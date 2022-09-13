@@ -126,19 +126,22 @@ h1, h2, h3, h4, h5, h6{
 	line-height: 1.2
 }
 .h1, h1 {
-	font-family: $Berlin;
+	font-family: $Gothic;
 	font-style: normal;
-	font-weight: 600;
-	line-height: 106.2%;
+	font-weight: 500;
+	font-size: 74px;
+	line-height: 85px;
 	margin-bottom: 1rem;
 	max-width: 900px;
 
 }
 .h2, h2 {
+	font-family: $Gothic;
 	font-style: normal;
-	font-weight: 600;
-	font-size: 26px;
-	line-height: 106.2%;
+	font-weight: 500;
+	font-size: 48px;
+	line-height: 48px;
+	margin-bottom: 1rem;
 }
 .h3, h3 {
 	font-weight: 600;

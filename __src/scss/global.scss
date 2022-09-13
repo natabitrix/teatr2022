@@ -26,6 +26,7 @@
 
 .sidebar{
 	width: 256px;
+	border-right: 1px solid $black;
 }
 .content{
 	width: calc(100vw - 256px);
@@ -55,8 +56,6 @@
 
 	}
 	&__nav{
-		
-		
 		padding: 24px 24px 24px;
 		ul li {
 			font-weight: 700;
@@ -80,13 +79,26 @@
 	}
 
 	&__social{
-		
+		padding: 24px 24px 0;
+		border-top:1px solid $black;
 	}
 	.social__list{
 		display: flex;
-		border-top:1px solid $black;
+		
 		a{
+			width: 38px;
+			height: 38px;
+			line-height: 38px;
+			border:1px solid $black;
+			border-radius: 50px;
 			margin-right: 12px;
+			text-align: center;
+			text-decoration: none;
+			vertical-align: middle;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
 			&:last-child{
 				margin-right:0
 			}
@@ -103,9 +115,7 @@
 	
 
 	&__phone{
-		width: 30%;
-		display: flex;
-		justify-content: flex-end;
+		padding: 24px 24px 0px;
 		.btn-phone{
 			font-size:20px;
 			white-space: nowrap;
@@ -114,6 +124,13 @@
 			font-size: 14px;
 			margin-left:12px;
 		}
+	}
+
+	&__eye-link{
+		padding: 24px 10px 24px 24px;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 21px;
 	}
 
 }
@@ -126,13 +143,21 @@
 .main-event{
 	display: flex;
 
+	.swiper-navigation{
+		width: 100px;
+		margin-left: -50px;
+		position: absolute;
+		left: 25%;
+		bottom: 50px;
+	}
+
 	&__text-block{
 		width: 50%;
 		display: flex;
 		text-align: center;
 		justify-content: center;
 		align-items: center;
-		background-color: $yellow;
+		background-color: $sky;
 		position: relative;
 
 		&-bg{
@@ -192,7 +217,6 @@
 			margin-bottom: 25px;
 		}
 		.event-name{
-			font-style: italic;
 			white-space: pre-line;
 			margin-bottom: 20px;
 			color:$dark;
@@ -308,8 +332,9 @@
 
 
 .partners {
+	background-color:$bg;
 	.partners-row{
-		border-bottom:1px solid $black;
+		//border-bottom:1px solid $black;
 	}	
 	.row{
 		height: 160px;
@@ -332,7 +357,7 @@
 }
 
 .footer{
-	background-color:$white;
+	background-color:$bg;
 	//background-image: url(../img/footer-logo.svg);
 	//background-position: bottom right;
 	//background-repeat:no-repeat;
