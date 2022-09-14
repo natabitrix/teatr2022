@@ -1,0 +1,87 @@
+
+$yellow: #F69F14;
+$dark: #1D1D1B;
+$black: #000000;
+$white: #ffffff;
+$bg: #F4F3F0;
+$blue: #006AA9;
+$green: #4CAF50;
+$red: #C23214;
+
+$lblue: #C4E0E7;
+$lyellow: #F4DFCF;
+$laqua: #C1D3C9;
+$lgreen: #C2CCBA;
+$lbrown: #E4D2AE;
+$lred: #F8C2AC;
+
+.bg-bg{
+	background-color: $bg;
+}
+
+.bg-lblue{
+	background-color: $lblue;
+}
+.bg-lyellow{
+	background-color: $lyellow;
+}
+.bg-laqua{
+	background-color: $laqua;
+}
+.bg-lgreen{
+	background-color: $lgreen;
+}
+.bg-lbrown{
+	background-color: $lbrown;
+}
+.bg-lred{
+	background-color: $lred;
+}
+
+.bg-yellow{
+	background-color: $yellow;
+}
+.bg-dark{
+	background-color: $dark;
+}
+.bg-black{
+	background-color: $black;
+}
+.bg-white{
+	background-color: $white;
+}
+
+.bg-blue{
+	background-color: $blue;
+}
+.bg-green{
+	background-color: $green;
+}
+.bg-red{
+	background-color: $red;
+}
+
+.color-yellow{
+	color: $yellow;
+}
+.color-dark{
+	color: $dark;
+}
+.color-black{
+	color: $black;
+}
+.color-white{
+	color: $white;
+}
+.color-bg{
+	color: $bg;
+}
+.color-blue{
+	color: $blue;
+}
+.color-green{
+	color: $green;
+}
+.color-red{
+	color: $red;
+}
