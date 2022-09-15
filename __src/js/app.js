@@ -56,16 +56,47 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     /**Menu */
-    var navItems = document.querySelectorAll(".nav-item");
+    var navItems = document.querySelector(".nav-items");
     var navItemParents = document.querySelectorAll(".nav-item-parent");
+    var navItemChildren = document.querySelectorAll(".nav-item-children");
     var navBack = document.querySelector(".nav-back");
+    var navItemActiveChildrenPlaceholder = document.querySelector(".nav-item-active-children");
 
+    //Перемещение всех children ul в отдельный div
+    Array.prototype.forEach.call(navItemChildren, function(navItemChild) {
+        navItemActiveChildrenPlaceholder.append(navItemChild);
+    });
+
+    Array.prototype.forEach.call(navItemParents, function(navItemParent) {
+        const thisId = navItemParent.id;
+        const thisChildrenId = thisId + "-children";
+        navItemParent.addEventListener("click", function () {
+
+            //Скрытие всех  children ul
+            Array.prototype.forEach.call(navItemChildren, function(navItemChild) {
+                navItemChild.classList.remove("active");
+            });
+
+            let thisChildren = document.getElementById(thisChildrenId);
+
+            //Появление дочернего ul
+            thisChildren.classList.add("active");
+
+            //Появление кнопки Назад
+            navBack.classList.add("active");
+
+            //Скрытие parent ul
+            navItems.classList.remove("active");
+
+        });
+    });
+
+    /*
     Array.prototype.forEach.call(navItemParents, function(navItemParent) {
 
         const thisChildren = navItemParent.querySelector("ul");
         const thisText = navItemParent.querySelector("span");
 
-        /**Клик по паренту - раскрытия чилдрена и скрытие всего остального */
         navItemParent.addEventListener("click", function () {
             //Появление кнопки Назад
             navBack.classList.add("active");
@@ -81,26 +112,25 @@ document.addEventListener("DOMContentLoaded", function() {
                 navItem.classList.remove("active");
             });
 
-            //Отображение текущего li
-            navItemParent.classList.add("active");
+            //Скрытие parent ul
+            navItemParent.classList.remove("active");
         });
     });
+    */
 
     navBack.addEventListener("click", function () {
         Array.prototype.forEach.call(navItemParents, function(navItemParent) {
-            const navItemChildren = navItemParent.querySelector("ul");
-            const thisText = navItemParent.querySelector("span");
+
+            //Скрытие всех  children ul
+            Array.prototype.forEach.call(navItemChildren, function(navItemChild) {
+                navItemChild.classList.remove("active");
+            });
 
             //Скрытие кнопки Назад
             navBack.classList.remove("active");
-            //Скрытие дочернего ul
-            navItemChildren.classList.remove("active");
-            //Отображение текущего заголовка
-            thisText.classList.remove("d-none");
-            //Отображение остальных всех li
-            Array.prototype.forEach.call(navItems, function(navItem) {
-                navItem.classList.add("active");
-            });
+
+            //Отображение parent ul
+            navItems.classList.add("active");
 
         });
     });

@@ -39,7 +39,7 @@ export const images = () => {
                 app.plugins.newer(app.path.build.images)
             )
         )
-        .pipe(app.plugins.if(app.isBuild,
+        /*.pipe(app.plugins.if(app.isBuild,
                 imagemin({
                     progressive: true,
                     svgoPlugins: [{ removeViewBox: false }],
@@ -47,7 +47,7 @@ export const images = () => {
                     optimizationLevel: 3 //0-7
                 })
             )
-        )
+        )*/
         .pipe(
             app.gulp.dest(app.path.build.images)
         )

@@ -38,9 +38,12 @@
 					<div class="nav-back">
 						<img src="@img/icons/back.svg" alt="&larr;"> назад
 					</div>
-					<ul class="nav-items list-unstyled">
-						<li class="nav-item nav-item-parent active"><span>Афиша</span>
-							<ul class="list-unstyled">
+
+					<div class="nav-item-active-children"></div>
+
+					<ul class="nav-items list-unstyled active">
+						<li class="nav-item nav-item-parent" id="item-afisha"><span>Афиша</span>
+							<ul class="list-unstyled nav-item-children" id="item-afisha-children">
 								<li><a href="#">О билетах и
 										правилах</a></li>
 								<li><a href="#"
@@ -54,10 +57,10 @@
 							</ul>
 
 						</li>
-						<li class="nav-item active"><a href="">Репертуар</a></li>
-						<li class="nav-item nav-item-parent active"><span>Театр</span>
+						<li class="nav-item"><a href="">Репертуар</a></li>
+						<li class="nav-item nav-item-parent" id="item-teatr"><span>Театр</span>
 						
-							<ul class="list-unstyled">
+							<ul class="list-unstyled nav-item-children" id="item-teatr-children">
 								<li><a href="#">Сказочники</a></li>
 								<li><a href="#">История</a></li>
 								<li><a href="#">Проекты</a></li>
@@ -66,38 +69,41 @@
 								<li><a href="#">Документы</a></li>
 							</ul>
 						</li>
-						<li class="nav-item active"><a href="">Новости</a></li>
-						<li class="nav-item active"><a href="">Проекты</a></li>
-						<li class="nav-item active"><a href="">Контакты</a></li>
+						<li class="nav-item"><a href="">Новости</a></li>
+						<li class="nav-item"><a href="">Проекты</a></li>
+						<li class="nav-item"><a href="">Контакты</a></li>
 					</ul>
 				</nav>
 
-				<div class="sidebar__logo">
-					<a class="sidebar__logo-link" href="/">
-						<img src="@img/logo.svg" alt="театр сказки">
-					</a>
-				</div>
-
-				<div class="sidebar__social">
-					<div class="social__list d-flex">
-						<a href="#" rel="nofollow" target="_blank" class="btn btn-circle-38"><img
-								src="@img/social/vk.svg" alt="VK"></a>
-						<a href="#" rel="nofollow" target="_blank" class="btn btn-circle-38"><img
-								src="@img/social/telegram.svg" alt="telegram"></a>
-						<a href="#" rel="nofollow" target="_blank" class="btn btn-circle-38"><img
-								src="@img/social/rutube.svg" alt="rutube"></a>
+				<div class="sidebar__bottom">
+					<div class="sidebar__logo">
+						<a class="sidebar__logo-link" href="/">
+							<img src="@img/logo.svg" alt="театр сказки">
+						</a>
+					</div>
+	
+					<div class="sidebar__social">
+						<div class="social__list d-flex">
+							<a href="#" rel="nofollow" target="_blank" class="btn btn-circle-38"><img
+									src="@img/social/vk.svg" alt="VK"></a>
+							<a href="#" rel="nofollow" target="_blank" class="btn btn-circle-38"><img
+									src="@img/social/telegram.svg" alt="telegram"></a>
+							<a href="#" rel="nofollow" target="_blank" class="btn btn-circle-38"><img
+									src="@img/social/rutube.svg" alt="rutube"></a>
+						</div>
+					</div>
+	
+	
+					<div class="sidebar__phone">
+						<a href="tel:+7 (812) 388-00-31" class="btn">+7 (812) 388-00-31</a>
+					</div>
+	
+					<div class="sidebar__eye-link">
+						<a href="#" rel="nofollow" target="_blank"><img src="@img/icons/eye.svg"
+								alt="Версия для слабовидящих"><span>Версия для слабовидящих</span></a>
 					</div>
 				</div>
 
-
-				<div class="sidebar__phone">
-					<a href="tel:+7 (812) 388-00-31" class="btn">+7 (812) 388-00-31</a>
-				</div>
-
-				<div class="sidebar__eye-link">
-					<a href="#" rel="nofollow" target="_blank"><img src="@img/icons/eye.svg"
-							alt="Версия для слабовидящих"><span>Версия для слабовидящих</span></a>
-				</div>
 
 
 

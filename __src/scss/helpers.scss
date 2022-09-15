@@ -33,6 +33,24 @@ html, body{
 }
 */
 
+
+.container {
+	//min-width: 1200px;
+	//max-width: 100%;
+
+}
+
+
+
+
+@include media-breakpoint-up(xxxl) {
+	.col-xxl-3 {
+		width: 20%
+	}
+}
+
+
+
 .modal-open, .hidden-scroll, .compensate-for-scrollbar{
 	background-color: $bg;
 	//padding-right: 10px;
