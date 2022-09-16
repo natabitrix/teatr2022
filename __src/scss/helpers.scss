@@ -90,6 +90,7 @@ input, button, a{
 .btn{
 	font-family: $Berlin;
 	font-weight: normal;
+	font-size: 20px;
 	border:1px solid $black;
 	background-color: $white;
 	color: $black;
@@ -147,7 +148,13 @@ input, button, a{
 		}
 	}
 
+	&.btn-lcase{
+		padding-bottom: 4px;
+	}
 
+	img{
+		position: relative;
+	}
 }
 
 [class*='btn-circle-']{
@@ -182,16 +189,19 @@ h1, h2, h3, h4, h5, h6{
 	margin-bottom: 1rem;
 }
 .h3, h3 {
-	font-weight: 600;
-	font-size: 18px;
-	line-height: 24px;
-	margin-bottom: .4rem;
+	font-family: $Gothic;
+	font-weight: 500;
+	font-size: 32px;
+	line-height: 28px;
+	margin-bottom: 1rem;
 }
 .h4, h4 {
-	font-weight: 600;
+	font-family: $Berlin;
 	font-style: normal;
-	font-size: 18px;
-	line-height: 106.2%;
+	font-weight: 700;
+	font-size: 32px;
+	line-height: 32px;
+	margin-bottom: 1rem;
 }
 .h5, h5 {
 	font-weight: 600;

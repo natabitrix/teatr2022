@@ -56,11 +56,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     /**Menu */
-    var navItems = document.querySelector(".nav-items");
-    var navItemParents = document.querySelectorAll(".nav-item-parent");
-    var navItemChildren = document.querySelectorAll(".nav-item-children");
-    var navBack = document.querySelector(".nav-back");
-    var navItemActiveChildrenPlaceholder = document.querySelector(".nav-item-active-children");
+    const navItems = document.querySelector(".nav-items");
+    const navItemParents = document.querySelectorAll(".nav-item-parent");
+    const navItemChildren = document.querySelectorAll(".nav-item-children");
+    const navBack = document.querySelector(".nav-back");
+    const navItemActiveChildrenPlaceholder = document.querySelector(".nav-item-active-children");
 
     //Перемещение всех children ul в отдельный div
     Array.prototype.forEach.call(navItemChildren, function(navItemChild) {
@@ -91,33 +91,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    /*
-    Array.prototype.forEach.call(navItemParents, function(navItemParent) {
-
-        const thisChildren = navItemParent.querySelector("ul");
-        const thisText = navItemParent.querySelector("span");
-
-        navItemParent.addEventListener("click", function () {
-            //Появление кнопки Назад
-            navBack.classList.add("active");
-
-            //Появление дочернего ul
-            thisChildren.classList.add("active");
-
-            //Скрытие текущего заголовка
-            thisText.classList.add("d-none");
-            
-            //Скрытие остальных всех li
-            Array.prototype.forEach.call(navItems, function(navItem) {
-                navItem.classList.remove("active");
-            });
-
-            //Скрытие parent ul
-            navItemParent.classList.remove("active");
-        });
-    });
-    */
-
     navBack.addEventListener("click", function () {
         Array.prototype.forEach.call(navItemParents, function(navItemParent) {
 
@@ -135,5 +108,155 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+
+    /**Tabs */
+    const tabList = document.querySelectorAll(".tab-list-item");
+    const tabContent = document.querySelectorAll(".tab");
+
+    Array.prototype.forEach.call(tabList, function(tabListItem) {
+        tabListItem.addEventListener("click", function () {
+
+            const thisId = tabListItem.id;
+            const tabContentId = thisId + "-content";
+            let thisTabContentItem = document.getElementById(tabContentId);
+
+            //Скрытие всех tab-content
+            Array.prototype.forEach.call(tabContent, function(tabContentItem) {
+                tabContentItem.classList.add("d-none");  
+            });
+            //Открытие активной tab-content
+            thisTabContentItem.classList.remove("d-none");
+            
+            //Убрать активность у всех tab
+            Array.prototype.forEach.call(tabList, function(tabListItem) {
+                tabListItem.classList.remove("active");
+            });
+            //Добавить активность активной tab
+            tabListItem.classList.add("active");
+
+            //Обновить фильтр
+            Array.prototype.forEach.call(document.querySelectorAll(".filter-list-container"), function(filterContainer) {
+                changeFilterWhenResize(filterContainer);
+                window.addEventListener('resize', function(event){
+                    changeFilterWhenResize(filterContainer);
+                });
+            });
+
+            //Обновить collapse
+            collapse();
+
+        });
+    });
+
+
+    /**Filter */
+    function changeFilterWhenResize(filterContainer)
+    {
+
+        var filterList = filterContainer.querySelector(".tab__filter-list");
+        var filterListItems = filterList.querySelectorAll(".filter-item");
+
+        var filterContainerWidth = filterContainer.clientWidth;
+        var filterListItemsWidth = 0;
+
+        Array.prototype.forEach.call(filterListItems, function(filterListItem) {
+            filterListItemsWidth += filterListItem.clientWidth + 12;
+            if(filterListItemsWidth > filterContainerWidth) {
+                filterListItem.classList.add("hidden");
+            }
+            else {
+                filterListItem.classList.remove("hidden");    
+            }
+        });
+
+        var filterListPlaceholder = filterContainer.querySelector(".tab__filter-list-hidden");
+        var filterListHiddenItems = filterList.querySelectorAll(".filter-item.hidden");
+        var filterListHiddenHeight = 0;
+
+        filterListPlaceholder.innerHTML = "";
+        Array.prototype.forEach.call(filterListHiddenItems, function(filterListItem) {
+                //Перемещение всех hidden li в отдельный ul
+                var li = document.createElement("li");
+                li.innerHTML = filterListItem.innerHTML;
+                filterListPlaceholder.append(li);
+
+                filterListHiddenHeight += li.clientHeight + 12;
+        });
+
+        var filterMoreBtn = filterContainer.querySelector(".btn-more");
+
+        if(filterListItemsWidth > filterContainerWidth) {
+            filterMoreBtn.classList.remove("d-none");
+        }
+        else{
+            filterMoreBtn.classList.add("d-none");
+        }
+
+
+        filterMoreBtn.addEventListener("click", function () {
+
+            filterListPlaceholder.classList.toggle("active");
+
+            if(filterListPlaceholder.clientHeight > 0) {
+                filterListPlaceholder.style.height = 0;
+            }
+            else {
+                filterListPlaceholder.style.height = filterListHiddenHeight + "px";
+            }
+            
+            this.classList.toggle("btn-more-hide");
+    
+        });
+
+        document.addEventListener("click", function (event) {
+			if (!filterListPlaceholder.contains(event.target) && !filterMoreBtn.contains(event.target)) {
+				filterListPlaceholder.classList.remove("active");
+			}
+		});
+
+    }
+
+    Array.prototype.forEach.call(document.querySelectorAll(".filter-list-container"), function(filterContainer) {
+        changeFilterWhenResize(filterContainer);
+        window.addEventListener('resize', function(event){
+            changeFilterWhenResize(filterContainer);
+        });
+    });
+
+
+
+
+    /**Collapse*/
+
+    function collapse()
+    {
+        var collapseContainer = document.querySelectorAll(".collapse-container");
+        var collapseItemsHeight = 0;
+
+        Array.prototype.forEach.call(collapseContainer, function(collapseItem) {
+
+            var collapseBtn = collapseItem.querySelector(".collapse-btn");
+            var collapseItems = collapseItem.querySelector(".collapse-items");
+
+            collapseItemsHeight += collapseItem.clientHeight;
+
+            collapseBtn.addEventListener("click", function () {
+
+
+                if(collapseItems.clientHeight > 0) {
+                    collapseItems.style.height = 0;
+                    collapseItems.classList.remove("active");
+                    collapseBtn.classList.remove("active");
+                }
+                else {
+                    collapseItems.style.height = collapseItemsHeight + "px";
+                    collapseItems.classList.add("active");
+                    collapseBtn.classList.add("active");
+                }
+            });
+        });
+    }
+
+    collapse();
 
 });

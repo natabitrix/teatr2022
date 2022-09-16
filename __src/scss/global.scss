@@ -1,5 +1,4 @@
-
-body.lock{
+body.lock {
 	height: 100%;
 	overflow: hidden;
 }
@@ -44,13 +43,12 @@ $headerHeight: 48px;
 
 .content {
 	width: 100%;
-	
+
 	@include media-breakpoint-up(lg) {
 		//width: calc(100vw - $sidebarWidth);
 		padding-left: $sidebarWidth;
 	}
 }
-
 
 .header {
 	display: block;
@@ -85,7 +83,8 @@ $headerHeight: 48px;
 		transition: 0.3s;
 		transform: translateY(-100%);
 		transition: transform .3s ease-in-out;
-		&.active{
+
+		&.active {
 			transform: translateY(0)
 		}
 	}
@@ -97,9 +96,6 @@ $headerHeight: 48px;
 	}
 }
 
-
-
-
 .sidebar {
 	border-right: 1px solid $black;
 	background-color: $white;
@@ -108,11 +104,11 @@ $headerHeight: 48px;
 	position: fixed;
 	z-index: 1;
 	height: 100%;
-	
+
 	padding-bottom: 50px;
 	transform: translateX(-100%);
 	transition: transform .3s ease-in-out;
-	
+
 	@include media-breakpoint-up(lg) {
 		width: $sidebarWidth;
 		//position: relative;
@@ -120,7 +116,7 @@ $headerHeight: 48px;
 		//padding-bottom: 0;
 		transform: translateX(0)
 	}
-	
+
 	&.opened {
 		transform: translateX(0)
 	}
@@ -133,6 +129,7 @@ $headerHeight: 48px;
 		overflow-y: auto;
 		overflow-x: hidden;
 		width: $sidebarWidthMobile;
+
 		@include media-breakpoint-up(lg) {
 			width: $sidebarWidth;
 		}
@@ -140,10 +137,11 @@ $headerHeight: 48px;
 
 	&__nav {
 		width: $sidebarWidthMobile;
+
 		@include media-breakpoint-up(lg) {
 			width: $sidebarWidth;
 		}
-		
+
 		//margin-bottom: 0;
 		position: relative;
 
@@ -151,15 +149,18 @@ $headerHeight: 48px;
 			//margin-bottom: 234px;
 		}
 
-		ul{
+		ul {
 			padding: 16px 16px 24px;
+
 			@include media-breakpoint-up(lg) {
 				padding: 24px 24px 24px;
 			}
+
 			position: relative;
 			top: 0;
 			transform: translateX(-100%);
 			transition: transform .3s ease-in-out;
+
 			&.active {
 				transform: translateX(0);
 				//position: static;
@@ -170,9 +171,10 @@ $headerHeight: 48px;
 			position: absolute;
 			top: $headerHeight;
 		}
-		
 
-		ul li, .nav-back {
+
+		ul li,
+		.nav-back {
 			font-weight: 700;
 			font-size: 20px;
 			line-height: 21px;
@@ -180,13 +182,14 @@ $headerHeight: 48px;
 			text-transform: lowercase;
 		}
 
-		ul li a, .nav-item-parent > span {
-			:hover{
+		ul li a,
+		.nav-item-parent>span {
+			:hover {
 				color: $dark;
 			}
 		}
 
-		.nav-item-parent > span {
+		.nav-item-parent>span {
 			cursor: pointer;
 		}
 
@@ -198,18 +201,21 @@ $headerHeight: 48px;
 			border-bottom: 1px solid $black;
 			position: relative;
 			z-index: 3;
-			left:-1px;
+			left: -1px;
 			margin-top: -$headerHeight;
 			transition: margin .3s ease-in-out;
 			background-color: $white;
 			display: flex;
 			align-items: center;
-			img{
+
+			img {
 				margin-right: 5px;
 			}
+
 			@include media-breakpoint-up(lg) {
-    			padding: 0 24px;
+				padding: 0 24px;
 			}
+
 			&.active {
 				margin-top: 0;
 			}
@@ -220,6 +226,7 @@ $headerHeight: 48px;
 
 	&__bottom {
 		width: $sidebarWidthMobile;
+
 		@include media-breakpoint-up(lg) {
 			width: $sidebarWidth;
 		}
@@ -241,9 +248,11 @@ $headerHeight: 48px;
 
 	&__social {
 		padding: 22px 16px 0;
+
 		@include media-breakpoint-up(lg) {
 			padding: 22px 24px 0;
 		}
+
 		border-top: 1px solid $black;
 	}
 
@@ -267,6 +276,7 @@ $headerHeight: 48px;
 	&__phone {
 
 		padding: 14px 16px 0px;
+
 		@include media-breakpoint-up(lg) {
 			padding: 14px 24px 0px;
 		}
@@ -279,9 +289,11 @@ $headerHeight: 48px;
 
 	&__eye-link {
 		padding: 14px 10px 24px 16px;
+
 		@include media-breakpoint-up(lg) {
 			padding: 14px 10px 24px 24px;
 		}
+
 		font-weight: 400;
 		font-size: 16px;
 		line-height: 21px;
@@ -292,7 +304,6 @@ $headerHeight: 48px;
 	}
 
 }
-
 
 .main {
 	position: relative;
@@ -343,11 +354,17 @@ $headerHeight: 48px;
 			height: auto;
 		}
 
-		@include media-breakpoint-up(xxl) {
-			padding: 100px 30px;
+		@include media-breakpoint-up(xl) { //1200
+			padding: 70px 40px;
 		}
 
+		@include media-breakpoint-up(xxl) { //1400
+			padding: 100px 40px;
+		}
 
+		@include media-breakpoint-up(xxxl) { //1600
+			padding: 150px 40px;
+		}
 
 		&-bg {
 			position: absolute;
@@ -421,7 +438,7 @@ $headerHeight: 48px;
 
 			@include media-breakpoint-up(xxxl) {
 				font-size: 21px;
-				margin-bottom: 40px;
+				margin-bottom: 50px;
 				height: 48px;
 			}
 
@@ -447,7 +464,9 @@ $headerHeight: 48px;
 				margin-bottom: 45px;
 			}
 
-			@include media-breakpoint-up(xxxl) {
+
+
+			@include media-breakpoint-up(xxl) {
 
 				font-size: 48px;
 				line-height: 48px;
@@ -472,7 +491,7 @@ $headerHeight: 48px;
 	}
 
 	&__img-block {
-		
+
 		width: 100%;
 		object-fit: cover;
 
@@ -486,6 +505,232 @@ $headerHeight: 48px;
 		}
 	}
 }
+
+
+.main-tabs {
+
+	&__tab-list {
+		align-items: center;
+		justify-content: center;
+		border-bottom: 1px solid $dark;
+
+		li {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			margin: 0 15px;
+			padding: 25px 10px;
+			position: relative;
+			top: 1px;
+
+			&.active {
+				border-bottom: 4px solid $yellow;
+				padding-bottom: 21px;
+				cursor: text;
+			}
+
+			.h2 {
+				margin: 0
+			}
+
+			img {
+				margin-right: 10px;
+			}
+		}
+	}
+
+	&__tab-content {
+
+	}
+
+	&__tab{
+		padding:0 36px;
+
+		.tab__filters{
+
+			padding-top: 24px;
+			.tab__filter-left{
+
+			}
+			.tab__filter-right{
+
+			}
+
+			.tab__filter-list{
+				display: flex;
+				flex-wrap: wrap;
+				margin-bottom: 12px;
+
+				height: 38px;
+				overflow: hidden;
+			}
+
+			.tab__filter-name{
+				font-style: normal;
+				font-weight: 700;
+				font-size: 20px;
+				line-height: 21px;
+				margin-bottom: 10px;
+				display: flex;
+
+				.icon{
+					font-size: 12px;
+					font-weight: 700;
+					width: 20px;
+					height: 20px;
+					padding:0;
+					margin-right:4px;
+					background-color: $yellow;
+				}
+			}
+
+
+			li{
+				margin-right: 12px;
+				margin-bottom: 12px;
+			}
+			.btn{
+				font-weight: 400;
+				font-size: 20px;
+				line-height: 20px;
+				padding: 0 18px 4px;
+				&.btn-more, &.btn-int {
+					padding-bottom: 0;
+				}
+				&.active{
+					background-color: $dark;
+					color: $white;
+					cursor: text;
+				}
+			}
+
+			.tab__filter-list-hidden {
+				margin-top: 12px;
+				position:absolute;
+				transition: height .3s ease-in-out;
+				height: 0;
+				overflow: hidden;
+			}
+			.filter-more-container{
+				margin-top: 12px;
+			}
+
+		}
+
+	}
+
+}
+
+.tickets{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	.ticket-item{
+		margin-bottom: 30px;
+	}
+	.tickets-more-container{
+
+	}
+	.btn-tickets-more{
+		padding-bottom: 4px;
+		img{
+			position: relative;
+			top: 3px;
+			margin-left: 10px;
+		}
+	}
+}
+
+.seasons{
+	margin-bottom: 24px;
+	.season{
+		border-bottom:1px solid $dark;
+		padding:24px 0;
+		.btn-season-show{
+			margin-right:24px;
+			position: relative;
+			//top:2px;
+			display:flex;
+			width: 36px;
+			height: 36px;
+			align-items: center;
+			
+			cursor: pointer;
+			transition: transform 0.3s ease-in-out;
+			transform-origin: center;
+			&.active{
+				//transform:rotate(540deg)
+				transform:rotate(180deg)
+			}
+		}
+
+		&__name{
+			margin:0;
+		}
+
+		&__items{
+			
+			&-header{
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+		}
+
+		&__day{
+			font-weight: 400;
+			font-size: 28px;
+			line-height: 24px;
+		}
+
+		&__btn{
+			.btn {
+				font-weight: 400;
+				font-size: 22px;
+				line-height: 20px;
+				img{
+					width: 17px;
+					height: 17px;
+					margin-left:10px;
+				}
+			}
+		}
+
+		&__spectacle-items{
+			//margin-top: 24px;
+			transition: margin .3s ease-in-out, height .3s ease-in-out;
+			height: 0;
+			overflow: hidden;
+			&.active{
+				margin-top: 24px;
+			}
+		}
+
+		&__spectacle-item{
+			border-top:1px solid $dark;
+			padding:15px 0 24px;
+			//height: 96px;
+			h3{
+				margin: 0;
+			}
+		}
+		&__spectacle-date-time{
+			display: flex;
+			align-items: center;
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 20px;
+			text-transform: uppercase;
+			margin-bottom: 8px;
+			.bull{
+				margin: 0 8px;
+			}
+		}
+
+	}
+}
+
+
 
 
 .afisha {

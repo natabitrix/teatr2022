@@ -1751,6 +1751,7 @@ a {
 .btn {
   font-family: "BerlinType";
   font-weight: normal;
+  font-size: 20px;
   border: 1px solid #000000;
   background-color: #ffffff;
   color: #000000;
@@ -1814,6 +1815,14 @@ a {
   line-height: 48px;
 }
 
+.btn.btn-lcase {
+  padding-bottom: 4px;
+}
+
+.btn img {
+  position: relative;
+}
+
 [class*=btn-circle-] {
   padding: 0;
 }
@@ -1862,18 +1871,21 @@ h2 {
 
 .h3,
 h3 {
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 24px;
-  margin-bottom: 0.4rem;
+  font-family: "PPRightGothic";
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 28px;
+  margin-bottom: 1rem;
 }
 
 .h4,
 h4 {
-  font-weight: 600;
+  font-family: "BerlinType";
   font-style: normal;
-  font-size: 18px;
-  line-height: 106.2%;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 32px;
+  margin-bottom: 1rem;
 }
 
 .h5,
@@ -2680,6 +2692,253 @@ body.lock {
 .main-event__img-block img {
   max-width: 100%;
   height: 100%;
+}
+
+.main-tabs__tab-list {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-bottom: 1px solid #1D1D1B;
+}
+
+.main-tabs__tab-list li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  margin: 0 15px;
+  padding: 25px 10px;
+  position: relative;
+  top: 1px;
+}
+
+.main-tabs__tab-list li.active {
+  border-bottom: 4px solid #F69F14;
+  padding-bottom: 21px;
+  cursor: text;
+}
+
+.main-tabs__tab-list li .h2 {
+  margin: 0;
+}
+
+.main-tabs__tab-list li img {
+  margin-right: 10px;
+}
+
+.main-tabs__tab {
+  padding: 0 36px;
+}
+
+.main-tabs__tab .tab__filters {
+  padding-top: 24px;
+}
+
+.main-tabs__tab .tab__filters .tab__filter-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 12px;
+  height: 38px;
+  overflow: hidden;
+}
+
+.main-tabs__tab .tab__filters .tab__filter-name {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 21px;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main-tabs__tab .tab__filters .tab__filter-name .icon {
+  font-size: 12px;
+  font-weight: 700;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  margin-right: 4px;
+  background-color: #F69F14;
+}
+
+.main-tabs__tab .tab__filters li {
+  margin-right: 12px;
+  margin-bottom: 12px;
+}
+
+.main-tabs__tab .tab__filters .btn {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  padding: 0 18px 4px;
+}
+
+.main-tabs__tab .tab__filters .btn.btn-more,
+.main-tabs__tab .tab__filters .btn.btn-int {
+  padding-bottom: 0;
+}
+
+.main-tabs__tab .tab__filters .btn.active {
+  background-color: #1D1D1B;
+  color: #ffffff;
+  cursor: text;
+}
+
+.main-tabs__tab .tab__filters .tab__filter-list-hidden {
+  margin-top: 12px;
+  position: absolute;
+  -webkit-transition: height 0.3s ease-in-out;
+  -o-transition: height 0.3s ease-in-out;
+  transition: height 0.3s ease-in-out;
+  height: 0;
+  overflow: hidden;
+}
+
+.main-tabs__tab .tab__filters .filter-more-container {
+  margin-top: 12px;
+}
+
+.tickets {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.tickets .ticket-item {
+  margin-bottom: 30px;
+}
+
+.tickets .btn-tickets-more {
+  padding-bottom: 4px;
+}
+
+.tickets .btn-tickets-more img {
+  position: relative;
+  top: 3px;
+  margin-left: 10px;
+}
+
+.seasons {
+  margin-bottom: 24px;
+}
+
+.seasons .season {
+  border-bottom: 1px solid #1D1D1B;
+  padding: 24px 0;
+}
+
+.seasons .season .btn-season-show {
+  margin-right: 24px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 36px;
+  height: 36px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  -o-transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+}
+
+.seasons .season .btn-season-show.active {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.seasons .season__name {
+  margin: 0;
+}
+
+.seasons .season__items-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.seasons .season__day {
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 24px;
+}
+
+.seasons .season__btn .btn {
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 20px;
+}
+
+.seasons .season__btn .btn img {
+  width: 17px;
+  height: 17px;
+  margin-left: 10px;
+}
+
+.seasons .season__spectacle-items {
+  -webkit-transition: margin 0.3s ease-in-out, height 0.3s ease-in-out;
+  -o-transition: margin 0.3s ease-in-out, height 0.3s ease-in-out;
+  transition: margin 0.3s ease-in-out, height 0.3s ease-in-out;
+  height: 0;
+  overflow: hidden;
+}
+
+.seasons .season__spectacle-items.active {
+  margin-top: 24px;
+}
+
+.seasons .season__spectacle-item {
+  border-top: 1px solid #1D1D1B;
+  padding: 15px 0 24px;
+}
+
+.seasons .season__spectacle-item h3 {
+  margin: 0;
+}
+
+.seasons .season__spectacle-date-time {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.seasons .season__spectacle-date-time .bull {
+  margin: 0 8px;
 }
 
 .afisha {
@@ -6873,6 +7132,10 @@ body.lock {
     text-align: center !important;
   }
 
+  .main-event__text-block {
+    padding: 70px 40px;
+  }
+
   .main-event__text-block .event-type {
     font-size: 18px;
     height: 38px;
@@ -6890,7 +7153,7 @@ body.lock {
   }
 }
 
-@media (min-width: 1300px) {
+@media (min-width: 1400px) {
   .col-xxl {
     -webkit-box-flex: 1;
         -ms-flex: 1 0 0%;
@@ -7870,11 +8133,16 @@ body.lock {
   }
 
   .main-event__text-block {
-    padding: 100px 30px;
+    padding: 100px 40px;
+  }
+
+  .main-event__text-block .event-name {
+    font-size: 48px;
+    line-height: 48px;
   }
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 1600px) {
   .col-xxxl {
     -webkit-box-flex: 1;
         -ms-flex: 1 0 0%;
@@ -8848,14 +9116,13 @@ body.lock {
     width: 20%;
   }
 
-  .main-event__text-block .event-type {
-    font-size: 21px;
-    margin-bottom: 40px;
-    height: 48px;
+  .main-event__text-block {
+    padding: 150px 40px;
   }
 
-  .main-event__text-block .event-name {
-    font-size: 48px;
-    line-height: 48px;
+  .main-event__text-block .event-type {
+    font-size: 21px;
+    margin-bottom: 50px;
+    height: 48px;
   }
 }

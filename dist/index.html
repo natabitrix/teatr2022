@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="format-detection" content="telephone=no" />
 	<meta name="format-detection" content="address=no" />
-	<link rel="stylesheet" href="css/style.min.css?_v=20220915102254">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220916173223">
 	<title>Театр сказки</title>
 	<script>
 		var homePage = false;
@@ -232,6 +232,215 @@
         </div>
     </div>
 
+    <div class="main-tabs">
+
+
+        <ul class="main-tabs__tab-list tab-list list-unstyled d-flex">
+            <li class="tab-list-item active" id="tab-tickets"><img src="img/icons/ticket.svg" alt=""><div class="h2">Билеты</div></li>
+            <li class="tab-list-item" id="tab-seasons"><img src="img/icons/percent.svg" alt=""><div class="h2">Абонементы</div></li>
+        </ul>
+
+
+        <div class="main-tabs__tab-content tab-content">
+
+            <div class="main-tabs__tab tab" id="tab-tickets-content">
+
+                <div class="tab__filters">
+
+                    <div class="row">
+
+                        <div class="tab__filter-left col-xxxl-6 col-xl-8 col-lg-6 col-md-6 mb-5 mb-md-0">
+                            <div class="tab__filter-name">
+                                Месяц:
+                            </div>
+                            <div class="filter-list-container" id="main_filter_month">
+                                <ul class="tab__filter-list list-unstyled">
+                                    <li class="filter-item"><button type="button" class="btn active">сентябрь</button></li> 
+                                    <li class="filter-item"><button type="button" class="btn">октябрь</button></li>
+                                    <li class="filter-item"><button type="button" class="btn">ноябрь</button></li>
+                                    <li class="filter-item"><button type="button" class="btn">декабрь</button></li>
+                                    <li class="filter-item"><button type="button" class="btn">январь</button></li>
+                                    <li class="filter-item"><button type="button" class="btn">февраль</button></li>
+                                </ul>
+                                <div class="filter-more-container">
+                                    <button type="button" class="btn btn-more d-none"><img src="img/icons/dots.svg" alt=""></button>
+                                    <ul class="tab__filter-list-hidden list-unstyled"></ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab__filter-right col-xxxl-6 col-xl-4 col-lg-6 col-md-6">
+                            <div class="tab__filter-name">
+                                <div class="icon btn question">?</div>Возраст:
+                            </div>
+                            <div class="filter-list-container" id="main_filter_old">
+                                <ul class="tab__filter-list list-unstyled">
+                                    <li class="filter-item"><button type="button" class="btn active">любой</button></li> 
+                                    <li class="filter-item"><button type="button" class="btn btn-int">0+</button></li>
+                                    <li class="filter-item"><button type="button" class="btn btn-int">6+</button></li>
+                                    <li class="filter-item"><button type="button" class="btn btn-int">12+</button></li>
+                                    <li class="filter-item"><button type="button" class="btn btn-int">16+</button></li>
+                                    <li class="filter-item"><button type="button" class="btn btn-int">18+</button></li>
+                                </ul>
+                                <div class="filter-more-container">
+                                    <button type="button" class="btn btn-more d-none"><img src="img/icons/dots.svg" alt=""></button>
+                                    <ul class="tab__filter-list-hidden list-unstyled"></ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="tickets">
+                    <div class="row">
+
+                        <div class="ticket-item col-xxxl-3 col-xl-4 col-lg-6 col-md-6">
+                            <picture><source srcset="img/demo/catalog/1.webp" type="image/webp"><img src="img/demo/catalog/1.jpg" alt="" class="img-fluid"></picture>
+                        </div>
+                        <div class="ticket-item col-xxxl-3 col-xl-4 col-lg-6 col-md-6">
+                            <picture><source srcset="img/demo/catalog/2.webp" type="image/webp"><img src="img/demo/catalog/2.jpg" alt="" class="img-fluid"></picture>
+                        </div>
+                        <div class="ticket-item col-xxxl-3 col-xl-4 col-lg-6 col-md-6">
+                            <picture><source srcset="img/demo/catalog/3.webp" type="image/webp"><img src="img/demo/catalog/3.jpg" alt="" class="img-fluid"></picture>
+                        </div>
+                        <div class="ticket-item col-xxxl-3 col-xl-4 col-lg-6 col-md-6">
+                            <picture><source srcset="img/demo/catalog/4.webp" type="image/webp"><img src="img/demo/catalog/4.jpg" alt="" class="img-fluid"></picture>
+                        </div>
+                        <div class="ticket-item col-xxxl-3 col-xl-4 col-lg-6 col-md-6">
+                            <picture><source srcset="img/demo/catalog/5.webp" type="image/webp"><img src="img/demo/catalog/5.jpg" alt="" class="img-fluid"></picture>
+                        </div>
+                        <div class="ticket-item col-xxxl-3 col-xl-4 col-lg-6 col-md-6">
+                            <picture><source srcset="img/demo/catalog/6.webp" type="image/webp"><img src="img/demo/catalog/6.jpg" alt="" class="img-fluid"></picture>
+                        </div>
+                        <div class="ticket-item col-xxxl-3 col-xl-4 col-lg-6 col-md-6">
+                            <picture><source srcset="img/demo/catalog/1.webp" type="image/webp"><img src="img/demo/catalog/1.jpg" alt="" class="img-fluid"></picture>
+                        </div>
+                        <div class="ticket-item col-xxxl-3 col-xl-4 col-lg-6 col-md-6">
+                            <picture><source srcset="img/demo/catalog/2.webp" type="image/webp"><img src="img/demo/catalog/2.jpg" alt="" class="img-fluid"></picture>
+                        </div>
+
+                    </div>
+                    <div class="tickets-more-container text-center">
+                        <button type="button" class="btn btn-tickets-more">показать ещё <img src="img/icons/dots.svg" alt=""></button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="main-tabs__tab tab d-none" id="tab-seasons-content">
+                <div class="seasons">
+
+                    <div class="season collapse-container">
+                        <div class="row">
+                            <div class="col-lg-5 d-flex">
+                                <div class="btn-season-show collapse-btn"><img src="img/icons/arrow-down2.svg" alt=""></div>
+                                <h4 class="season__name">Абонемент №1</h4>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="season__items">
+                                    <div class="season__items-header">
+                                        <div class="season__day">
+                                            пятница, 14:00
+                                        </div>
+                                        <div class="season__btn">
+                                            <a href="#" class="btn btn-season-buy btn-lcase btn__yellow">купить <img src="img/icons/arrow-right.svg" alt="&larr;"></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="season__spectacle-items collapse-items">
+
+                                        <div class="season__spectacle-item">
+                                            <div class="season__spectacle-date-time">
+                                                16 ноября
+                                                <div class="bull">&bull;</div> 
+                                                40 мин
+                                            </div>
+                                            <h3 class="season__spectacle-name">
+                                                Синяя борода
+                                            </h3>
+                                        </div>
+
+                                        <div class="season__spectacle-item">
+                                            <div class="season__spectacle-date-time">
+                                                16 ноября
+                                                <div class="bull">&bull;</div> 
+                                                40 мин
+                                            </div>
+                                            <h3 class="season__spectacle-name">
+                                                Синяя борода
+                                            </h3>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="season collapse-container">
+                        <div class="row">
+                            <div class="col-lg-5 d-flex">
+                                <div class="btn-season-show collapse-btn"><img src="img/icons/arrow-down2.svg" alt=""></div>
+                                <h4 class="season__name">Абонемент №1</h4>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="season__items">
+                                    <div class="season__items-header">
+                                        <div class="season__day">
+                                            пятница, 14:00
+                                        </div>
+                                        <div class="season__btn">
+                                            <a href="#" class="btn btn-season-buy btn-lcase btn__yellow">купить <img src="img/icons/arrow-right.svg" alt="&larr;"></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="season__spectacle-items collapse-items">
+
+                                        <div class="season__spectacle-item">
+                                            <div class="season__spectacle-date-time">
+                                                16 ноября
+                                                <div class="bull">&bull;</div> 
+                                                40 мин
+                                            </div>
+                                            <h3 class="season__spectacle-name">
+                                                Синяя борода
+                                            </h3>
+                                        </div>
+
+                                        <div class="season__spectacle-item">
+                                            <div class="season__spectacle-date-time">
+                                                16 ноября
+                                                <div class="bull">&bull;</div> 
+                                                40 мин
+                                            </div>
+                                            <h3 class="season__spectacle-name">
+                                                Синяя борода
+                                            </h3>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="main-news">
+        
+    </div>
+
 </div>
 
 
@@ -323,7 +532,7 @@
 
 </div><!--.wrapper-->
 
-<script src="js/app.min.js?_v=20220915102254"></script>
+<script src="js/app.min.js?_v=20220916173223"></script>
 </body>
 
 </html>
