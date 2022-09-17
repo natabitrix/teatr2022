@@ -310,8 +310,11 @@ $headerHeight: 48px;
 	z-index: 0;
 }
 
-.slider {
+.main-event {
 	display: flex;
+}
+
+.main-slider {
 
 	.swiper-navigation {
 		position: absolute;
@@ -356,7 +359,7 @@ $headerHeight: 48px;
 
 		@include media-breakpoint-up(xl) {
 			//1200
-			padding: 70px 40px;
+			padding: 75px 40px;
 		}
 
 		@include media-breakpoint-up(xxl) {
@@ -684,7 +687,7 @@ $headerHeight: 48px;
 
 		@include media-breakpoint-down(xl) {
 			&:last-child, &:nth-last-child(2){
-				display: flex;
+				display: block;
 			}
 		}
 
@@ -860,6 +863,9 @@ $headerHeight: 48px;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+		@include media-breakpoint-down(md) {
+			height: auto!important;
+		}
 	}
 
 	&__item{
@@ -875,10 +881,17 @@ $headerHeight: 48px;
 		&:nth-child(2n){
 			.news__item-img {
 				order:1;
+				@include media-breakpoint-down(md) {
+					order:0;
+				}
 			}
 			.news__item-text{
 				order:0;
+				@include media-breakpoint-down(md) {
+					order:1;
+				}
 			}
+			
 			/*&:hover {
 				.news__item-img {
 					order:0;
@@ -897,7 +910,7 @@ $headerHeight: 48px;
 
 		@include media-breakpoint-down(xl) {
 			&:last-child{
-				display: flex;
+				display: block;
 			}
 		}
 
@@ -1010,25 +1023,72 @@ $headerHeight: 48px;
 }
 
 
-.partners {
-	background-color: $bg;
-	padding: 36px 36px 36px;
+.partners-slider {
+	
+	.swiper-navigation {
+		.swiper-button-disabled {
+			display: none;
+		}
 
-	.partners-row {
-		//border-bottom:1px solid $black;
+		.btn{
+			position: absolute;
+			top: 50%;
+			margin-top: -24px;
+			&.swiper-button-next{
+				//right:-36px;
+			}
+			&.swiper-button-next{
+				//right:-36px;
+			}
+		}
+
+		@include media-breakpoint-up(lg) {
+
+		}
 	}
 
-	.row {
-		//height: 160px;
-		justify-content: center;
+	.swiper-wrapper {
 		align-items: center;
 	}
-
-	.col {
+	.swiper-slide-inner {
+		height: 100%;
+		display: flex;
 		text-align: center;
+		align-items: center;
+		justify-content: center;
+
+		@include media-breakpoint-up(lg) {
+			
+		}
+	}
+
+	.swiper-slide{
+
+
+	}
+}
+
+
+.partners {
+	background-color: $bg;
+	padding: 36px 0 0;
+
+	&__items {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+
+	&__item {
+		height: 100%;
+		text-align: center;
+		margin:0 36px 36px;
 	}
 
 	a {
+		display: block;
+
 		transition: all .3s;
 		filter: grayscale(100%);
 
