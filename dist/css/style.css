@@ -2729,9 +2729,6 @@ body.lock {
 }
 
 .tab-list {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -2939,6 +2936,10 @@ body.lock {
   height: auto;
 }
 
+.afisha .btn-afisha-more {
+  margin-top: 3px;
+}
+
 .afisha .btn-afisha-more .icon {
   position: relative;
   top: 3px;
@@ -2950,13 +2951,10 @@ body.lock {
 }
 
 .collapse-btn .icon {
-  margin-right: 24px;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 36px;
-  height: 36px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -2976,6 +2974,14 @@ body.lock {
           transform: rotate(180deg);
 }
 
+.collapse-content {
+  -webkit-transition: margin 0.3s ease-in-out, height 0.3s ease-in-out;
+  -o-transition: margin 0.3s ease-in-out, height 0.3s ease-in-out;
+  transition: margin 0.3s ease-in-out, height 0.3s ease-in-out;
+  height: 0;
+  overflow: hidden;
+}
+
 .seasons {
   margin-bottom: 24px;
 }
@@ -2983,6 +2989,12 @@ body.lock {
 .seasons .season {
   border-bottom: 1px solid #1D1D1B;
   padding: 24px 0;
+}
+
+.seasons .season .btn-season-show .icon {
+  margin-right: 24px;
+  width: 36px;
+  height: 36px;
 }
 
 .seasons .season__name {
@@ -3018,14 +3030,6 @@ body.lock {
   height: 17px;
 }
 
-.seasons .season__spectacle-items {
-  -webkit-transition: margin 0.3s ease-in-out, height 0.3s ease-in-out;
-  -o-transition: margin 0.3s ease-in-out, height 0.3s ease-in-out;
-  transition: margin 0.3s ease-in-out, height 0.3s ease-in-out;
-  height: 0;
-  overflow: hidden;
-}
-
 .seasons .season__spectacle-items.active {
   margin-top: 24px;
 }
@@ -3033,6 +3037,10 @@ body.lock {
 .seasons .season__spectacle-item {
   border-top: 1px solid #1D1D1B;
   padding: 15px 0 24px;
+}
+
+.seasons .season__spectacle-item:last-child {
+  padding-bottom: 0;
 }
 
 .seasons .season__spectacle-item h3 {
@@ -3058,9 +3066,9 @@ body.lock {
 }
 
 .news {
-  margin-top: 32px;
+  margin-top: 35px;
   background-color: #F4F3F0;
-  padding: 24px 36px;
+  padding: 40px 36px;
 }
 
 .news__heading {
@@ -3073,7 +3081,7 @@ body.lock {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 24px;
+  margin-bottom: 36px;
 }
 
 .news__heading .h2 {
@@ -3179,7 +3187,59 @@ body.lock {
 }
 
 .about {
-  margin-top: 65px;
+  background-color: #F4F3F0;
+  padding: 0 36px;
+}
+
+.about__bg {
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.about__overlay {
+  background: #181818;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.about__text {
+  color: #ffffff;
+  text-align: center;
+  padding: 88px 36px 52px;
+  position: relative;
+  z-index: 1;
+}
+
+.about .h2 {
+  margin: 0 auto 30px;
+  font-size: 26px;
+  line-height: 30px;
+}
+
+.about p {
+  max-width: 680px;
+  margin: 0 auto;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.about .collapse-container {
+  border-bottom: 1px solid #ffffff;
+  margin-top: 34px;
+}
+
+.about .collapse-btn {
+  position: relative;
+  top: 20px;
+  padding: 0 16px;
 }
 
 .write-us {
@@ -3196,10 +3256,10 @@ body.lock {
 
 .partners {
   background-color: #F4F3F0;
+  padding: 36px 36px 36px;
 }
 
 .partners .row {
-  height: 160px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -3272,7 +3332,10 @@ body.lock {
 }
 
 .footer__contacts {
-  margin-top: 34px;
+  margin-top: 32px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 21px;
 }
 
 .footer__copy {
@@ -3291,7 +3354,7 @@ body.lock {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 10px;
+  margin-top: 4px;
 }
 
 .footer__copy-item {
@@ -4272,6 +4335,12 @@ body.lock {
   .text-sm-center {
     text-align: center !important;
   }
+
+  .about .h2 {
+    font-size: 32px;
+    line-height: 38px;
+    margin-bottom: 20px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -5248,6 +5317,17 @@ body.lock {
 
   .text-md-center {
     text-align: center !important;
+  }
+
+  .about .h2 {
+    font-size: 38px;
+    line-height: 44px;
+    padding: 0 36px;
+    margin-bottom: 10px;
+  }
+
+  .about p {
+    padding: 0 36px;
   }
 }
 
@@ -6304,6 +6384,11 @@ body.lock {
 
   .slider__img-block {
     width: 50%;
+  }
+
+  .about .h2 {
+    font-size: 48px;
+    line-height: 54px;
   }
 }
 
