@@ -208,7 +208,7 @@ $headerHeight: 48px;
 			display: flex;
 			align-items: center;
 
-			img {
+			.icon {
 				margin-right: 5px;
 			}
 
@@ -298,7 +298,7 @@ $headerHeight: 48px;
 		font-size: 16px;
 		line-height: 21px;
 
-		img {
+		.icon {
 			margin-right: 7px;
 		}
 	}
@@ -310,7 +310,7 @@ $headerHeight: 48px;
 	z-index: 0;
 }
 
-.main-event {
+.slider {
 	display: flex;
 
 	.swiper-navigation {
@@ -354,15 +354,18 @@ $headerHeight: 48px;
 			height: auto;
 		}
 
-		@include media-breakpoint-up(xl) { //1200
+		@include media-breakpoint-up(xl) {
+			//1200
 			padding: 70px 40px;
 		}
 
-		@include media-breakpoint-up(xxl) { //1400
+		@include media-breakpoint-up(xxl) {
+			//1400
 			padding: 100px 40px;
 		}
 
-		@include media-breakpoint-up(xxxl) { //1600
+		@include media-breakpoint-up(xxxl) {
+			//1600
 			padding: 150px 40px;
 		}
 
@@ -509,131 +512,189 @@ $headerHeight: 48px;
 
 .main-tabs {
 
-	&__tab-list {
+}
+
+.tab-list {
+	align-items: center;
+	justify-content: center;
+	border-bottom: 1px solid $dark;
+
+	li {
+		display: flex;
 		align-items: center;
 		justify-content: center;
-		border-bottom: 1px solid $dark;
+		cursor: pointer;
+		margin: 0 15px;
+		padding: 25px 10px;
+		position: relative;
+		top: 1px;
 
-		li {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			cursor: pointer;
-			margin: 0 15px;
-			padding: 25px 10px;
-			position: relative;
-			top: 1px;
+		&.active {
+			border-bottom: 4px solid $yellow;
+			padding-bottom: 21px;
+			cursor: text;
+		}
 
-			&.active {
-				border-bottom: 4px solid $yellow;
-				padding-bottom: 21px;
-				cursor: text;
-			}
+		.h2 {
+			margin: 0
+		}
 
-			.h2 {
-				margin: 0
-			}
+		img {
+			margin-right: 10px;
+		}
+	}
+}
 
-			img {
-				margin-right: 10px;
-			}
+.tab {
+	padding: 0 36px;
+}
+
+.filters {
+	padding-top: 24px;
+	.filter-list {
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: 12px;
+		height: 38px;
+		overflow: hidden;
+	}
+
+	.filter-name {
+		font-style: normal;
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 21px;
+		margin-bottom: 10px;
+		display: flex;
+
+		.icon {
+			font-size: 12px;
+			font-weight: 700;
+			width: 20px;
+			height: 20px;
+			padding: 0;
+			margin-right: 4px;
+			background-color: $yellow;
 		}
 	}
 
-	&__tab-content {
 
+	li {
+		margin-right: 12px;
+		margin-bottom: 12px;
 	}
 
-	&__tab{
-		padding:0 36px;
+	.btn {
+		font-weight: 400;
+		font-size: 20px;
+		line-height: 20px;
+		padding: 0 18px 4px;
 
-		.tab__filters{
-
-			padding-top: 24px;
-			.tab__filter-left{
-
-			}
-			.tab__filter-right{
-
-			}
-
-			.tab__filter-list{
-				display: flex;
-				flex-wrap: wrap;
-				margin-bottom: 12px;
-
-				height: 38px;
-				overflow: hidden;
-			}
-
-			.tab__filter-name{
-				font-style: normal;
-				font-weight: 700;
-				font-size: 20px;
-				line-height: 21px;
-				margin-bottom: 10px;
-				display: flex;
-
-				.icon{
-					font-size: 12px;
-					font-weight: 700;
-					width: 20px;
-					height: 20px;
-					padding:0;
-					margin-right:4px;
-					background-color: $yellow;
-				}
-			}
-
-
-			li{
-				margin-right: 12px;
-				margin-bottom: 12px;
-			}
-			.btn{
-				font-weight: 400;
-				font-size: 20px;
-				line-height: 20px;
-				padding: 0 18px 4px;
-				&.btn-more, &.btn-int {
-					padding-bottom: 0;
-				}
-				&.active{
-					background-color: $dark;
-					color: $white;
-					cursor: text;
-				}
-			}
-
-			.tab__filter-list-hidden {
-				margin-top: 12px;
-				position:absolute;
-				transition: height .3s ease-in-out;
-				height: 0;
-				overflow: hidden;
-			}
-			.filter-more-container{
-				margin-top: 12px;
-			}
-
+		&.btn-more,
+		&.btn-int {
+			padding-bottom: 0;
 		}
 
+		&.active {
+			background-color: $dark;
+			color: $white;
+			cursor: text;
+		}
+	}
+
+	.filter-list-hidden {
+		margin-top: 12px;
+		position: absolute;
+		transition: height .3s ease-in-out;
+		height: 0;
+		overflow: hidden;
+	}
+
+	.filter-more-container {
+		margin-top: 12px;
 	}
 
 }
 
-.tickets{
-	margin-top: 20px;
+.afisha {
+	margin-top: 26px;
 	margin-bottom: 20px;
-	.ticket-item{
-		margin-bottom: 30px;
+	.afisha-item-inner{
+		padding: 16px 18px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 100%;
 	}
-	.tickets-more-container{
+
+	.afisha-item {
+		margin-bottom: 20px;
+		padding-left: 10px;
+		padding-right: 10px;
+		&__top-row {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		&__date-time {
+			display: flex;
+			align-items: center;
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 20px;
+			text-transform: uppercase;
+	
+			.bull {
+				margin: 0 8px;
+			}
+		}
+		&__old{
+			width: 29px;
+			height: 29px;
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 20px;
+		}
+		&__name{
+			text-align: center;
+			//padding:0 24px;
+			margin:15px 0 15px;
+		}
+		&__buttons{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			> div {
+				margin:0 7px
+			}
+		}
+		&__img{
+			padding:20px 30px 0;
+			img{
+				width: 100%;
+				height: auto;
+			}
+		}
+
+		@include media-breakpoint-down(xxxl) {
+			&:last-child, &:nth-last-child(2){
+				display: none;
+			}
+		}
+
+		@include media-breakpoint-down(xl) {
+			&:last-child, &:nth-last-child(2){
+				display: flex;
+			}
+		}
+
 
 	}
-	.btn-tickets-more{
-		padding-bottom: 4px;
-		img{
+
+
+
+	.btn-afisha-more {
+		.icon {
 			position: relative;
 			top: 3px;
 			margin-left: 10px;
@@ -641,80 +702,92 @@ $headerHeight: 48px;
 	}
 }
 
-.seasons{
+.collapse-btn {
+	cursor: pointer;
+	.icon {
+		margin-right: 24px;
+		position: relative;
+		display: flex;
+		width: 36px;
+		height: 36px;
+		align-items: center;
+		
+		transition: transform 0.3s ease-in-out;
+		transform-origin: center;
+	}
+
+
+	&.active {
+		.icon {
+			transform: rotate(180deg)
+		}
+	}
+}
+.seasons {
 	margin-bottom: 24px;
-	.season{
-		border-bottom:1px solid $dark;
-		padding:24px 0;
-		.btn-season-show{
-			margin-right:24px;
-			position: relative;
-			//top:2px;
-			display:flex;
-			width: 36px;
-			height: 36px;
-			align-items: center;
-			
-			cursor: pointer;
-			transition: transform 0.3s ease-in-out;
-			transform-origin: center;
-			&.active{
-				//transform:rotate(540deg)
-				transform:rotate(180deg)
-			}
+
+	.season {
+		border-bottom: 1px solid $dark;
+		padding: 24px 0;
+
+		.btn-season-show {
+
 		}
 
-		&__name{
-			margin:0;
-		}
+		&__name {
+			margin: 0;
 
-		&__items{
-			
-			&-header{
+		}
+		&__items {
+			&-header {
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
 			}
 		}
 
-		&__day{
+		&__day {
 			font-weight: 400;
 			font-size: 28px;
 			line-height: 24px;
 		}
 
-		&__btn{
+		&__btn {
 			.btn {
 				font-weight: 400;
 				font-size: 22px;
 				line-height: 20px;
-				img{
+
+				.icon {
 					width: 17px;
 					height: 17px;
-					margin-left:10px;
+					
 				}
 			}
 		}
 
-		&__spectacle-items{
+		&__spectacle-items {
 			//margin-top: 24px;
 			transition: margin .3s ease-in-out, height .3s ease-in-out;
 			height: 0;
 			overflow: hidden;
-			&.active{
+
+			&.active {
 				margin-top: 24px;
 			}
 		}
 
-		&__spectacle-item{
-			border-top:1px solid $dark;
-			padding:15px 0 24px;
+		&__spectacle-item {
+			border-top: 1px solid $dark;
+			padding: 15px 0 24px;
+
 			//height: 96px;
-			h3{
+			h3 {
 				margin: 0;
 			}
 		}
-		&__spectacle-date-time{
+
+		&__spectacle-date-time {
 			display: flex;
 			align-items: center;
 			font-weight: 400;
@@ -722,7 +795,8 @@ $headerHeight: 48px;
 			line-height: 20px;
 			text-transform: uppercase;
 			margin-bottom: 8px;
-			.bull{
+
+			.bull {
 				margin: 0 8px;
 			}
 		}
@@ -731,71 +805,19 @@ $headerHeight: 48px;
 }
 
 
-
-
-.afisha {
-	padding-top: 32px;
-	padding-bottom: 42px;
-	background: $white;
-
-	&__filter {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-
-		.h2 {}
-
-		&>div {
-			display: flex;
-			align-items: center;
-		}
-
-		.buttons {
-			display: flex;
-			margin-left: 25px;
-
-			.btn {
-				margin-right: 12px;
-
-				&:last-child {
-					margin-right: 0
-				}
-
-				.icon-arrow {
-					margin-left: 12px;
-				}
-
-				.icon-arrow-up {
-					top: 3px
-				}
-			}
-		}
-
-		&-left {}
-
-		&-right {}
-	}
-
-	&__catalog {
-		margin-top: 30px;
-
-		&-item {
-			margin-bottom: 18px;
-		}
-	}
-}
-
-
 .news {
 	margin-top: 32px;
-
+	background-color: $bg;
+	padding:24px 36px;
 	&__heading {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		margin-bottom: 38px;
+		margin-bottom: 24px;
 
-		.h2 {}
+		.h2 {
+			margin:0
+		}
 
 		&>div {
 			display: flex;
@@ -807,8 +829,94 @@ $headerHeight: 48px;
 		&-right {}
 	}
 
+	&__items{
 
+	}
+
+
+	&__item-inner{
+		background-color: $white;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	&__item-img{
+		order:0;
+		img{
+			width: 100%;
+			height:auto;
+		}
+	}
+
+	&__item-text{
+		padding:20px 20px;
+		order:1;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	&__item{
+		margin-bottom: 36px;
+		/*&:hover {
+			.news__item-img {
+				order:1;
+			}
+			.news__item-text{
+				order:0;
+			}	
+		}*/
+		&:nth-child(2n){
+			.news__item-img {
+				order:1;
+			}
+			.news__item-text{
+				order:0;
+			}
+			/*&:hover {
+				.news__item-img {
+					order:0;
+				}
+				.news__item-text{
+					order:1;
+				}	
+			}*/
+		}
+
+		@include media-breakpoint-down(xxxl) {
+			&:last-child{
+				display: none;
+			}
+		}
+
+		@include media-breakpoint-down(xl) {
+			&:last-child{
+				display: flex;
+			}
+		}
+
+
+
+	}
+
+	&__item-date{
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 20px;
+		text-transform: uppercase;
+	}
+
+	&__item-name{
+
+		.h5{
+			margin-bottom: 0;
+		}
+		
+	}
 }
+
 
 .about {
 	margin-top: 65px;

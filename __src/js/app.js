@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function changeFilterWhenResize(filterContainer)
     {
 
-        var filterList = filterContainer.querySelector(".tab__filter-list");
+        var filterList = filterContainer.querySelector(".filter-list");
         var filterListItems = filterList.querySelectorAll(".filter-item");
 
         var filterContainerWidth = filterContainer.clientWidth;
@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
 
-        var filterListPlaceholder = filterContainer.querySelector(".tab__filter-list-hidden");
+        var filterListPlaceholder = filterContainer.querySelector(".filter-list-hidden");
         var filterListHiddenItems = filterList.querySelectorAll(".filter-item.hidden");
         var filterListHiddenHeight = 0;
 
@@ -259,4 +259,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
     collapse();
 
+
+    /**News item text height*/
+    function newsItemTextHeight() {
+        var newsItems = document.querySelectorAll(".news__item");
+        Array.prototype.forEach.call(newsItems, function(newsItem) {
+            var imgHeight = newsItem.querySelector("img").clientHeight;
+            newsItem.querySelector(".news__item-text").style.height = imgHeight + "px";
+        });
+    }
+
+    newsItemTextHeight();
+    window.addEventListener('resize', function(event){
+        newsItemTextHeight();
+    });
+    
 });

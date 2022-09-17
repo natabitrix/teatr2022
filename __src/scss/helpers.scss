@@ -134,8 +134,22 @@ input, button, a{
 		}
 	}
 
-	&.btn-circle{
+	&.btn__dark{
+		background-color: $dark;
+		border-color: $dark;
+		color: $white;
+		&:hover{
+			background-color: $white;
+			color: $black;
+		}
+		&.no-btn:hover{
+			background-color: $dark;
+			color: $white;
+		}
+	}
 
+	&.btn-circle{
+		padding:0;
 		&-38{
 			width: 38px;
 			height: 38px;
@@ -150,12 +164,24 @@ input, button, a{
 
 	&.btn-lcase{
 		padding-bottom: 4px;
+		.icon{
+			top:2px;
+		}
 	}
 
-	img{
+	.icon{
 		position: relative;
 	}
 }
+
+
+.icon-l {
+	margin-right:10px;
+}
+.icon-r {
+	margin-left:10px;
+}
+
 
 [class*='btn-circle-']{
 	padding:0;
@@ -204,9 +230,11 @@ h1, h2, h3, h4, h5, h6{
 	margin-bottom: 1rem;
 }
 .h5, h5 {
-	font-weight: 600;
-	font-size: 16px;
-	line-height: 26px;
+	font-family: $Berlin;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 24px;
+	margin-bottom: 1rem;
 }
 .h6, h6 {
 	font-size: 16px;
