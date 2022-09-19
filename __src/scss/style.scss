@@ -35,7 +35,22 @@ $grid-breakpoints: (
   // Extra large screen / wide desktop
   xl: 1200px,
   xxl: 1400px,
+  xxl1500: 1500px,
   xxxl: 1600px,
+  xxxxl: 1900px,
+
+
+
+);
+
+$my-grid-breakpoints: (
+  sm576: 576px,
+  md768: 768px,
+  lg992: 992px,
+  xl1200: 1200px,
+  xxl1400: 1400px,
+  xxl1500: 1500px,
+  xxxl1600: 1600px,
 );
 
 $container-max-widths: (

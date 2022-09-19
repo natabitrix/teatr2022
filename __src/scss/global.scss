@@ -494,6 +494,43 @@ $headerHeight: 48px;
 				line-height: 24px;
 			}
 		}
+
+		.decor2{
+			$width: 107px;
+			$height: 120px;
+			width: calc($width * 0.5);
+			height: calc($height * 0.5);
+			left: 0;
+			top: 61%;
+			@include media-breakpoint-up(lg) {
+				width: calc($width * 0.8);
+				height: calc($height * 0.8);
+			}
+			@include media-breakpoint-up(xl) {
+				width: $width;
+				height: $height;
+			}
+	
+		}
+		.decor1{
+			$width: 110px;
+			$height: 75px;
+			width: calc($width * 0.5);
+			height: calc($height * 0.5);
+			left:auto;
+			right: 4%;
+			top: 8%;
+			
+			@include media-breakpoint-up(lg) {
+				width: calc($width * 0.8);
+				height: calc($height * 0.8);
+			}
+			@include media-breakpoint-up(xl) {
+				width: $width;
+				height: $height;
+			}
+		}
+
 	}
 
 	&__img-block {
@@ -1171,6 +1208,7 @@ $headerHeight: 48px;
 		font-size: 20px;
 		line-height: 24px;
 		margin-bottom: -2px;
+		text-transform: lowercase;
 		.icon {
 			margin:0 4px
 		}
@@ -1185,11 +1223,13 @@ $headerHeight: 48px;
 .subscribe {
 	position: relative;
 	padding:50px 36px 62px;
+	border-top: 1px solid $dark;
 	border-bottom: 1px solid $dark;
 	&__text{
 		.h2{
 			font-size: 28px;
 			line-height: 35px;
+			max-width: 580px;
 			@include media-breakpoint-up(xl) {
 				font-size: 38px;
 				line-height: 45px;
@@ -1388,4 +1428,149 @@ $headerHeight: 48px;
 			justify-content: space-between;
 		}
 	}
+}
+
+.spectacle-page .breadcrumbs{
+	position: absolute;
+	left:36px;
+	top:20px;
+	z-index: 1;
+}
+
+.spectacle-header {
+	position: relative;
+	@include media-breakpoint-up(lg) {
+		display: flex;
+	}
+	&__text-block {
+		width: 100%;
+		height: 350px;
+		display: flex;
+		text-align: center;
+		justify-content: center;
+		position: relative;
+		flex-direction: column;
+
+		@include media-breakpoint-up(lg) {
+			width: 50%;
+			height: auto;
+		}
+
+		.decor2{
+			$width: 107px;
+			$height: 120px;
+			width: calc($width * 0.5);
+			height: calc($height * 0.5);
+			left: 0;
+			top: 61%;
+			@include media-breakpoint-up(lg) {
+				width: calc($width * 0.8);
+				height: calc($height * 0.8);
+			}
+			@include media-breakpoint-up(xl) {
+				width: $width;
+				height: $height;
+			}
+	
+		}
+		.decor1{
+			$width: 110px;
+			$height: 75px;
+			width: calc($width * 0.5);
+			height: calc($height * 0.5);
+			left:auto;
+			right: 4%;
+			top: 8%;
+			
+			@include media-breakpoint-up(lg) {
+				width: calc($width * 0.8);
+				height: calc($height * 0.8);
+			}
+			@include media-breakpoint-up(xl) {
+				width: $width;
+				height: $height;
+			}
+		}
+
+
+		&-items {
+			position: relative;
+			z-index: 1;
+		}
+	}
+
+
+
+
+	h1 {
+			
+		color: $dark;
+		//max-width: 500px;
+		margin: 0 auto;
+		font-style: italic;
+		font-weight: 500;
+		font-size: 40px;
+		line-height: 35px;
+		margin-bottom: 20px;
+
+		@include media-breakpoint-up(lg) {
+			font-size: 50px;
+			line-height: 44px;
+		}
+
+		@include media-breakpoint-up(xl) {
+			font-size: 62px;
+			line-height: 50px;
+		}
+
+		@include media-breakpoint-up(xxl) {
+			font-size: 80px;
+			line-height: 60px;
+			white-space: pre-line;
+		}
+		@include media-breakpoint-up(xxxl) {
+
+			font-size: 100px;
+			line-height: 70px;
+		}
+		@include media-breakpoint-up(xxxxl) {
+			font-size: 124px;
+			line-height: 90px;
+		}
+
+
+	}
+
+	&-text {
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 22px;
+		//white-space: pre-line;
+		color: $dark;
+		max-width: 380px;
+		margin: 0 auto;
+
+		@include media-breakpoint-up(xl) {
+			font-size: 20px;
+			line-height: 24px;
+		}
+	}
+
+
+
+	&__img-block {
+
+		width: 100%;
+		object-fit: cover;
+
+		img {
+			max-width: 100%;
+			height: 100%;
+		}
+
+		@include media-breakpoint-up(lg) {
+			width: 50%;
+		}
+	}
+
 }
