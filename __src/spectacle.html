@@ -1,78 +1,83 @@
 @@include('html/header.html', {
-    "class": " spectacle-page page",
-    })
-    
-    <div class="breadcrumbs">
-        <div class="breadcrumbs__container">
-            <ul class="breadcrumbs__list list-unstyled d-flex">
-                <li class="breadcrumbs__list-item">
-                    <a href="/">главная</a>
-                </li>
-                <li class="breadcrumbs__list-item icon">
-                    &rarr;
-                </li>
-                <li class="breadcrumbs__list-item">
-                    <a href="repertuar.html">репертуар</a>
-                </li>
-                <li class="breadcrumbs__list-item icon">
-                    &rarr;
-                </li>
-                <li class="breadcrumbs__list-item">
-                    <span>Лисёнок плут</span>
-                </li>
-            </ul>
-        </div>
-    </div>
+"class": " spectacle-page page",
+})
 
-    <div class="spectacle-header">
-        <div class="spectacle-header__text-block bg-lblue">
-            <div class="decors">
-                <div class="decor decor2 decor-yellow"></div>
-                <div class="decor decor1 decor-yellow"></div>
-            </div>
-            <div class="spectacle-header__text-block-items">
-                <h1>Волшебник изумрудного города</h1>
-                <div class="spectacle-header-text">Наивная сказка в двух действиях – спектакль для самых маленьких зрителей</div>
-            </div>
-        </div>
-        <div class="spectacle-header__img-block"><img src="@img/demo/main-event/1.jpg" alt=""></div>
-    </div>
-
-    <div class="spectacle-tabs tabs bg-bg">
-
-        <ul class="tab-list list-unstyled d-flex">
-            <li class="tab-list-item active" id="tab-description"><img src="@img/icons/description.svg" alt="" class="icon icon-l"><h2 class="h2">Описание</h2></li>
-            <li class="tab-list-item" id="tab-afisha"><img src="@img/icons/ticket.svg" alt="" class="icon icon-l"><h2 class="h2">Билеты</h2></li>
-            <li class="tab-list-item" id="tab-comments"><img src="@img/icons/comment.svg" alt="" class="icon icon-l"><h2 class="h2">Отзывы</h2></li>
+<div class="breadcrumbs">
+    <div class="breadcrumbs__container">
+        <ul class="breadcrumbs__list list-unstyled d-flex">
+            <li class="breadcrumbs__list-item">
+                <a href="/">главная</a>
+            </li>
+            <li class="breadcrumbs__list-item icon">
+                &rarr;
+            </li>
+            <li class="breadcrumbs__list-item">
+                <a href="repertuar.html">репертуар</a>
+            </li>
+            <li class="breadcrumbs__list-item icon">
+                &rarr;
+            </li>
+            <li class="breadcrumbs__list-item">
+                <span>Лисёнок плут</span>
+            </li>
         </ul>
+    </div>
+</div>
 
-
-        <div class="tab-content">
-
-            <div class="tab" id="tab-description-content">
-
-
+<div class="spectacle-header">
+    <div class="spectacle-header__text-block bg-lblue">
+        <div class="decors">
+            <div class="decor decor2 decor-yellow"></div>
+            <div class="decor decor1 decor-yellow"></div>
+        </div>
+        <div class="spectacle-header__text-block-items">
+            <h1>Волшебник изумрудного города</h1>
+            <div class="spectacle-header-text">Наивная сказка в двух действиях – спектакль для самых маленьких зрителей
             </div>
+        </div>
+    </div>
+    <div class="spectacle-header__img-block"><img src="@img/demo/main-event/1.jpg" alt=""></div>
+</div>
 
-            <div class="tab d-none" id="tab-afisha-content">
+<div class="spectacle-tabs tabs bg-bg">
+
+    <ul class="tab-list list-unstyled d-flex">
+        <li class="tab-list-item active" id="tab-description"><img src="@img/icons/description.svg" alt=""
+                class="icon icon-l">
+            <h2 class="h2">Описание</h2>
+        </li>
+        <li class="tab-list-item" id="tab-tickets"><img src="@img/icons/ticket.svg" alt="" class="icon icon-l">
+            <h2 class="h2">Билеты</h2>
+        </li>
+        <li class="tab-list-item" id="tab-comments"><img src="@img/icons/comment.svg" alt="" class="icon icon-l">
+            <h2 class="h2">Отзывы</h2>
+        </li>
+    </ul>
 
 
-            </div>
+    <div class="tab-content">
 
-            <div class="tab d-none" id="tab-comments-content">
+        <div class="tab" id="tab-description-content">
+            @@include('html/spectacle/description.html')
+        </div>
 
+        <div class="tab d-none" id="tab-tickets-content">
+            @@include('html/spectacle/tickets.html')
+        </div>
 
-            </div>
-
+        <div class="tab d-none" id="tab-comments-content">
+            @@include('html/spectacle/comments.html')
         </div>
 
     </div>
 
+</div>
 
-    <div class="container-fluid bg-bg">
+
+<div class="container-fluid bg-bg">
 
 
-    </div>
-    @@include('html/subscribe.html')
-    
-    @@include('html/footer.html')
+</div>
+@@include('html/subscribe.html')
+
+@@include('html/footer.html')

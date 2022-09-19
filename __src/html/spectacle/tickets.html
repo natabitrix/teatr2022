@@ -1,0 +1,41 @@
+<div class="tickets">
+    <div class="alert alert-info d-flex bg-lyellow">
+        <div>
+            <div class="btn btn-circle-52 btn__yellow no-border no-btn"><img src="@img/icons/alert.svg" class="icon"></div>
+        </div>
+        <p>На каждого зрителя, независимо от возраста, необходим билет. Перед посещением театра, пожалуйста, ознакомьтесь с <a href="rules.html"> Правилами посещения театра</a></p>
+    </div>
+    <div class="tickets-list">
+        <div class="row">
+            @@include('ticket-item.html', {
+                "day": "среда",
+                "date": "18 сентября",
+                "button1": '<div class="btn">11:00<img src="@img/icons/arrow-right.svg" class="icon icon-r"></div>',
+                "button2": '<div class="btn">14:00<img src="@img/icons/arrow-right.svg" class="icon icon-r"></div>',
+                "button3": '',
+            })
+            @@include('ticket-item.html', {
+                "day": "среда",
+                "date": "26 окбятря",
+                "button1": '<div class="btn">11:00<img src="@img/icons/arrow-right.svg" class="icon icon-r"></div>',
+                "button2": '',
+                "button3": '',
+            })
+            @@include('ticket-item.html', {
+                "day": "четверг",
+                "date": "16 декабря",
+                "button1": '<div class="btn">12:00<img src="@img/icons/arrow-right.svg" class="icon icon-r"></div>',
+                "button2": '',
+                "button3": '',
+            })
+            @@include('ticket-item.html', {
+                "day": "среда",
+                "date": "17 декабря",
+                "button1": '<div class="btn">19:00<img src="@img/icons/arrow-right.svg" class="icon icon-r"></div>',
+                "button2": '<div class="btn">21:00<img src="@img/icons/arrow-right.svg" class="icon icon-r"></div>',
+                "button3": '',
+            })
+
+        </div>
+    </div>
+</div>

@@ -14,8 +14,10 @@ const swiper = new Swiper('.swiper', {
 
 
 import Swiper, { Navigation, Autoplay, EffectFade, EffectCreative } from 'swiper';
+//import Swiper, { Navigation, Autoplay, EffectFade, EffectCreative, EffectCoverflow } from 'swiper';
 
 Swiper.use([Navigation, Autoplay, EffectFade, EffectCreative]);
+//Swiper.use([Navigation, Autoplay, EffectFade, EffectCreative, EffectCoverflow]);
 
 const slider = new Swiper('.main-slider', {
     // configure Swiper to use modules
@@ -27,6 +29,7 @@ const slider = new Swiper('.main-slider', {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
+    speed: 1000,
     autoplay: {
         delay: 5000,
     },
@@ -88,8 +91,58 @@ const partnersSlider = new Swiper('.partners-slider', {
     }
 });
 
+const spectacleSlider = new Swiper('.spectacle-slider', {
+    // configure Swiper to use modules
+    //modules: [Navigation],
+    slidesPerView: "auto",
+    loop: true,
+    centeredSlides: true,
+    spaceBetween: 0,
+    slideToClickedSlide: true,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    speed: 1000,
+    //autoplay: {
+    //    delay: 5000,
+    //},
+    /*effect: 'fade',
+    fadeEffect: {
+        crossFade: true
+    }*/
+    /*effect: "creative",
+    creativeEffect: {
+        prev: {
+            shadow: true,
+            //translate: [0, 0, -400],
+
+            translate: ["-125%", 0, -800],
+            rotate: [0, 0, -90],
+        },
+        next: {
+            //translate: ["100%", 0, 0],
+
+            shadow: true,
+            translate: ["125%", 0, -800],
+            rotate: [0, 0, 90],
+        },
+    },*/
+    /*
+    effect: "coverflow",
+    coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      },*/
+});
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
+
 
     const viewport = document.documentElement.clientWidth;//вычисляем ширину вьюпорта
 
@@ -314,7 +367,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
+    /**Toggle swiper slider full-screen */
+    Array.prototype.forEach.call(document.querySelectorAll(".swiper-slide-fullscreen"), function (slide) {
+        slide.addEventListener("click", function () {
+            document.querySelector("body").classList.add("swiper-slider-fullscreen");
+        });
+    });
+    Array.prototype.forEach.call(document.querySelectorAll(".close-slider"), function (close) {
+        close.addEventListener("click", function () {
+            document.querySelector("body").classList.remove("swiper-slider-fullscreen");
+        });
+    });
+    function setSliderHeight()
+    {
+        var sliderContainer = document.querySelector(".slider-container");
+        sliderContainer.style.height = sliderContainer.clientHeight + "px";
+    }
 
 
     menu();
@@ -323,15 +391,21 @@ document.addEventListener("DOMContentLoaded", function () {
     filterResponsive();
     collapseContent();
     newsItemTextHeight();
+    //setSliderHeight();
 
 
     window.addEventListener('resize', function (event) {
         filterResponsive();
         collapseContent();
         newsItemTextHeight();
+        //setSliderHeight();
+
+
     });
 
 
 
 
 });
+
+
