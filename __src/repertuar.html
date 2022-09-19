@@ -1,0 +1,106 @@
+@@include('html/header.html', {
+    "class": " repertuar-page page",
+    })
+    
+    
+    <div class="container-fluid bg-bg">
+        <div class="breadcrumbs">
+            <div class="breadcrumbs__container">
+                <ul class="breadcrumbs__list list-unstyled d-flex">
+                    <li class="breadcrumbs__list-item">
+                        <a href="">главная</a>
+                    </li>
+                    <li class="breadcrumbs__list-item icon">
+                        &rarr;
+                    </li>
+                    <li class="breadcrumbs__list-item">
+                        <span>репертуар</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <h1>Репертуар</h1>
+    
+        <div class="filters repertuar-filter">
+
+            <div class="filter-list-container" id="repertuar_filter_old">
+                <ul class="filter-list list-unstyled">
+                    <li class="filter-item"><button type="button" class="btn active">весь</button></li> 
+                    <li class="filter-item"><button type="button" class="btn">Для малышей  0+</button></li>
+                    <li class="filter-item"><button type="button" class="btn">для детей 6+</button></li>
+                    <li class="filter-item"><button type="button" class="btn">для детей 12+</button></li>
+                    <li class="filter-item"><button type="button" class="btn">для детей 16+</button></li>
+                    <li class="filter-item"><button type="button" class="btn">для взрослых 18+</button></li>
+                </ul>
+                <div class="filter-more-container">
+                    <button type="button" class="btn btn-more d-none"><img src="@img/icons/dots.svg" alt="..." class="icon"></button>
+                    <ul class="filter-list-hidden list-unstyled"></ul>
+                </div>
+            </div>
+        
+        </div>
+        
+        <div class="repertuar-list repertuar-list-list-">
+            <div class="row">
+
+                @@include('html/repertuar/repertuar-item.html', {
+                    "img": "1.jpg",
+                    "name": "Первая зима",
+                    "old": "6+",
+                    "time": "40 мин.",
+                    "text": 'По мотивам сказок "Айболит" и "Бармалей" Корнея Чуковского, пьесе Оксаны Дмитриевой. Доктор Айболит в нашем спектакле, как и в сказке Чуковского, конечно же, очень добрый! …а еще странный, в восприятии людей. И не только потому, что понимает язык зверей...',
+                    "author": "Григорий Лайко"
+                })
+
+                @@include('html/repertuar/repertuar-item.html', {
+                    "img": "2.jpg",
+                    "name": "Сказки африканского леса",
+                    "old": "16+",
+                    "time": "1 ч. 55 мин.",
+                    "text": 'Спектакль поставлен по мотивам сказки Р. Киплинга "Слонёнок". Спектакль атмосферный и яркий: сценический мир полон живых существ - зверей и птиц, богов и духов. В этот живой и сказочный мир нас зовёт театр! ',
+                    "author": "Григорий Лайко"
+                })
+
+                @@include('html/repertuar/repertuar-item.html', {
+                    "img": "3.jpg",
+                    "name": "Айболит",
+                    "old": "16+",
+                    "time": "1 ч. 25 мин.",
+                    "text": 'сценический мир полон живых существ - зверей и птиц, богов и духов. В этот живой и сказочный мир нас зовёт театр! ',
+                    "author": "Григорий Лайко"
+                })            
+
+                @@include('html/repertuar/repertuar-item.html', {
+                    "img": "4.jpg",
+                    "name": "Первая зима",
+                    "old": "16+",
+                    "time": "40 мин.",
+                    "text": 'Спектакль поставлен по мотивам сказки Р. Киплинга "Слонёнок". Спектакль атмосферный и яркий: сценический мир полон живых существ - зверей и птиц, богов и духов. В этот живой и сказочный мир нас зовёт театр! ',
+                    "author": "Григорий Лайко"
+                })   
+                
+                @@include('html/repertuar/repertuar-item.html', {
+                    "img": "3.jpg",
+                    "name": "Айболит",
+                    "old": "16+",
+                    "time": "1 ч. 25 мин.",
+                    "text": 'Спектакль поставлен по мотивам сказки Р. Киплинга "Слонёнок". Спектакль атмосферный и яркий: сценический мир полон живых существ - зверей и птиц, богов и духов. В этот живой и сказочный мир нас зовёт театр! ',
+                    "author": "Григорий Лайко"
+                })            
+
+                @@include('html/repertuar/repertuar-item.html', {
+                    "img": "4.jpg",
+                    "name": "Первая зима",
+                    "old": "16+",
+                    "time": "40 мин.",
+                    "text": 'Спектакль поставлен по мотивам сказки Р. Киплинга "Слонёнок". Спектакль атмосферный и яркий: сценический мир полон живых существ - зверей и птиц, богов и духов. В этот живой и сказочный мир нас зовёт театр! ',
+                    "author": "Григорий Лайко"
+                })        
+            </div>
+
+        </div>
+    </div>
+    @@include('html/subscribe.html')
+    
+    @@include('html/footer.html')

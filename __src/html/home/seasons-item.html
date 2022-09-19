@@ -1,0 +1,42 @@
+<div class="season collapse-container">
+    <div class="row">
+        <div class="col-lg-5">
+            <div class="collapse-btn d-flex">
+                <div class="btn-season-show"><img src="@img/icons/arrow-down2.svg" alt="" class="icon"></div>
+                <h4 class="h4 season__name">@@name</h4>
+            </div>
+        </div>
+        <div class="col-lg-7">
+            <div class="season__items">
+                <div class="season__items-header">
+                    <div class="season__day">
+                        @@day
+                    </div>
+                    <div class="season__btn">
+                        <a href="#" class="btn btn-season-buy btn-lcase btn__yellow">купить <img src="@img/icons/arrow-right.svg" alt="&larr;" class="icon icon-r"></a>
+                    </div>
+                </div>
+
+                <div class="season__spectacle-items collapse-content">
+                    @@include('seasons-item-spectacle.html', {
+                        "date": "16 ноября",
+                        "time": "40 мин",
+                        "name": "Синяя борода",
+                    })
+                    @@include('seasons-item-spectacle.html', {
+                        "date": "16 декабря",
+                        "time": "1 час 40 мин",
+                        "name": "Сказки африканского леса",
+                    })
+                    @@include('seasons-item-spectacle.html', {
+                        "date": "16 ноября",
+                        "time": "40 мин",
+                        "name": "Волшебник изумрудного города",
+                    })
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

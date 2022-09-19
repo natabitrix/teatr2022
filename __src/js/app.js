@@ -311,6 +311,12 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+
+
+
+
+
+
     menu();
     sidebarToggle();
     tabs();

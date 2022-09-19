@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="format-detection" content="address=no" />
+	<link rel="stylesheet" href="css/style.min.css?_v=20220919123348">
+	<title>Театр сказки</title>
+	<script>
+		var homePage = false;
+	</script>
+</head>
+
+<body>
+	<div class="wrapper repertuar-page page">
+
+		<header class="header">
+			<div class="header__menu-btn btn-open active">
+				<img src="img/icons/menu.svg" alt="">
+			</div>
+			<div class="header__menu-btn btn-close">
+				<img src="img/icons/close.svg" alt="">
+			</div>
+			<div class="header__logo">
+				<a class="header__logo-link" href="/">
+					<img src="img/logo-mobile.svg" alt="театр сказки">
+				</a>
+			</div>
+		</header>
+
+		<aside class="sidebar">
+			<div class="sidebar__navbar">
+
+
+				<nav class="sidebar__nav">
+					<div class="nav-back">
+						<img src="img/icons/back.svg" alt="&larr;" class="icon icon-l"> назад
+					</div>
+
+					<div class="nav-item-active-children"></div>
+
+					<ul class="nav-items list-unstyled active">
+						<li><a href="/">Главная</a></li>
+						<li class="nav-item nav-item-parent" id="item-afisha"><span>Афиша</span>
+							<ul class="list-unstyled nav-item-children" id="item-afisha-children">
+								<li><a href="#">О билетах и
+										правилах</a></li>
+								<li><a href="#"
+										>Абонементы</a></li>
+								<li><a href="#"
+										>Цены</a></li>
+								<li><a href="#"
+										>Новости</a></li>
+								<li><a href="#"
+										>Экскурсии</a></li>
+							</ul>
+
+						</li>
+						<li class="nav-item"><a href="repertuar.html">Репертуар</a></li>
+						<li class="nav-item nav-item-parent" id="item-teatr"><span>Театр</span>
+						
+							<ul class="list-unstyled nav-item-children" id="item-teatr-children">
+								<li><a href="#">Сказочники</a></li>
+								<li><a href="#">История</a></li>
+								<li><a href="#">Проекты</a></li>
+								<li><a href="#">Доступная среда</a></li>
+								<li><a href="#">Отзывы</a></li>
+								<li><a href="#">Документы</a></li>
+							</ul>
+						</li>
+						<li class="nav-item"><a href="">Новости</a></li>
+						<li class="nav-item"><a href="">Проекты</a></li>
+						<li class="nav-item"><a href="">Контакты</a></li>
+					</ul>
+				</nav>
+
+				<div class="sidebar__bottom">
+					<div class="sidebar__logo">
+						<a class="sidebar__logo-link" href="/">
+							<img src="img/logo.svg" alt="театр сказки">
+						</a>
+					</div>
+	
+					<div class="sidebar__social">
+						<div class="social__list d-flex">
+							<a href="#" rel="nofollow" target="_blank" class="btn btn-circle-38"><img
+									src="img/social/vk.svg" alt="VK"></a>
+							<a href="#" rel="nofollow" target="_blank" class="btn btn-circle-38"><img
+									src="img/social/telegram.svg" alt="telegram"></a>
+							<a href="#" rel="nofollow" target="_blank" class="btn btn-circle-38"><img
+									src="img/social/rutube.svg" alt="rutube"></a>
+						</div>
+					</div>
+	
+	
+					<div class="sidebar__phone">
+						<a href="tel:+7 (812) 388-00-31" class="btn">+7 (812) 388-00-31</a>
+					</div>
+	
+					<div class="sidebar__eye-link">
+						<a href="#" rel="nofollow" target="_blank"><img src="img/icons/eye.svg"
+								alt="Версия для слабовидящих" class="icon icon-l"><span>Версия для слабовидящих</span></a>
+					</div>
+				</div>
+
+
+
+
+
+
+			</div>
+
+
+		</aside>
+
+
+		<div class="content">
+
+
+			<main class="main">
+    
+    
+    <div class="container-fluid bg-bg">
+        <div class="breadcrumbs">
+            <div class="breadcrumbs__container">
+                <ul class="breadcrumbs__list list-unstyled d-flex">
+                    <li class="breadcrumbs__list-item">
+                        <a href="">главная</a>
+                    </li>
+                    <li class="breadcrumbs__list-item icon">
+                        &rarr;
+                    </li>
+                    <li class="breadcrumbs__list-item">
+                        <span>репертуар</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <h1>Репертуар</h1>
+    
+        <div class="filters repertuar-filter">
+
+            <div class="filter-list-container" id="repertuar_filter_old">
+                <ul class="filter-list list-unstyled">
+                    <li class="filter-item"><button type="button" class="btn active">весь</button></li> 
+                    <li class="filter-item"><button type="button" class="btn">Для малышей  0+</button></li>
+                    <li class="filter-item"><button type="button" class="btn">для детей 6+</button></li>
+                    <li class="filter-item"><button type="button" class="btn">для детей 12+</button></li>
+                    <li class="filter-item"><button type="button" class="btn">для детей 16+</button></li>
+                    <li class="filter-item"><button type="button" class="btn">для взрослых 18+</button></li>
+                </ul>
+                <div class="filter-more-container">
+                    <button type="button" class="btn btn-more d-none"><img src="img/icons/dots.svg" alt="..." class="icon"></button>
+                    <ul class="filter-list-hidden list-unstyled"></ul>
+                </div>
+            </div>
+        
+        </div>
+        
+        <div class="repertuar-list repertuar-list-list-">
+            <div class="row">
+
+                
+
+<div class="repertuar-list-item col-md-12- col-xl-6">
+
+    <div class="repertuar-list-item-inner">
+        <div class="repertuar-list-item__img">
+            <a href="spectacle.html"><picture><source srcset="img/demo/repertuar/1.webp" type="image/webp"><img src="img/demo/repertuar/1.jpg" alt=""></picture></a>
+        </div>
+
+        <div class="repertuar-list-item__content">
+
+            <div class="repertuar-list-item__name-info-text">
+                <h2 class="repertuar-list-item__name h2"><a href="spectacle.html">Первая зима</a></h2>
+
+                <div class="repertuar-list-item__info">
+                    <div class="repertuar-list-item__old btn btn__dark btn-circle no-btn">6+</div>
+                    <div class="repertuar-list-item__time">40 мин.</div>
+                </div>
+
+                <div class="repertuar-list-item__text">
+                    По мотивам сказок "Айболит" и "Бармалей" Корнея Чуковского, пьесе Оксаны Дмитриевой. Доктор Айболит в нашем спектакле, как и в сказке Чуковского, конечно же, очень добрый! …а еще странный, в восприятии людей. И не только потому, что понимает язык зверей...
+                </div>
+            </div>
+
+            <div class="repertuar-list-item__author">
+                <div class="author-post">
+                    Режиссёр
+                </div>
+                <a href="actor.html" class="underline">Григорий Лайко</a>
+            </div>
+
+        </div>
+        
+    </div>
+</div>
+
+
+
+                
+
+<div class="repertuar-list-item col-md-12- col-xl-6">
+
+    <div class="repertuar-list-item-inner">
+        <div class="repertuar-list-item__img">
+            <a href="spectacle.html"><picture><source srcset="img/demo/repertuar/2.webp" type="image/webp"><img src="img/demo/repertuar/2.jpg" alt=""></picture></a>
+        </div>
+
+        <div class="repertuar-list-item__content">
+
+            <div class="repertuar-list-item__name-info-text">
+                <h2 class="repertuar-list-item__name h2"><a href="spectacle.html">Сказки африканского леса</a></h2>
+
+                <div class="repertuar-list-item__info">
+                    <div class="repertuar-list-item__old btn btn__dark btn-circle no-btn">16+</div>
+                    <div class="repertuar-list-item__time">1 ч. 55 мин.</div>
+                </div>
+
+                <div class="repertuar-list-item__text">
+                    Спектакль поставлен по мотивам сказки Р. Киплинга "Слонёнок". Спектакль атмосферный и яркий: сценический мир полон живых существ - зверей и птиц, богов и духов. В этот живой и сказочный мир нас зовёт театр! 
+                </div>
+            </div>
+
+            <div class="repertuar-list-item__author">
+                <div class="author-post">
+                    Режиссёр
+                </div>
+                <a href="actor.html" class="underline">Григорий Лайко</a>
+            </div>
+
+        </div>
+        
+    </div>
+</div>
+
+
+
+                
+
+<div class="repertuar-list-item col-md-12- col-xl-6">
+
+    <div class="repertuar-list-item-inner">
+        <div class="repertuar-list-item__img">
+            <a href="spectacle.html"><picture><source srcset="img/demo/repertuar/3.webp" type="image/webp"><img src="img/demo/repertuar/3.jpg" alt=""></picture></a>
+        </div>
+
+        <div class="repertuar-list-item__content">
+
+            <div class="repertuar-list-item__name-info-text">
+                <h2 class="repertuar-list-item__name h2"><a href="spectacle.html">Айболит</a></h2>
+
+                <div class="repertuar-list-item__info">
+                    <div class="repertuar-list-item__old btn btn__dark btn-circle no-btn">16+</div>
+                    <div class="repertuar-list-item__time">1 ч. 25 мин.</div>
+                </div>
+
+                <div class="repertuar-list-item__text">
+                    сценический мир полон живых существ - зверей и птиц, богов и духов. В этот живой и сказочный мир нас зовёт театр! 
+                </div>
+            </div>
+
+            <div class="repertuar-list-item__author">
+                <div class="author-post">
+                    Режиссёр
+                </div>
+                <a href="actor.html" class="underline">Григорий Лайко</a>
+            </div>
+
+        </div>
+        
+    </div>
+</div>
+
+            
+
+                
+
+<div class="repertuar-list-item col-md-12- col-xl-6">
+
+    <div class="repertuar-list-item-inner">
+        <div class="repertuar-list-item__img">
+            <a href="spectacle.html"><picture><source srcset="img/demo/repertuar/4.webp" type="image/webp"><img src="img/demo/repertuar/4.jpg" alt=""></picture></a>
+        </div>
+
+        <div class="repertuar-list-item__content">
+
+            <div class="repertuar-list-item__name-info-text">
+                <h2 class="repertuar-list-item__name h2"><a href="spectacle.html">Первая зима</a></h2>
+
+                <div class="repertuar-list-item__info">
+                    <div class="repertuar-list-item__old btn btn__dark btn-circle no-btn">16+</div>
+                    <div class="repertuar-list-item__time">40 мин.</div>
+                </div>
+
+                <div class="repertuar-list-item__text">
+                    Спектакль поставлен по мотивам сказки Р. Киплинга "Слонёнок". Спектакль атмосферный и яркий: сценический мир полон живых существ - зверей и птиц, богов и духов. В этот живой и сказочный мир нас зовёт театр! 
+                </div>
+            </div>
+
+            <div class="repertuar-list-item__author">
+                <div class="author-post">
+                    Режиссёр
+                </div>
+                <a href="actor.html" class="underline">Григорий Лайко</a>
+            </div>
+
+        </div>
+        
+    </div>
+</div>
+
+   
+                
+                
+
+<div class="repertuar-list-item col-md-12- col-xl-6">
+
+    <div class="repertuar-list-item-inner">
+        <div class="repertuar-list-item__img">
+            <a href="spectacle.html"><picture><source srcset="img/demo/repertuar/3.webp" type="image/webp"><img src="img/demo/repertuar/3.jpg" alt=""></picture></a>
+        </div>
+
+        <div class="repertuar-list-item__content">
+
+            <div class="repertuar-list-item__name-info-text">
+                <h2 class="repertuar-list-item__name h2"><a href="spectacle.html">Айболит</a></h2>
+
+                <div class="repertuar-list-item__info">
+                    <div class="repertuar-list-item__old btn btn__dark btn-circle no-btn">16+</div>
+                    <div class="repertuar-list-item__time">1 ч. 25 мин.</div>
+                </div>
+
+                <div class="repertuar-list-item__text">
+                    Спектакль поставлен по мотивам сказки Р. Киплинга "Слонёнок". Спектакль атмосферный и яркий: сценический мир полон живых существ - зверей и птиц, богов и духов. В этот живой и сказочный мир нас зовёт театр! 
+                </div>
+            </div>
+
+            <div class="repertuar-list-item__author">
+                <div class="author-post">
+                    Режиссёр
+                </div>
+                <a href="actor.html" class="underline">Григорий Лайко</a>
+            </div>
+
+        </div>
+        
+    </div>
+</div>
+
+            
+
+                
+
+<div class="repertuar-list-item col-md-12- col-xl-6">
+
+    <div class="repertuar-list-item-inner">
+        <div class="repertuar-list-item__img">
+            <a href="spectacle.html"><picture><source srcset="img/demo/repertuar/4.webp" type="image/webp"><img src="img/demo/repertuar/4.jpg" alt=""></picture></a>
+        </div>
+
+        <div class="repertuar-list-item__content">
+
+            <div class="repertuar-list-item__name-info-text">
+                <h2 class="repertuar-list-item__name h2"><a href="spectacle.html">Первая зима</a></h2>
+
+                <div class="repertuar-list-item__info">
+                    <div class="repertuar-list-item__old btn btn__dark btn-circle no-btn">16+</div>
+                    <div class="repertuar-list-item__time">40 мин.</div>
+                </div>
+
+                <div class="repertuar-list-item__text">
+                    Спектакль поставлен по мотивам сказки Р. Киплинга "Слонёнок". Спектакль атмосферный и яркий: сценический мир полон живых существ - зверей и птиц, богов и духов. В этот живой и сказочный мир нас зовёт театр! 
+                </div>
+            </div>
+
+            <div class="repertuar-list-item__author">
+                <div class="author-post">
+                    Режиссёр
+                </div>
+                <a href="actor.html" class="underline">Григорий Лайко</a>
+            </div>
+
+        </div>
+        
+    </div>
+</div>
+
+        
+            </div>
+
+        </div>
+    </div>
+    <div class="subscribe bg-white">
+
+    <div class="decors">
+        <div class="decor decor3 decor-yellow"></div>
+        <div class="decor decor2 decor-yellow"></div>
+        <div class="decor decor1 decor-yellow"></div>
+    </div>
+
+    <div class="row position-relative">
+        <div class="col-lg-6">
+            <div class="subscribe__text">
+                <div class="h2">Узнавайте первыми
+                    о новостях и акциях театра</div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="subscribe__form">
+                <form action="">
+                    <div class="form-field">
+                        <input type="text" placeholder="Ваш E-mail">
+                        <button type="submit" class="btn btn-circle-44"><img src="img/icons/arrow-right.svg" alt="&rarr;" class="icon"></button>
+                    </div>
+                </form>
+                <p class="form-description">
+                    Нажимая на кнопку "подписаться", я выражаю свое согласие на передачу и обработку персональных данных в соответствии с Пользовательским соглашением
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    </main>
+
+<div class="ext-code">
+
+</div>
+
+<div class="partners">
+	<div class="partners__items">
+
+		<div class="partners__item">
+    <a href="#"><picture><source srcset="img/demo/partners/1.webp" type="image/webp"><img src="img/demo/partners/1.png" alt="" width="134"></picture></a>
+</div>
+		<div class="partners__item">
+    <a href="#"><picture><source srcset="img/demo/partners/2.webp" type="image/webp"><img src="img/demo/partners/2.png" alt="" width="197"></picture></a>
+</div>
+		<div class="partners__item">
+    <a href="#"><picture><source srcset="img/demo/partners/3.webp" type="image/webp"><img src="img/demo/partners/3.png" alt="" width="178"></picture></a>
+</div>
+		<div class="partners__item">
+    <a href="#"><picture><source srcset="img/demo/partners/4.webp" type="image/webp"><img src="img/demo/partners/4.png" alt="" width="186"></picture></a>
+</div>
+		<div class="partners__item">
+    <a href="#"><picture><source srcset="img/demo/partners/5.webp" type="image/webp"><img src="img/demo/partners/5.png" alt="" width="160"></picture></a>
+</div>
+
+	</div>
+
+</div>
+
+<footer class="footer">
+
+	<div class="container-fluid">
+
+		<div class="footer__cols">
+
+			<div class="footer__col-text">
+
+				<div class="footer__nav">
+					<ul class="list-unstyled">
+						<li><a href="#">Документы</a></li>
+						<li><a href="#">Доступная среда</a></li>
+						<li><a href="#">Правила театра</a></li>
+						<li><a href="#">Возврат билетов</a></li>
+					</ul>
+					<ul class="list-unstyled">
+						<li><a href="#">VK</a></li>
+						<li><a href="#">Telegram</a></li>
+						<li><a href="#">Rutube</a></li>
+					</ul>
+				</div>
+
+				<div class="footer__contacts">
+					Санкт-Петербург,<br>
+					Московский проспект, дом 121 <br>
+					+7 (812) 388-00-31
+				</div>
+
+				<div class="footer__copy">
+					<div class="footer__copy-year">
+						© 2022
+					</div>
+
+					<div class="footer__copy-items">
+						<div class="footer__copy-item">
+							СПб ГБУК "Кукольный театр сказки"
+						</div>
+						<div class="footer__copy-item">
+							Разработка <a href="https://twoi.digital/" target="_blank">TWOi Digital</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer__col-img">
+				<img src="img/logo-footer.svg" alt="">
+			</div>
+
+
+
+
+		</div>
+
+	</div>
+
+
+</footer>
+
+</div>
+<!--.content-->
+
+</div>
+<!--.wrapper-->
+
+<script src="js/app.min.js?_v=20220919123348"></script>
+</body>
+
+</html>

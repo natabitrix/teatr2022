@@ -512,7 +512,6 @@ $headerHeight: 48px;
 	}
 }
 
-
 .main-tabs {
 
 }
@@ -592,6 +591,7 @@ $headerHeight: 48px;
 		font-size: 20px;
 		line-height: 20px;
 		padding: 0 18px 4px;
+		text-transform: lowercase;
 
 		&.btn-more,
 		&.btn-int {
@@ -726,11 +726,13 @@ $headerHeight: 48px;
 		}
 	}
 }
+
 .collapse-content{
 	transition: margin .3s ease-in-out, height .3s ease-in-out;
 	height: 0;
 	overflow: hidden;
 }
+
 .seasons {
 	margin-bottom: 24px;
 
@@ -934,13 +936,12 @@ $headerHeight: 48px;
 	}
 }
 
-
 .about {
 	background-color: $bg;
 	padding:0 36px;
 	&__bg{
 		background-position: center top;
-		background-size: cover;
+		background-size:cover;
 		background-repeat: no-repeat;
 		position: relative;
 	}
@@ -1010,19 +1011,6 @@ $headerHeight: 48px;
 }
 
 
-.write-us {
-	margin-top: 95px;
-	padding-top: 66px;
-	padding-bottom: 112px;
-
-	.text-block {
-		max-width: 612px;
-		font-size: 32px;
-		line-height: 38px;
-	}
-}
-
-
 .partners-slider {
 	
 	.swiper-navigation {
@@ -1067,7 +1055,6 @@ $headerHeight: 48px;
 
 	}
 }
-
 
 .partners {
 	background-color: $bg;
@@ -1173,4 +1160,232 @@ $headerHeight: 48px;
 	}
 
 
+}
+
+.page {
+	.container-fluid {
+		padding-top:20px
+	}
+	.breadcrumbs {
+		font-weight: 400;
+		font-size: 20px;
+		line-height: 24px;
+		margin-bottom: -2px;
+		.icon {
+			margin:0 4px
+		}
+	}
+
+	h1 {
+
+	}
+
+}
+
+.subscribe {
+	position: relative;
+	padding:50px 36px 62px;
+	border-bottom: 1px solid $dark;
+	&__text{
+		.h2{
+			font-size: 28px;
+			line-height: 35px;
+			@include media-breakpoint-up(xl) {
+				font-size: 38px;
+				line-height: 45px;
+			}
+			@include media-breakpoint-up(xl) {
+				font-size: 48px;
+				line-height: 55px;
+				white-space: pre-line;
+			}
+		}
+	}
+	&__form{
+		padding-top:10px;
+		max-width: 600px;
+		.form-field{
+			input{
+
+			}
+			.btn{
+
+			}
+		}
+		.form-description{
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 20px;
+			opacity: 0.67;
+			margin-top:10px;
+		}
+	}
+	.decor3{
+		$width: 128px;
+		$height: 128px;
+		width: calc($width * 0.5);
+		height: calc($height * 0.5);
+		left: 8%;
+		top: 28%;
+		
+		@include media-breakpoint-up(lg) {
+			width: calc($width * 0.8);
+			height: calc($height * 0.8);
+		}
+		@include media-breakpoint-up(xl) {
+			left: 8%;
+			width: $width;
+			height: $height;
+		}
+	}
+	.decor2{
+		$width: 250px;
+		$height: 285px;
+		width: calc($width * 0.5);
+		height: calc($height * 0.5);
+		left:40%;
+		@include media-breakpoint-up(lg) {
+			width: calc($width * 0.8);
+			height: calc($height * 0.8);
+		}
+		@include media-breakpoint-up(xl) {
+			width: $width;
+			height: $height;
+		}
+
+	}
+	.decor1{
+		$width: 222px;
+		$height: 152px;
+		width: calc($width * 0.5);
+		height: calc($height * 0.5);
+		left:auto;
+		right: 4%;
+		top: 70%;
+    	
+		@include media-breakpoint-up(sm) {
+			top: 8%;
+		}
+		@include media-breakpoint-up(lg) {
+			width: calc($width * 0.8);
+			height: calc($height * 0.8);
+		}
+		@include media-breakpoint-up(xl) {
+			width: $width;
+			height: $height;
+		}
+	}
+
+
+}
+
+.repertuar-filter {
+	padding-top: 17px;
+	.btn {
+		padding: 0 18px 4px;
+	}
+}
+
+.repertuar-list {
+	margin-top: 40px;
+	//margin-bottom: 25px;
+
+	.repertuar-item-inner{
+
+	}
+
+	&-item {
+		margin-bottom: 64px;
+
+		&__img{
+			img{
+				width: 100%;
+				height: auto;
+			}
+			margin-bottom: 25px;
+		}
+
+
+		&__name-info-text{
+			
+		}
+
+		&__name{
+			margin-bottom:6px;
+			line-height: 55px;
+		}
+
+		&__info{
+			display: flex;
+			margin-bottom: 8px;
+		}
+		&__old{
+			width: 29px;
+			height: 29px;
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 20px;
+			margin-right: 10px;
+		}
+		&__time {
+			display: flex;
+			align-items: center;
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 20px;
+			text-transform: uppercase;
+		}
+		&__text{
+			font-weight: 400;
+			font-size: 20px;
+			line-height: 26px;
+			margin-bottom: 10px;
+		}
+		&__author{
+			font-weight: 400;
+			font-size: 20px;
+			line-height: 24px;
+			.author-post{
+				font-weight: 400;
+				font-size: 14px;
+				line-height: 20px;
+				text-transform: uppercase;
+			}
+			a {
+
+			}
+		}
+
+
+
+		@include media-breakpoint-down(xxxl) {
+
+		}
+
+		@include media-breakpoint-down(xl) {
+
+		}
+	}
+}
+
+
+
+.repertuar-list-list {
+	margin-top:62px;
+	.repertuar-list-item-inner {
+		display: flex;
+	}
+	.repertuar-list-item {
+		&__img{
+			margin-bottom: 0;
+			margin-right: 20px;
+			width: 41%;
+		}
+		&__content{
+			width: 50%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+	}
 }

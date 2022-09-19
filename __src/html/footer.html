@@ -5,62 +5,29 @@
 </div>
 
 <div class="partners">
-
-	<!--div class="partners-slider swiper">
-		<div class="swiper-wrapper">
-			<div class="swiper-slide">
-				<div class="swiper-slide-inner">
-					<a href="#"><img src="@img/demo/partners/1.png" alt="" width="134"></a>
-				</div>
-			</div>
-			<div class="swiper-slide">
-				<div class="swiper-slide-inner">
-					<a href="#"><img src="@img/demo/partners/2.png" alt="" width="197"></a>
-				</div>
-			</div>
-			<div class="swiper-slide">
-				<div class="swiper-slide-inner">
-					<a href="#"><img src="@img/demo/partners/3.png" alt="" width="178"></a>
-				</div>
-			</div>
-			<div class="swiper-slide">
-				<div class="swiper-slide-inner">
-					<a href="#"><img src="@img/demo/partners/4.png" alt="" width="186"></a>
-				</div>
-			</div>
-			<div class="swiper-slide">
-				<div class="swiper-slide-inner">
-					<a href="#"><img src="@img/demo/partners/5.png" alt="" width="160"></a>
-				</div>
-			</div>
-		</div>
-
-		<div class="swiper-navigation">
-			<div class="swiper-button-next btn btn-circle-48"><img src="@img/icons/arrow-right.svg" alt="next">
-			</div>
-			<div class="swiper-button-prev btn btn-circle-48"><img src="@img/icons/arrow-left.svg" alt="prev"></div>
-		</div>
-
-	</div-->
-
-
-
 	<div class="partners__items">
-		<div class="partners__item">
-			<a href="#"><img src="@img/demo/partners/1.png" alt="" width="134"></a>
-		</div>
-		<div class="partners__item">
-			<a href="#"><img src="@img/demo/partners/2.png" alt="" width="197"></a>
-		</div>
-		<div class="partners__item">
-			<a href="#"><img src="@img/demo/partners/3.png" alt="" width="178"></a>
-		</div>
-		<div class="partners__item">
-			<a href="#"><img src="@img/demo/partners/4.png" alt="" width="186"></a>
-		</div>
-		<div class="partners__item">
-			<a href="#"><img src="@img/demo/partners/5.png" alt="" width="160"></a>
-		</div>
+
+		@@include('partners-item.html', {
+			"img": "1.png",
+			"width": "134",
+		})
+		@@include('partners-item.html', {
+			"img": "2.png",
+			"width": "197",
+		})
+		@@include('partners-item.html', {
+			"img": "3.png",
+			"width": "178",
+		})
+		@@include('partners-item.html', {
+			"img": "4.png",
+			"width": "186",
+		})
+		@@include('partners-item.html', {
+			"img": "5.png",
+			"width": "160",
+		})
+
 	</div>
 
 </div>
