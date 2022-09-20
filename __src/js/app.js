@@ -256,6 +256,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 //Обновить collapse
                 collapseContent();
 
+                initDecors();
+
             });
         });
     }
@@ -382,26 +384,6 @@ document.addEventListener("DOMContentLoaded", function () {
         var sliderContainer = document.querySelector(".slider-container");
         sliderContainer.style.height = sliderContainer.clientHeight + "px";
     }
-
-
-    menu();
-    sidebarToggle();
-    tabs();
-    filterResponsive();
-    collapseContent();
-    newsItemTextHeight();
-    //setSliderHeight();
-
-
-    window.addEventListener('resize', function (event) {
-        filterResponsive();
-        collapseContent();
-        newsItemTextHeight();
-        //setSliderHeight();
-
-
-    });
-
 
 
     // Some random colors
@@ -591,23 +573,46 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-
-    const commentsDecors = document.querySelector(".comments .decors");
-    const subscribeDecors = document.querySelector(".subscribe .decors");
-    const subscribeOneDecors = document.querySelector(".subscribe.one-decor .decors");
-    if(commentsDecors) {
-        decoration(commentsDecors, ['yellow', 'dark', 'red', 'blue'], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], 100, false, true);
-    }
-    if(subscribeOneDecors) {
-        decoration(subscribeOneDecors, ['yellow'], [2], 1000, false, false);
-        console.log('sdf')
-    }
-    else {
-        if(subscribeDecors) {
-            decoration(subscribeDecors, ['yellow'], [1, 2, 3], 100, false, true);
+    function initDecors()
+    {
+        const commentsDecors = document.querySelector(".comments .decors");
+        const subscribeDecors = document.querySelector(".subscribe .decors");
+        const subscribeOneDecors = document.querySelector(".subscribe.one-decor .decors");
+        if(commentsDecors) {
+            commentsDecors.innerHTML = "";
+            decoration(commentsDecors, ['yellow', 'dark', 'red', 'blue'], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], 100, false, true);
+        }
+        if(subscribeOneDecors) {
+            subscribeOneDecors.innerHTML = "";
+            decoration(subscribeOneDecors, ['yellow'], [2], 1000, false, false);
+            console.log('sdf')
+        }
+        else {
+            if(subscribeDecors) {
+                subscribeDecors.innerHTML = "";
+                decoration(subscribeDecors, ['yellow'], [1, 2, 3], 100, false, true);
+            }
         }
     }
+
     
+
+
+    menu();
+    sidebarToggle();
+    tabs();
+    filterResponsive();
+    collapseContent();
+    newsItemTextHeight();
+    initDecors();
+
+
+    window.addEventListener('resize', function (event) {
+        filterResponsive();
+        collapseContent();
+        newsItemTextHeight();
+
+    });
 
 
 

@@ -42,14 +42,14 @@
 <div class="spectacle-tabs tabs bg-bg">
 
     <ul class="tab-list list-unstyled d-flex">
-        <li class="tab-list-item" id="tab-description"><img src="@img/icons/description.svg" alt=""
+        <li class="tab-list-item active" id="tab-description"><img src="@img/icons/description.svg" alt=""
                 class="icon icon-l">
             <h2 class="h2">Описание</h2>
         </li>
         <li class="tab-list-item" id="tab-tickets"><img src="@img/icons/ticket.svg" alt="" class="icon icon-l">
             <h2 class="h2">Билеты</h2>
         </li>
-        <li class="tab-list-item active" id="tab-comments"><img src="@img/icons/comment.svg" alt="" class="icon icon-l">
+        <li class="tab-list-item" id="tab-comments"><img src="@img/icons/comment.svg" alt="" class="icon icon-l">
             <h2 class="h2">Отзывы</h2>
         </li>
     </ul>
@@ -57,7 +57,7 @@
 
     <div class="tab-content">
 
-        <div class="tab d-none" id="tab-description-content">
+        <div class="tab" id="tab-description-content">
             @@include('html/spectacle/description.html')
         </div>
 
@@ -65,7 +65,7 @@
             @@include('html/spectacle/tickets.html')
         </div>
 
-        <div class="tab" id="tab-comments-content">
+        <div class="tab d-none" id="tab-comments-content">
             @@include('html/spectacle/comments.html')
         </div>
 
