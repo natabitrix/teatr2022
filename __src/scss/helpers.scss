@@ -131,9 +131,11 @@ a {
 		cursor: text;
 		background-color: $white;
 	}
+
 	&.no-border {
-		border:none;
+		border: none;
 	}
+
 	&:focus {
 		outline: 0;
 		box-shadow: none;
@@ -169,6 +171,7 @@ a {
 
 	&.btn-circle {
 		padding: 0;
+
 		&-38 {
 			width: 38px;
 			height: 38px;
@@ -186,6 +189,7 @@ a {
 			height: 48px;
 			line-height: 48px;
 		}
+
 		&-52 {
 			width: 52px;
 			height: 52px;
@@ -213,9 +217,10 @@ a {
 	font-size: 14px;
 	line-height: 20px;
 	background-color: $dark;
-    border-color: $dark;
-    color: $white;
-	padding:0;
+	border-color: $dark;
+	color: $white;
+	padding: 0;
+
 	&:hover {
 		cursor: text;
 		background-color: $dark;
@@ -231,26 +236,50 @@ a {
 	input[type=text],
 	input[type=tel],
 	input[type=email],
-	input[type=password] {
+	input[type=password],
+	textarea {
 		border: 1px solid $dark;
 		border-radius: 50px;
 		height: 60px;
-		padding: 10px 60px 10px 20px;
+		padding: 16px 24px;
 		width: 100%;
 
 		font-family: $Berlin;
 		font-style: normal;
 		font-weight: 400;
-		font-size: 32px;
-		color: $dark;
 
+		font-size: 20px;
+		line-height: 24px;
+
+		color: $dark;
 	}
 
-	.btn {
-		position: absolute;
-		top: 8px;
-		right: 8px;
-		z-index: 1;
+	textarea {
+		resize: none;
+		overflow: hidden;
+	}
+
+
+	&--btn {
+
+		input[type=text],
+		input[type=tel],
+		input[type=email],
+		input[type=password],
+		textarea {
+			padding-right: 60px;
+		}
+
+		.btn {
+			position: absolute;
+			top: 8px;
+			right: 8px;
+			z-index: 1;
+		}
+	}
+
+	&-sm {
+		max-width: 180px;
 	}
 }
 
@@ -732,7 +761,13 @@ img.w-100 {
 
 
 
-.decors{
+:root {
+	--shift: 0;
+	--x: 0;
+	--y: 0;
+}
+
+.decors {
 	position: absolute;
 	z-index: 0;
 	top: 0;
@@ -741,50 +776,83 @@ img.w-100 {
 	height: 100%;
 }
 
+
 .decor {
 	position: absolute;
-	background-size: cover;
-	-webkit-mask-size: cover;
+	mask-size: cover;
+	//transition: transform 0.3s ease;
 
 	&1 {
 		width: 110px;
 		height: 75px;
-			-webkit-mask-image: url('/img/decor/1.svg');
-			mask-image: url('/img/decor/1.svg');
-		
+		mask-image: url('/img/decor/1.svg');
+
 	}
 
 	&2 {
 		width: 108px;
 		height: 122px;
-			-webkit-mask-image: url('/img/decor/2.svg');
-			mask-image: url('/img/decor/2.svg');
-		
+		mask-image: url('/img/decor/2.svg');
+
 	}
 
 	&3 {
 		width: 66px;
 		height: 66px;
-			-webkit-mask-image: url('/img/decor/3.svg');
-			mask-image: url('/img/decor/3.svg');
-		
+		mask-image: url('/img/decor/3.svg');
+
 	}
 
 	&4 {
 		width: 55px;
-		height: 39px;
-			-webkit-mask-image: url('/img/decor/4.svg');
-			mask-image: url('/img/decor/4.svg');
-		
+		height: 38px;
+		mask-image: url('/img/decor/4.svg');
+
 	}
 
 	&5 {
 		width: 46px;
 		height: 38px;
-			-webkit-mask-image: url('/img/decor/5.svg');
-			mask-image: url('/img/decor/5.svg');
-		
+		mask-image: url('/img/decor/5.svg');
+
 	}
+
+	&6 {
+		width: 58px;
+		height: 28px;
+		mask-image: url('/img/decor/6.svg');
+	}
+
+	&7 {
+		width: 45px;
+		height: 78px;
+		mask-image: url('/img/decor/7.svg');
+	}
+
+	&8 {
+		width: 100px;
+		height: 80px;
+		mask-image: url('/img/decor/8.svg');
+	}
+
+	&9 {
+		width: 75px;
+		height: 42px;
+		mask-image: url('/img/decor/9.svg');
+	}
+
+	&10 {
+		width: 39px;
+		height: 39px;
+		mask-image: url('/img/decor/10.svg');
+	}
+
+	&11 {
+		width: 76px;
+		height: 55px;
+		mask-image: url('/img/decor/11.svg');
+	}
+
 
 	&-red {
 		background-color: $red;
@@ -818,18 +886,22 @@ img.w-100 {
 }
 
 
-.alert{
-	padding:24px 24px 10px;
+.alert {
+	padding: 24px 24px 10px;
 	max-width: 1200px;
+
 	.btn {
-		margin-right:20px;
+		margin-right: 20px;
+
 		.icon {
 			width: 4px;
 			height: 31px;
 		}
 	}
+
 	margin-bottom:24px;
-	p{
+
+	p {
 		font-weight: 400;
 		font-size: 20px;
 		line-height: 26px;

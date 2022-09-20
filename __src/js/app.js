@@ -37,7 +37,7 @@ const slider = new Swiper('.main-slider', {
     fadeEffect: {
         crossFade: true
     }*/
-    effect: "creative",
+    /*effect: "creative",
     creativeEffect: {
         prev: {
             shadow: true,
@@ -53,7 +53,7 @@ const slider = new Swiper('.main-slider', {
             translate: ["125%", 0, -800],
             rotate: [0, 0, 90],
         },
-    },
+    },*/
 });
 
 const partnersSlider = new Swiper('.partners-slider', {
@@ -65,29 +65,29 @@ const partnersSlider = new Swiper('.partners-slider', {
         prevEl: '.swiper-button-prev',
     },
     breakpoints: {
-      576: {
-        slidesPerView: 2,
-        //spaceBetween: 20,
-      },
-      768: {
-        slidesPerView: 3,
-        //spaceBetween: 40,
-      },
-      992: {
-        slidesPerView: 3,
-        //spaceBetween: 50,
-      },
-      1200: {
-        slidesPerView: 4,
-        //spaceBetween: 50,
-      },
-      1400: {
-        slidesPerView: 5,
-        //spaceBetween: 50,
-      },
-      //1600: {
-      //  slidesPerView: 5,
-      //},
+        576: {
+            slidesPerView: 2,
+            //spaceBetween: 20,
+        },
+        768: {
+            slidesPerView: 3,
+            //spaceBetween: 40,
+        },
+        992: {
+            slidesPerView: 3,
+            //spaceBetween: 50,
+        },
+        1200: {
+            slidesPerView: 4,
+            //spaceBetween: 50,
+        },
+        1400: {
+            slidesPerView: 5,
+            //spaceBetween: 50,
+        },
+        //1600: {
+        //  slidesPerView: 5,
+        //},
     }
 });
 
@@ -378,8 +378,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.querySelector("body").classList.remove("swiper-slider-fullscreen");
         });
     });
-    function setSliderHeight()
-    {
+    function setSliderHeight() {
         var sliderContainer = document.querySelector(".slider-container");
         sliderContainer.style.height = sliderContainer.clientHeight + "px";
     }
@@ -403,6 +402,212 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
+
+
+    // Some random colors
+    /*const yellow = "#F69F14";
+    const dark = "#1D1D1B";
+    const black = "#000000";
+    const white = "#ffffff";
+    const bg = "#F4F3F0";
+    const blue = "#006AA9";
+    const green = "#4CAF50";
+    const red = "#C23214";*/
+
+    //document.addEventListener('mousemove', onMouseMove);
+
+
+    /*document.querySelectorAll(".decors").forEach(parallaxWrap =>
+        parallaxWrap.addEventListener("mousemove", ({ clientX, clientY }) => {
+            parallaxWrap.style.setProperty("--x", clientX);
+            parallaxWrap.style.setProperty("--y", clientY);
+        }),
+    );*/
+
+
+    function getRandomWholeNumber(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+
+    function shuffle(array) {
+        let currentIndex = array.length, randomIndex;
+
+        // While there remain elements to shuffle.
+        while (currentIndex != 0) {
+
+            // Pick a remaining element.
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+
+            // And swap it with the current element.
+            [array[currentIndex], array[randomIndex]] = [
+                array[randomIndex], array[currentIndex]];
+        }
+
+        return array;
+    }
+
+    function decoration(container, colors, arrDecors, minMargin, isAnim, isParallax) {
+
+        const numDecorsOrig = 10;
+        const decors = [];
+
+        shuffle(arrDecors);
+
+        //console.log(arrDecors);
+
+        var numDecors = arrDecors.length;
+        var newNumDecors = 0;
+        var containerHeight = container.offsetHeight;
+        var margin = containerHeight / numDecors;
+        if (margin > minMargin) {
+            newNumDecors = Math.round(containerHeight / minMargin);
+            margin = minMargin;
+            var addNumDecors = newNumDecors - numDecors;
+            var addDecors = [];
+            for (let m = 0; m < addNumDecors; m++) {
+                var addDecor = arrDecors[m];
+                arrDecors.push(addDecor);
+            }
+        }
+
+        shuffle(arrDecors);
+
+        //console.log(arrDecors);
+        //console.log(numDecors);
+
+        let i = 0;
+        //for (let i = 0; i < numDecors; i++) {
+        arrDecors.forEach(element => {
+
+            let decor = document.createElement("div");
+
+            //console.log(Math.floor(numDecors * Math.random()));
+
+            decor.classList.add("decor");
+            //decor.classList.add("decor" + Math.floor(Math.random() * numDecorsOrig));
+            //decor.classList.add("decor" + arrDecors[Math.floor(arrDecors.length * Math.random())]);
+
+            decor.classList.add("decor" + element);
+            decor.classList.add("decor-" + colors[Math.floor(Math.random() * colors.length)]);
+
+            //decor.style.transform = `scale(${getRandomWholeNumber(0.3, 1.2)})`;
+
+            decor.style.top = margin * i + "px";
+
+            var left = 0;
+            var right = 0;
+            var value = 1;
+            var dir = 0;
+            
+            if(arrDecors.length == 1) {
+                left = "40%";
+                right = "auto"
+                dir = -1;
+            }
+            else if(arrDecors.length == 3) {
+                if (i == 0) { //left
+                    right = "auto";
+                    left = getRandomWholeNumber(0, 20) + "%";
+                    dir = 1;
+                }
+                else if (i == 1) { //center
+                    left = "40%";
+                    right = "auto"
+                    dir = -1;
+                }
+                else { //right
+                    left = "auto";
+                    right = getRandomWholeNumber(0, 20) + "%";
+                    dir = -1;
+
+                }
+            }
+            else {
+                if (i % 2 == 0) { //left
+                    right = "auto";
+                    left = getRandomWholeNumber(0, 20) + "%";
+                    dir = 1;
+                }
+                else {  //right
+                    left = "auto";
+                    right = getRandomWholeNumber(0, 20) + "%";
+                    dir = -1;
+    
+                }
+            }
+
+
+            decor.style.left = left;
+            decor.style.right = right;
+            decor.setAttribute("value", value * dir);
+
+
+            i++;
+            decors.push(decor);
+            container.append(decor);
+        });
+
+
+        // Keyframes
+        if (isAnim) {
+            decors.forEach((el, i, ra) => {
+                let to = {
+                    x: Math.random() * (i % 2 === 0 ? -11 : 11),
+                    y: Math.random() * 12
+                };
+
+                let anim = el.animate(
+                    [
+                        { transform: "translate(0, 0)" },
+                        { transform: `translate(${to.x}rem, ${to.y}rem)` }
+                    ],
+                    {
+                        duration: (Math.random() + 1) * 2000, // random duration
+                        direction: "alternate",
+                        fill: "both",
+                        iterations: Infinity,
+                        easing: "ease-in-out"
+                    }
+                );
+            });
+        }
+
+
+
+        if(isParallax)
+        {
+            document.addEventListener("mousemove", parallax);
+            function parallax(event) {
+                container.querySelectorAll(".decor").forEach((shift) => {
+                    const position = shift.getAttribute("value");
+                    const x = (container.offsetWidth - event.pageX * position) / 90;
+                    const y = (container.offsetHeight - event.pageY * position) / 90;
+
+                    shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
+                });
+            }
+        }
+
+    }
+
+
+    const commentsDecors = document.querySelector(".comments .decors");
+    const subscribeDecors = document.querySelector(".subscribe .decors");
+    const subscribeOneDecors = document.querySelector(".subscribe.one-decor .decors");
+    if(commentsDecors) {
+        decoration(commentsDecors, ['yellow', 'dark', 'red', 'blue'], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], 100, false, true);
+    }
+    if(subscribeOneDecors) {
+        decoration(subscribeOneDecors, ['yellow'], [2], 1000, false, false);
+        console.log('sdf')
+    }
+    else {
+        if(subscribeDecors) {
+            decoration(subscribeDecors, ['yellow'], [1, 2, 3], 100, false, true);
+        }
+    }
+    
 
 
 
