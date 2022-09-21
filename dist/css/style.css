@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 .bg-bg {
   background-color: #F4F3F0;
 }
@@ -4769,7 +4771,7 @@ h5 {
   font-family: "BerlinType";
   font-weight: 700;
   font-size: 20px;
-  line-height: 24px;
+  line-height: 26px;
   margin-bottom: 1rem;
 }
 
@@ -4884,9 +4886,8 @@ textarea {
 hr {
   margin: 0.5em 0;
   color: inherit;
-  background-color: currentColor;
+  background-color: #000000;
   border: 0;
-  opacity: 0.1;
 }
 
 hr:not([size]) {
@@ -5172,85 +5173,85 @@ img.w-100 {
 
 .decor {
   position: absolute;
+  mask-size: cover;
   -webkit-mask-size: cover;
-          mask-size: cover;
 }
 
 .decor1 {
   width: 110px;
   height: 75px;
   -webkit-mask-image: url("../img/decor/1.svg");
-          mask-image: url("../img/decor/1.svg");
+  mask-image: url("../img/decor/1.svg");
 }
 
 .decor2 {
   width: 108px;
   height: 122px;
   -webkit-mask-image: url("../img/decor/2.svg");
-          mask-image: url("../img/decor/2.svg");
+  mask-image: url("../img/decor/2.svg");
 }
 
 .decor3 {
   width: 66px;
   height: 66px;
   -webkit-mask-image: url("../img/decor/3.svg");
-          mask-image: url("../img/decor/3.svg");
+  mask-image: url("../img/decor/3.svg");
 }
 
 .decor4 {
   width: 55px;
   height: 38px;
   -webkit-mask-image: url("../img/decor/4.svg");
-          mask-image: url("../img/decor/4.svg");
+  mask-image: url("../img/decor/4.svg");
 }
 
 .decor5 {
   width: 46px;
   height: 38px;
   -webkit-mask-image: url("../img/decor/5.svg");
-          mask-image: url("../img/decor/5.svg");
+  mask-image: url("../img/decor/5.svg");
 }
 
 .decor6 {
   width: 58px;
   height: 28px;
   -webkit-mask-image: url("../img/decor/6.svg");
-          mask-image: url("../img/decor/6.svg");
+  mask-image: url("../img/decor/6.svg");
 }
 
 .decor7 {
   width: 45px;
   height: 78px;
   -webkit-mask-image: url("../img/decor/7.svg");
-          mask-image: url("../img/decor/7.svg");
+  mask-image: url("../img/decor/7.svg");
 }
 
 .decor8 {
   width: 100px;
   height: 80px;
   -webkit-mask-image: url("../img/decor/8.svg");
-          mask-image: url("../img/decor/8.svg");
+  mask-image: url("../img/decor/8.svg");
 }
 
 .decor9 {
   width: 75px;
   height: 42px;
   -webkit-mask-image: url("../img/decor/9.svg");
-          mask-image: url("../img/decor/9.svg");
+  mask-image: url("../img/decor/9.svg");
 }
 
 .decor10 {
   width: 39px;
   height: 39px;
   -webkit-mask-image: url("../img/decor/10.svg");
-          mask-image: url("../img/decor/10.svg");
+  mask-image: url("../img/decor/10.svg");
 }
 
 .decor11 {
   width: 76px;
   height: 55px;
   -webkit-mask-image: url("../img/decor/11.svg");
-          mask-image: url("../img/decor/11.svg");
+  mask-image: url("../img/decor/11.svg");
 }
 
 .decor-red {
@@ -7024,6 +7025,62 @@ body.lock {
 
 .comment-form .form-field {
   margin-bottom: 12px;
+}
+
+/****************text-page********************/
+
+.content-text {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.text-page .container-fluid,
+.text-page .container-sm,
+.text-page .container-md,
+.text-page .container-lg,
+.text-page .container-xl,
+.text-page .container-xxl {
+  background-color: #F4F3F0;
+  padding-bottom: 100px;
+}
+
+.text-page .content-text {
+  max-width: 850px;
+}
+
+.text-page .content-text h1 {
+  margin-bottom: 12px;
+}
+
+.text-page .content-text h2 {
+  font-size: 36px;
+  line-height: 41px;
+  margin-bottom: 34px;
+}
+
+.text-page .content-text ul.columns-2 {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.text-page .content-text ul.columns-2 li {
+  margin-bottom: 40px;
+  -webkit-column-break-inside: avoid;
+     -moz-column-break-inside: avoid;
+          break-inside: avoid-column;
+}
+
+/****************CONTACTS********************/
+
+.сontacts-page li .h5 {
+  font-weight: 400;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.сontacts-page .map {
+  margin-top: 40px;
 }
 
 @media (min-width: 576px) {
@@ -8999,7 +9056,7 @@ body.lock {
     padding: 0 36px;
   }
 
-  .spectacle-authors .authors-list {
+  .text-page .content-text ul.columns-2 {
     columns: 2;
     -webkit-columns: 2;
     -moz-columns: 2;

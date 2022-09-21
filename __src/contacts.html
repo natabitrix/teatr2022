@@ -1,26 +1,128 @@
 @@include('html/header.html', {
-"class": " сontacts-page page",
+"class": " сontacts-page text-page page",
 })
 
-<div class="breadcrumbs">
-    <div class="breadcrumbs__container">
-        <ul class="breadcrumbs__list list-unstyled d-flex">
-            <li class="breadcrumbs__list-item">
-                <a href="index.html">главная</a>
+<div class="container-fluid bg-bg">
+
+    <div class="breadcrumbs">
+        <div class="breadcrumbs__container">
+            <ul class="breadcrumbs__list list-unstyled d-flex">
+                <li class="breadcrumbs__list-item">
+                    <a href="index.html">главная</a>
+                </li>
+                <li class="breadcrumbs__list-item icon">
+                    &rarr;
+                </li>
+                <li class="breadcrumbs__list-item">
+                    <span>Контакты</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="content-text">
+
+        <h1>Контакты</h1>
+
+        <ul class="columns-2">
+            <li>
+                Наше официальное название<br>
+<b>Санкт-Петербургское государственное бюджетное учреждение культуры «Кукольный театр сказки»</b>
             </li>
-            <li class="breadcrumbs__list-item icon">
-                &rarr;
-            </li>
-            <li class="breadcrumbs__list-item">
-                <span>Контакты</span>
+            <li>
+                Наш учредитель
+<br>
+<b>Комитет по культуре Санкт-Петербурга</b>
             </li>
         </ul>
+
+
+        <br>
+        <br>
+
+
+        <h2>Наши сотрудники</h2>
+
+
+        <ul class="columns-2">
+
+                @@include('html/contacts/contact-item.html', {
+                    "name": "Директор",
+                    "description": "Заслуженный работник культуры РФ<br> Лавров Николай Александрович",
+                    "phone": "(812) 388 58 72<br>",
+                    "email": "teatrskazki.1@yandex.ru"
+                })
+                @@include('html/contacts/contact-item.html', {
+                    "name": "Главный режиссёр",
+                    "description": "Дорожко Светлана Леонтьевна",
+                    "phone": "",
+                    "email": "sv-doroga@bk.ru"
+                })
+                @@include('html/contacts/contact-item.html', {
+                    "name": "Администратор",
+                    "description": "Губенко Наталия Юрьевна",
+                    "phone": "(812) 388 02 39<br>",
+                    "email": "admin@teatrskazki.spb.ru"
+                })
+                @@include('html/contacts/contact-item.html', {
+                    "name": "Заместитель директора по работе со зрителями",
+                    "description": "Гуро Кира Александровна",
+                    "phone": "",
+                    "email": ""
+                })
+                @@include('html/contacts/contact-item.html', {
+                    "name": "Главный художник",
+                    "description": "Игнатьев Филипп Игоревич",
+                    "phone": "",
+                    "email": "terra-cotta25@yandex.ru"
+                })
+                @@include('html/contacts/contact-item.html', {
+                    "name": "Начальник билетного стола",
+                    "description": "Голова Инна Чеславовна",
+                    "phone": "(812) 387 54 75",
+                    "email": ""
+                })
+        </ul>
+
+
+        <br>
+        <hr>
+        <br>
+
+        <ul class="columns-2">
+            <li>
+                <b>Адрес</b><br>
+                196006, Санкт-Петербург,<br>
+                Московский проспект, дом 121
+            </li>
+            <li>
+                <b>Касса театра</b><br>
+                +7 (812) 388-00-31
+            </li>
+            <li>
+                <b>График работы</b><br>
+                Пн–Сб<br>
+                10:00 – 19:00 (Обед с 15 до 16)<br>
+                Воскресенье<br> 
+                10:00 - 17:00 (Обед с 15 до 16) <br>
+                <div class="h5">
+                    Касса работает до 26 июня 2022 <br>
+                    и с 22 августа 2022
+                </div>
+                
+            </li>
+        </ul>
+
+
+        <div class="map">
+            <img src="@img/demo/map.jpg" alt="" class="img-fluid">
+        </div>
     </div>
+
 </div>
 
-<h1>Контакты</h1>
 
-
-@@include('html/subscribe.html')
+@@include('html/subscribe.html', {"one_decor": "one-decor"})
 
 @@include('html/footer.html')
