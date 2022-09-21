@@ -210,6 +210,13 @@ a {
 	}
 }
 
+.bvi-active .btn {
+	height: auto!important;
+	width: auto!important;
+	padding:10px 24px!important;
+
+}
+
 .btn-age {
 	width: 29px;
 	height: 29px;
@@ -226,6 +233,10 @@ a {
 		background-color: $dark;
 		color: $white;
 	}
+
+	.bvi-active {
+
+	}
 }
 
 
@@ -238,10 +249,11 @@ a {
 	input[type=email],
 	input[type=password],
 	textarea {
-		border: 1px solid $dark;
+		border: 0;
+		outline: 1px solid $dark;
 		border-radius: 50px;
 		height: 60px;
-		padding: 16px 24px;
+		padding: 18px 25px;
 		width: 100%;
 
 		font-family: $Berlin;
@@ -257,6 +269,8 @@ a {
 	textarea {
 		resize: none;
 		overflow: hidden;
+		display: block;
+		min-height: 60px;
 	}
 
 
@@ -272,7 +286,7 @@ a {
 
 		.btn {
 			position: absolute;
-			top: 8px;
+			bottom: 8px;
 			right: 8px;
 			z-index: 1;
 		}

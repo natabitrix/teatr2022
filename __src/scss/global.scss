@@ -310,6 +310,7 @@ $headerHeight: 48px;
 	z-index: 0;
 }
 
+/****************HOME********************/
 .main-event {
 	display: flex;
 }
@@ -554,6 +555,7 @@ $headerHeight: 48px;
 
 }
 
+/****************tabs********************/
 .tab-list {
 
 	justify-content: center;
@@ -590,6 +592,7 @@ $headerHeight: 48px;
 	overflow: hidden;
 }
 
+/****************filters********************/
 .filters {
 	padding-top: 24px;
 	.filter-list {
@@ -658,6 +661,7 @@ $headerHeight: 48px;
 
 }
 
+/****************AFISHA********************/
 .afisha {
 	margin-top: 26px;
 	margin-bottom: 20px;
@@ -766,6 +770,7 @@ $headerHeight: 48px;
 	overflow: hidden;
 }
 
+/****************ABONEMENTS********************/
 .seasons {
 	margin-bottom: 24px;
 
@@ -850,7 +855,7 @@ $headerHeight: 48px;
 	}
 }
 
-
+/****************NEWS********************/
 .news {
 	margin-top: 35px;
 	background-color: $bg;
@@ -882,6 +887,10 @@ $headerHeight: 48px;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+		text-decoration: none;
+		&:hover {
+			text-decoration: none;
+		}
 	}
 
 	&__item-img{
@@ -1216,6 +1225,7 @@ $headerHeight: 48px;
 
 }
 
+/****************subscribe********************/
 .subscribe {
 	position: relative;
 	padding:50px 36px 62px;
@@ -1316,6 +1326,7 @@ $headerHeight: 48px;
 
 }
 
+/****************REPERTUAR********************/
 .repertuar-filter {
 	padding-top: 17px;
 	.btn {
@@ -1400,8 +1411,6 @@ $headerHeight: 48px;
 	}
 }
 
-
-
 .repertuar-list-list {
 	margin-top:62px;
 	.repertuar-list-item-inner {
@@ -1422,6 +1431,7 @@ $headerHeight: 48px;
 	}
 }
 
+/****************SPECTACLE********************/
 .spectacle-page .breadcrumbs{
 	position: absolute;
 	left:36px;
@@ -1691,7 +1701,12 @@ $headerHeight: 48px;
 	}
 }
 
-/*full screen slider*/
+.spectacle-suggestion{
+	margin-top: 50px;
+	padding:0 36px;
+}
+
+/****************full-screen slider********************/
 .swiper-slide-fullscreen {
 	cursor: pointer;
 }
@@ -1803,12 +1818,7 @@ $headerHeight: 48px;
 	}
 }
 
-.spectacle-suggestion{
-	margin-top: 50px;
-	padding:0 36px;
-}
-
-
+/****************TICKETS********************/
 .tickets{
 	padding:24px 36px 80px;
 }
@@ -1840,17 +1850,11 @@ $headerHeight: 48px;
 	
 }
 
+/****************COMMENTS********************/
 .comments{
 	position: relative;
 	padding:0 36px 0;
-	.decors-left{
-		width: 10%;
-	}
-	.decors-right{
-		left: auto;
-		right:0;
-		width: 10%;
-	}
+
 }
 .comment-list, .comment-form{
 	max-width: 795px;
@@ -1896,6 +1900,8 @@ $headerHeight: 48px;
 	&__info{
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 8px;
 	}
 	&__name {
 		font-weight: 700;
@@ -1917,7 +1923,14 @@ $headerHeight: 48px;
 .comment-form{
 	margin-top: 50px;
 	margin-bottom: 150px;
+	.h3{
+		font-size: 36px;
+		line-height: 41px;
+		margin-bottom: 26px;
+	}
 	.form-field{
 		margin-bottom: 12px;
 	}
 }
+
+

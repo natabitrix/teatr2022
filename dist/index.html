@@ -1,19 +1,46 @@
 <!DOCTYPE html>
 <html lang="ru">
+<!--
+Контакты
+Правила
+Актер
+Актеры
+Документы
+Новости
+Новость
+Отзывы
+--------
+Для слабовидящих
+Новости на главной декор
+Слайдер декор 
+Детальная спектакля декор
+Адаптив
+Стили для контент-редактора
+--------
+Переключатель вида в репертуаре + кнопка Смотреть архив?
+Афиша > Цены?
+О нас > Проекты?
+О нас > История > Исторические записки?
+Адаптив недорисован
+	главная
+	подвал
+	не вмещаются крупный шрифт в спектакле
 
+
+-->
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="format-detection" content="telephone=no" />
 	<meta name="format-detection" content="address=no" />
-	<link rel="stylesheet" href="css/style.min.css?_v=20220920173014">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220921120800">
 	<title>Театр сказки</title>
 	<script>
 		var homePage = false;
 	</script>
 </head>
 
-<body>
+<body class="color-schemes-bvi">
 	<div class="wrapper home-page">
 
 		<header class="header">
@@ -46,9 +73,9 @@
 
 						<li class="nav-item nav-item-parent" id="item-afisha"><span>Афиша</span>
 							<ul class="list-unstyled nav-item-children" id="item-afisha-children">
-								<li><a href="#">О билетах и
+								<li><a href="rules.html">О билетах и
 										правилах</a></li>
-								<li><a href="#"
+								<li><a href="abonements.html"
 										>Абонементы</a></li>
 								<li><a href="#"
 										>Цены</a></li>
@@ -73,7 +100,7 @@
 						</li>
 						<li class="nav-item"><a href="">Новости</a></li>
 						<li class="nav-item"><a href="">Проекты</a></li>
-						<li class="nav-item"><a href="">Контакты</a></li>
+						<li class="nav-item"><a href="contacts.html">Контакты</a></li>
 					</ul>
 				</nav>
 
@@ -101,7 +128,7 @@
 					</div>
 	
 					<div class="sidebar__eye-link">
-						<a href="#" rel="nofollow" target="_blank"><img src="img/icons/eye.svg"
+						<a href="#" class="bvi-open"><img src="img/icons/eye.svg"
 								alt="Версия для слабовидящих" class="icon icon-l"><span>Версия для слабовидящих</span></a>
 					</div>
 				</div>
@@ -849,7 +876,7 @@
             <div class="row">
 
                 <div class="col-xxxl-3 col-xl-4 col-md-6 news__item">
-    <div class="news__item-inner">
+    <a class="news__item-inner" href="news-detail.html">
         <div class="news__item-img">
             <picture><source srcset="img/news/1.webp" type="image/webp"><img src="img/news/1.jpg" alt="" class="img-fluid"></picture>
         </div>
@@ -863,11 +890,11 @@
                 </h3>
             </div>
         </div>
-    </div>
+    </a>
 </div>
 
                 <div class="col-xxxl-3 col-xl-4 col-md-6 news__item">
-    <div class="news__item-inner">
+    <a class="news__item-inner" href="news-detail.html">
         <div class="news__item-img">
             <picture><source srcset="img/news/2.webp" type="image/webp"><img src="img/news/2.jpg" alt="" class="img-fluid"></picture>
         </div>
@@ -881,11 +908,11 @@
                 </h3>
             </div>
         </div>
-    </div>
+    </a>
 </div>
 
                 <div class="col-xxxl-3 col-xl-4 col-md-6 news__item">
-    <div class="news__item-inner">
+    <a class="news__item-inner" href="news-detail.html">
         <div class="news__item-img">
             <picture><source srcset="img/news/3.webp" type="image/webp"><img src="img/news/3.jpg" alt="" class="img-fluid"></picture>
         </div>
@@ -899,11 +926,11 @@
                 </h3>
             </div>
         </div>
-    </div>
+    </a>
 </div>
 
                 <div class="col-xxxl-3 col-xl-4 col-md-6 news__item">
-    <div class="news__item-inner">
+    <a class="news__item-inner" href="news-detail.html">
         <div class="news__item-img">
             <picture><source srcset="img/news/4.webp" type="image/webp"><img src="img/news/4.jpg" alt="" class="img-fluid"></picture>
         </div>
@@ -917,7 +944,7 @@
                 </h3>
             </div>
         </div>
-    </div>
+    </a>
 </div>
 
             </div>
@@ -1049,7 +1076,9 @@
 </div>
 <!--.wrapper-->
 
-<script src="js/app.min.js?_v=20220920173014"></script>
+<!--script src="js/bvi.min.js"></script-->
+<script src="js/app.min.js?_v=20220921120800"></script>
+
 </body>
 
 </html>

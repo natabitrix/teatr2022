@@ -10,10 +10,16 @@ export const js = () => {
         )
         .pipe(webpack({
             mode: app.isBuild ? 'production' : 'development',
+            //mode: 'production',
             output: {
                 filename: 'app.min.js'
             }
         }))
         .pipe(app.gulp.dest(app.path.build.js))
+
+        .pipe(app.gulp.src(app.path.src.jsExt))
+        .pipe(app.gulp.dest(app.path.build.js))
+
+
         .pipe(app.plugins.browsersync.stream())
 }
