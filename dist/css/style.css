@@ -7029,11 +7029,6 @@ body.lock {
 
 /****************text-page********************/
 
-.content-text {
-  font-size: 18px;
-  line-height: 24px;
-}
-
 .text-page .container-fluid,
 .text-page .container-sm,
 .text-page .container-md,
@@ -7045,7 +7040,9 @@ body.lock {
 }
 
 .text-page .content-text {
-  max-width: 850px;
+  font-size: 24px;
+  line-height: 32px;
+  max-width: 1000px;
 }
 
 .text-page .content-text h1 {
@@ -7055,7 +7052,25 @@ body.lock {
 .text-page .content-text h2 {
   font-size: 36px;
   line-height: 41px;
-  margin-bottom: 34px;
+  margin-bottom: 24px;
+}
+
+.text-page .content-text h3 {
+  font-size: 28px;
+  line-height: 32px;
+  margin-bottom: 0;
+}
+
+.text-page .content-text p {
+  margin-bottom: 25px;
+}
+
+.text-page .content-text a {
+  text-decoration: underline;
+}
+
+.text-page .content-text a:hover {
+  text-decoration: none;
 }
 
 .text-page .content-text ul.columns-2 {
@@ -7071,7 +7086,36 @@ body.lock {
           break-inside: avoid-column;
 }
 
+.text-page .content-text ul,
+.text-page .content-text ol {
+  margin-top: 32px;
+  padding-left: 36px;
+  margin-left: 0;
+  margin-bottom: 32px;
+}
+
+.text-page .content-text ul li,
+.text-page .content-text ol li {
+  margin-bottom: 10px;
+}
+
+.text-page .content-text ol li {
+  margin-bottom: 15px;
+}
+
 /****************CONTACTS********************/
+
+.сontacts-page .content-text {
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 850px;
+}
+
+.сontacts-page .content-text h2 {
+  font-size: 36px;
+  line-height: 41px;
+  margin-bottom: 34px;
+}
 
 .сontacts-page li .h5 {
   font-weight: 400;
