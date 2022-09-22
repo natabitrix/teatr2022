@@ -1,5 +1,5 @@
 @@include('_common/header.html', {
-    "class": " text-page page",
+    "class": " news-list-page page",
     })
     
     <div class="container-fluid bg-bg">
@@ -25,6 +25,36 @@
     
             <h1>Новости</h1>
     
+            <div class="news-list">
+                    @@include('news/news-list-item.html', {
+                        "img": "1.jpg",
+                        "name": "Открытие 78 театрального сезона",
+                        "text": 'Мы открыли сезон премьерой спектакля "Елизавета Бам"!  ',
+                        "date": "16 сентября 2022"
+                    })
+                    @@include('news/news-list-item.html', {
+                        "img": "2.jpg",
+                        "name": "Открытие 78 театрального сезона",
+                        "text": 'Мы открыли сезон премьерой спектакля "Елизавета Бам"!  ',
+                        "date": "16 сентября 2022"
+                    })
+                    @@include('news/news-list-item.html', {
+                        "img": "3.jpg",
+                        "name": "Открытие 78 театрального сезона",
+                        "text": 'Мы открыли сезон премьерой спектакля "Елизавета Бам"!  ',
+                        "date": "16 сентября 2022"
+                    })
+                    @@include('news/news-list-item.html', {
+                        "img": "4.jpg",
+                        "name": "Открытие 78 театрального сезона",
+                        "text": 'Мы открыли сезон премьерой спектакля "Елизавета Бам"!  ',
+                        "date": "16 сентября 2022"
+                    })
+            </div>
+
+            <div class="news-more-container text-center">
+                <button type="button" class="btn btn-lcase btn-news-more">показать ещё <img src="@img/icons/dots.svg" alt="" class="icon icon-r"></button>
+            </div>
 
         </div>
     

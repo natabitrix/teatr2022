@@ -1,0 +1,89 @@
+@@include('_common/header.html', {
+    "class": " news-detail-page page",
+    })
+    
+    <div class="container-fluid bg-bg">
+    
+        <div class="breadcrumbs">
+            <div class="breadcrumbs__container">
+                <ul class="breadcrumbs__list list-unstyled d-flex">
+                    <li class="breadcrumbs__list-item">
+                        <a href="index.html">главная</a>
+                    </li>
+                    <li class="breadcrumbs__list-item icon">
+                        &rarr;
+                    </li>
+                    <li class="breadcrumbs__list-item">
+                        <span>Новости</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    
+    
+        <div class="content-text">
+            <div class="news-detail">
+
+                <h1>III Международный Фестиваль театров кукол "Балтийский кукловорот| Baltic Puppetwhirl"</h1>
+            
+                <div class="news-detail__date">
+                    23 июн 2022
+                </div>
+                <div class="news-detail__img">
+                    <img src="@img/demo/news/detail.jpg" alt="" class="img-fluid">
+                </div>
+                <div class="news-detail__text">
+                    <p>Сегодня, 11 сентября, в Выборге открывается III Международный Фестиваль театров кукол "Балтийский кукловорот| Baltic Puppetwhirl"! Для нас фестиваль особенный - в этом году его посвятили Игорю и Анне Игнатьевым. Делимся с вами сюжетом об открытии и будем ждать встречи в Выборге!</p>
+                    <div class="news-detail__text-more-link">
+                        <div class="btn btn__yellow">
+                            <img src="@img/icons/link.svg" alt="" class="icon icon-l">
+                            больше по ссылке
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-detail__share">
+                    <div class="news-detail__share-title">
+                        <div class="h5">Поделиться новостью</div>
+                    </div>
+                    <div class="news-detail__share-list">
+                        <div class="news-detail__share-list-item">
+                            <a href=""><div class="icon icon-vk" style="background:#0077FF"><img src="@img/social/vk-white.svg" alt=""></div></a>
+                        </div>
+                        <div class="news-detail__share-list-item">
+                            <a href=""><div class="icon icon-tg" style="background:#27A6E5"><img src="@img/social/tg-white.svg" alt=""></div></a>
+                        </div>
+                        <div class="news-detail__share-list-item">
+                            <a href=""><div class="icon icon-ok" style="background:#F79A38"><img src="@img/social/ok-white.svg" alt=""></div></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="news-detail-suggestions">
+                <div class="h3">Другие новости</div>
+                <div class="news-list">
+                    @@include('news/news-list-item.html', {
+                        "img": "1.jpg",
+                        "name": "Открытие 78 театрального сезона",
+                        "text": 'Мы открыли сезон премьерой спектакля "Елизавета Бам"!  ',
+                        "date": "16 сентября 2022"
+                    })
+                    @@include('news/news-list-item.html', {
+                        "img": "2.jpg",
+                        "name": "Открытие 78 театрального сезона",
+                        "text": 'Мы открыли сезон премьерой спектакля "Елизавета Бам"!  ',
+                        "date": "16 сентября 2022"
+                    })
+                </div>
+            </div>
+
+        </div>
+    
+    </div>
+    
+    
+    @@include('_common/subscribe.html')
+    
+    @@include('_common/footer.html')
