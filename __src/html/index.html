@@ -1,11 +1,11 @@
-@@include('html/header.html', {
+@@include('_common/header.html', {
 "class": " home-page",
 })
 
 
 <div class="container-fluid p-0">
 
-    @@include('html/home/slider.html')
+    @@include('home/slider.html')
 
     <div class="main-tabs tabs">
 
@@ -19,26 +19,26 @@
 
             <div class="tab" id="tab-afisha-content">
 
-                @@include('html/home/afisha.html')
+                @@include('home/afisha.html')
 
             </div>
 
             <div class="tab d-none" id="tab-seasons-content">
 
-                @@include('html/home/seasons.html')
+                @@include('home/seasons.html')
 
             </div>
         </div>
 
     </div>
 
-    @@include('html/home/news.html')
+    @@include('home/news.html')
 
-    @@include('html/home/about.html')
+    @@include('home/about.html')
 
 
 </div>
 
 
 
-@@include('html/footer.html')
+@@include('_common/footer.html')

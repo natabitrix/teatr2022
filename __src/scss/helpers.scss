@@ -44,7 +44,7 @@ body {
 
 @include media-breakpoint-up(xxxl) {
 	.col-xxl-3 {
-		width: 20%
+		//width: 20%
 	}
 }
 
@@ -211,9 +211,9 @@ a {
 }
 
 .bvi-active .btn {
-	height: auto!important;
-	width: auto!important;
-	padding:10px 24px!important;
+	height: auto !important;
+	width: auto !important;
+	padding: 10px 24px !important;
 
 }
 
@@ -234,9 +234,7 @@ a {
 		color: $white;
 	}
 
-	.bvi-active {
-
-	}
+	.bvi-active {}
 }
 
 
@@ -339,8 +337,9 @@ h1 {
 	font-style: normal;
 	font-weight: 500;
 	font-size: 74px;
-	line-height: 85px;
-	margin-bottom: 0;
+	line-height: 60px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 	max-width: 900px;
 
 }
@@ -774,12 +773,6 @@ img.w-100 {
 
 
 
-:root {
-	--shift: 0;
-	--x: 0;
-	--y: 0;
-}
-
 .decors {
 	position: absolute;
 	z-index: 0;
@@ -790,6 +783,32 @@ img.w-100 {
 }
 
 
+
+
+@mixin decor($widthOrig, $heightOrig, $img) {
+
+	$width: $widthOrig * 0.5;
+	$height: $heightOrig * 0.5;
+
+	@include media-breakpoint-up(lg) {
+		$width: $widthOrig * 0.8;
+		$height: $heightOrig * 0.8;
+	}
+
+	@include media-breakpoint-up(xl) {
+		$width: $widthOrig;
+		$height: $heightOrig;
+	}
+
+	width: #{$width}px;
+	height: #{$height}px;
+
+	-webkit-mask-image: url('../img/decor/'+$img);
+	mask-image: url('../img/decor/'+$img);
+
+}
+
+
 .decor {
 	position: absolute;
 	mask-size: cover;
@@ -797,86 +816,48 @@ img.w-100 {
 	//transition: transform 0.3s ease;
 
 	&1 {
-		width: 110px;
-		height: 75px;
-		-webkit-mask-image: url('../img/decor/1.svg');
-		mask-image: url('../img/decor/1.svg');
-
+		@include decor(110, 75, "1.svg");
 	}
-
 	&2 {
-		width: 108px;
-		height: 122px;
-		-webkit-mask-image: url('../img/decor/2.svg');
-		mask-image: url('../img/decor/2.svg');
-
+		@include decor(108, 122, "2.svg");
 	}
-
 	&3 {
-		width: 66px;
-		height: 66px;
-		-webkit-mask-image: url('../img/decor/3.svg');
-		mask-image: url('../img/decor/3.svg');
-
+		@include decor(66, 66, "3.svg");
 	}
 
 	&4 {
-		width: 55px;
-		height: 38px;
-		-webkit-mask-image: url('../img/decor/4.svg');
-		mask-image: url('../img/decor/4.svg');
-
+		@include decor(55, 38, "4.svg");
 	}
 
 	&5 {
-		width: 46px;
-		height: 38px;
-		-webkit-mask-image: url('../img/decor/5.svg');
-		mask-image: url('../img/decor/5.svg');
-
+		@include decor(46, 38, "5.svg");
 	}
 
 	&6 {
-		width: 58px;
-		height: 28px;
-		-webkit-mask-image: url('../img/decor/6.svg');
-		mask-image: url('../img/decor/6.svg');
+		@include decor(58, 28, "6.svg");
 	}
 
 	&7 {
-		width: 45px;
-		height: 78px;
-		-webkit-mask-image: url('../img/decor/7.svg');
-		mask-image: url('../img/decor/7.svg');
+		@include decor(45, 78, "7.svg");
 	}
 
 	&8 {
-		width: 100px;
-		height: 80px;
-		-webkit-mask-image: url('../img/decor/8.svg');
-		mask-image: url('../img/decor/8.svg');
+		@include decor(100, 80, "8.svg");
 	}
 
 	&9 {
-		width: 75px;
-		height: 42px;
-		-webkit-mask-image: url('../img/decor/9.svg');
-		mask-image: url('../img/decor/9.svg');
+		@include decor(75, 42, "9.svg");
 	}
 
 	&10 {
-		width: 39px;
-		height: 39px;
-		-webkit-mask-image: url('../img/decor/10.svg');
-		mask-image: url('../img/decor/10.svg');
+		@include decor(39, 39, "10.svg");
 	}
 
 	&11 {
-		width: 76px;
-		height: 55px;
-		-webkit-mask-image: url('../img/decor/11.svg');
-		mask-image: url('../img/decor/11.svg');
+		@include decor(76, 55, "11.svg");
 	}
+
+
 
 
 	&-red {
@@ -933,3 +914,12 @@ img.w-100 {
 	}
 }
 
+
+.grayscale {
+	transition: all .3s;
+	filter: grayscale(100%);
+
+	&:hover {
+		filter: grayscale(0);
+	}
+}

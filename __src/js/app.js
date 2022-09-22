@@ -3,6 +3,9 @@ import * as flsFunctions from "./modules/functions.js";
 flsFunctions.isWebP();
 
 
+import Sticky from 'sticky-js';
+var sticky = new Sticky('[data-sticky]', {});
+
 import Swiper, { Navigation, Autoplay } from 'swiper';
 //import Swiper, { Navigation, Autoplay, EffectFade, EffectCreative, EffectCoverflow } from 'swiper';
 
@@ -18,9 +21,9 @@ const slider = new Swiper('.main-slider', {
         prevEl: '.swiper-button-prev',
     },
     speed: 1000,
-    autoplay: {
-        delay: 5000,
-    },
+    // autoplay: {
+    //     delay: 5000,
+    // },
     // effect: 'fade',
     // fadeEffect: {
     //     crossFade: true
@@ -75,7 +78,7 @@ const partnersSlider = new Swiper('.partners-slider', {
     }
 });
 
-const spectacleSlider = new Swiper('.spectacle-slider', {
+const gallerySlider = new Swiper('.gallery-slider', {
     // configure Swiper to use modules
     //modules: [Navigation],
     slidesPerView: "auto",
@@ -297,14 +300,15 @@ document.addEventListener("DOMContentLoaded", function () {
             document.querySelector("body").classList.remove("swiper-slider-fullscreen");
         });
     });
-    function setSliderHeight() {
-        var sliderContainer = document.querySelector(".slider-container");
-        sliderContainer.style.height = sliderContainer.clientHeight + "px";
-    }
+
+    // function setSliderHeight() {
+    //     var sliderContainer = document.querySelector(".slider-container");
+    //     sliderContainer.style.height = sliderContainer.clientHeight + "px";
+    // }
 
 
     function getRandomWholeNumber(min, max) {
-        return Math.random() * (max - min) + min;
+        return (Math.random() * (max - min) + min);
     }
 
     function shuffle(array) {
@@ -325,60 +329,129 @@ document.addEventListener("DOMContentLoaded", function () {
         return array;
     }
 
-    function decoration(container, colors, arrDecors, minMargin, isAnim, isParallax) {
 
-        const numDecorsOrig = 10;
+    /**
+     * рандомные фигуры в любом кол-ве: figures="random" figure_count="auto" (по умолчанию)
+     * рандомные фигуры в указанном кол-ве: figures="random" figure_count="3"
+     * указанные фигуры в любом кол-ве: figures="1,2,3" figure_count="auto"
+     * указанные фигуры в указанном кол-ве: figures="1,2,3" figure_count="7"
+     * 
+     * недостаток фигур до размеров контейнера дополняется автоматически
+     * недостаток фигур до указанного кол-ва дополняется автоматически
+     */
+         
+    function decoration(container, colors, figures, figureCount, figurePosition, minMargin, edgeMargin, scaleRange, isParallax, shift) {
+  
         const decors = [];
 
+        //все цвета
+        var arrColors = ['red','blue','yellow','dark','white']; //все фигуры (colors.scss, helper.scss: .decor)
+        //указанные цвета
+        if(colors != "random") {  
+            arrColors = colors.split(",");
+        }
+        //перемешаем массив цветов
+        shuffle(arrColors);
+
+
+        //рандомные фигуры в любом кол-ве: figures="random" figure_count="all" (по умолчанию)
+        var arrDecors = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]; //все фигуры (helper.scss: .decor)
+
+        //перемешаем массив фигур
         shuffle(arrDecors);
+
+        //рандомные фигуры в указанном кол-ве: figures="random" figure_count="3"
+        if(figures == "random" && parseInt(figureCount) > 0) {
+            arrDecors = arrDecors.slice(0, figureCount);
+            console.log(arrDecors);
+        }
+        else {
+            //указанные фигуры в любом кол-ве: figures="1,2,3" figure_count="auto"
+            if(figures != "random") {
+                arrDecors = figures.split(",");
+            }
+            
+            //указанные фигуры в указанном кол-ве: figures="1,2,3" figure_count="7" и указанное кол-во больше чем кол-во указанных фигур
+            if(parseInt(figureCount) > 0 && arrDecors.length < parseInt(figureCount)) {
+                var addNumDecors = parseInt(figureCount) - arrDecors.length; //сколько добавить
+                for (let n = 0; n < addNumDecors; n++) {
+                    shuffle(arrDecors);
+                    arrDecors.push(arrDecors[0]);
+                }
+            }
+        }
 
         //console.log(arrDecors);
 
         var numDecors = arrDecors.length;
-        var newNumDecors = 0;
-        var containerHeight = container.offsetHeight;
-        var margin = containerHeight / numDecors;
-        if (margin > minMargin) {
-            newNumDecors = Math.round(containerHeight / minMargin);
+        var containerSize = container.offsetHeight;
+        if(figurePosition == "horizontal") { 
+            containerSize = container.offsetWidth;
+        }
+        var margin = containerSize / numDecors;
+
+        if (figureCount == arrDecors.length) {
             margin = minMargin;
-            var addNumDecors = newNumDecors - numDecors;
-            var addDecors = [];
-            for (let m = 0; m < addNumDecors; m++) {
-                var addDecor = arrDecors[m];
-                arrDecors.push(addDecor);
+        }     
+        else {
+        //недостаток фигур до размеров контейнера дополняется автоматически
+            if (margin > minMargin || figureCount == "auto") {
+                var newNumDecors = Math.round(containerSize / minMargin);
+                margin = minMargin;
+                var addNumDecors = newNumDecors - numDecors;
+                for (let m = 0; m < addNumDecors; m++) {
+                    var addDecor = arrDecors[m];
+                    arrDecors.push(addDecor);
+                }
             }
         }
 
+        margin = parseFloat(margin);
+
         shuffle(arrDecors);
 
-        //console.log(arrDecors);
-        //console.log(numDecors);
-
         let i = 0;
-        //for (let i = 0; i < numDecors; i++) {
+        var randomIndex = Math.round(Math.random()); //1 или 0
+
         arrDecors.forEach(element => {
 
             let decor = document.createElement("div");
 
-            //console.log(Math.floor(numDecors * Math.random()));
-
             decor.classList.add("decor");
-            //decor.classList.add("decor" + Math.floor(Math.random() * numDecorsOrig));
-            //decor.classList.add("decor" + arrDecors[Math.floor(arrDecors.length * Math.random())]);
-
             decor.classList.add("decor" + element);
-            decor.classList.add("decor-" + colors[Math.floor(Math.random() * colors.length)]);
+            decor.classList.add("decor-" + arrColors[Math.floor(Math.random() * arrColors.length)]);
 
-            //decor.style.transform = `scale(${getRandomWholeNumber(0.3, 1.2)})`;
+            var scale = 1;
+            if(scaleRange) {
+                var scaleMin = parseFloat(scaleRange.split(",")[0]);
+                var scaleMax = parseFloat(scaleRange.split(",")[1]);
+                scale = (getRandomWholeNumber(scaleMin, scaleMax)).toFixed(1);
+                decor.setAttribute("data-scale", scale);
+            }
 
-            decor.style.top = margin * i + "px";
+            var rotate = (getRandomWholeNumber(0, 360)).toFixed(1);
+            decor.style.transform = `scale(${scale}) rotate(${rotate}deg)`;
+            decor.setAttribute("data-rotate", rotate);
+
+
+            var randomMargin = (getRandomWholeNumber(margin-1, margin+1)).toFixed(1);
+            if(figurePosition == "horizontal") {
+                //decor.style.left = randomMargin * i + "px";
+                decor.style.left = randomMargin * i + "%";
+            } 
+            else {
+                //decor.style.top = randomMargin * i + "px";
+                decor.style.top = randomMargin * i + "%";
+            }
+            
 
             var left = 0;
             var right = 0;
-            var value = 1;
+            var top = 0;
+            var bottom = 0;
             var dir = 0;
 
-            if (arrDecors.length == 1) {
+            if (arrDecors.length == 1) { //center
                 left = "40%";
                 right = "auto"
                 dir = -1;
@@ -386,7 +459,7 @@ document.addEventListener("DOMContentLoaded", function () {
             else if (arrDecors.length == 3) {
                 if (i == 0) { //left
                     right = "auto";
-                    left = getRandomWholeNumber(0, 20) + "%";
+                    left = getRandomWholeNumber(0, edgeMargin) + "%";
                     dir = 1;
                 }
                 else if (i == 1) { //center
@@ -396,29 +469,50 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 else { //right
                     left = "auto";
-                    right = getRandomWholeNumber(0, 20) + "%";
+                    right = getRandomWholeNumber(0, edgeMargin) + "%";
                     dir = -1;
 
                 }
             }
             else {
-                if (i % 2 == 0) { //left
-                    right = "auto";
-                    left = getRandomWholeNumber(0, 20) + "%";
-                    dir = 1;
-                }
-                else {  //right
-                    left = "auto";
-                    right = getRandomWholeNumber(0, 20) + "%";
-                    dir = -1;
 
+                if(figurePosition == "horizontal") {
+                    if (i % 2 == randomIndex) { //top
+                        bottom = "auto";
+                        top = getRandomWholeNumber(0, edgeMargin) + "%";
+                        dir = 1;
+                    }
+                    else {  //bottom
+                        top = "auto";
+                        bottom = getRandomWholeNumber(0, edgeMargin) + "%";
+                        dir = -1;
+                    }
                 }
+                else {
+                    if (i % 2 == randomIndex) { //left
+                        right = "auto";
+                        left = getRandomWholeNumber(0, edgeMargin) + "%";
+                        dir = 1;
+                    }
+                    else {  //right
+                        left = "auto";
+                        right = getRandomWholeNumber(0, edgeMargin) + "%";
+                        dir = -1;
+                    }
+                }
+
             }
 
+            if(figurePosition == "horizontal") {
+                decor.style.top = top;
+                decor.style.bottom = bottom;
+            }
+            else {
+                decor.style.left = left;
+                decor.style.right = right;
+            }
 
-            decor.style.left = left;
-            decor.style.right = right;
-            decor.setAttribute("value", value * dir);
+            decor.setAttribute("data-shift", shift * dir);
 
 
             i++;
@@ -428,7 +522,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         // Keyframes
-        if (isAnim) {
+        /*if (isAnim) {
             decors.forEach((el, i, ra) => {
                 let to = {
                     x: Math.random() * (i % 2 === 0 ? -11 : 11),
@@ -449,19 +543,23 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 );
             });
-        }
+        }*/
 
 
 
         if (isParallax) {
+            
             document.addEventListener("mousemove", parallax);
             function parallax(event) {
-                container.querySelectorAll(".decor").forEach((shift) => {
-                    const position = shift.getAttribute("value");
-                    const x = (container.offsetWidth - event.pageX * position) / 90;
-                    const y = (container.offsetHeight - event.pageY * position) / 90;
+                container.querySelectorAll(".decor").forEach((decor_move) => {
+                    const shift = decor_move.getAttribute("data-shift");
+                    const scale = decor_move.getAttribute("data-scale");
+                    const rotate = decor_move.getAttribute("data-rotate");
+                    const x = ((container.offsetWidth - event.pageX * shift) / 90).toFixed(1);
+                    const y = ((container.offsetHeight - event.pageY * shift) / 90).toFixed(1);
 
-                    shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
+                    decor_move.style.transform = `translateX(${x}px) translateY(${y}px) scale(${scale}) rotate(${rotate}deg)`;
+
                 });
             }
         }
@@ -469,24 +567,55 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function initDecors() {
-        const commentsDecors = document.querySelector(".comments .decors");
-        const subscribeDecors = document.querySelector(".subscribe .decors");
-        const subscribeOneDecors = document.querySelector(".subscribe.one-decor .decors");
-        if (commentsDecors) {
-            commentsDecors.innerHTML = "";
-            decoration(commentsDecors, ['yellow', 'dark', 'red', 'blue'], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], 100, false, true);
-        }
-        if (subscribeOneDecors) {
-            subscribeOneDecors.innerHTML = "";
-            decoration(subscribeOneDecors, ['yellow'], [2], 1000, false, false);
-            console.log('sdf')
-        }
-        else {
-            if (subscribeDecors) {
-                subscribeDecors.innerHTML = "";
-                decoration(subscribeDecors, ['yellow'], [1, 2, 3], 100, false, true);
+        var containerDecors = document.querySelectorAll(".decors-js");
+        
+        Array.prototype.forEach.call(containerDecors, function (decor) {
+
+            decor.innerHTML = "";
+
+            if(decor.dataset.figure !== undefined)
+            {
+                //цвета (helper.scss: .decor)
+                //data-colors="red,blue,yellow,dark,white" или random
+                //var arrColors = decor.dataset.colors.split(",");
+                var colors = (decor.dataset.colors !== undefined) ? decor.dataset.colors : "random";
+
+                //или рандом, или заданные
+                //data-figure="1,2" или data-figure="random" 
+                var figure = decor.dataset.figure;
+
+                //кол-во фигур
+                //data-figure_count="2" или data-figure_count="auto" 
+                var figure_count = (decor.dataset.figure_count !== undefined) ? decor.dataset.figure_count : "auto";
+
+                //вид расположения фигур
+                //data-figure_pos="vertical" или data-figure_pos="horizontal" 
+                var figure_pos = (decor.dataset.figure_pos !== undefined) ? decor.dataset.figure_pos : "vertical";
+
+                //отступ фигур друг от друга в пикс (если нехватает фигур, они будут добавляться)
+                //если не нужно добавления, надо поставить большой отступ, типа 10000
+                //data-min_margin="500" 
+                var min_margin = (decor.dataset.min_margin !== undefined) ? decor.dataset.min_margin : "10000";
+
+                //отступ от границ контейнера в процентах (сгенерируется случайны отступ примерно равный указанному)
+                var edge_margin = (decor.dataset.edge_margin !== undefined) ? decor.dataset.edge_margin : "10";
+                
+                //величина рандомного размера фигуры
+                //data-scale="2" 
+                var scale = (decor.dataset.scale !== undefined) ? decor.dataset.scale : false;
+
+                //параллакс (анимировать по движению мыши)
+                var parallax = (decor.dataset.parallax !== undefined && decor.dataset.parallax == "true") ? true : false;
+
+                //величина сдвига при параллаксе
+                //data-shift="2" 
+                var shift = (decor.dataset.shift !== undefined) ? decor.dataset.shift : "1";
+
+
+                decoration(decor, colors, figure, figure_count, figure_pos, min_margin, edge_margin, scale, parallax, shift);
             }
-        }
+            
+        });
     }
 
     function resizeTextarea()

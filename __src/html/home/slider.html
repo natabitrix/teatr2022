@@ -3,39 +3,79 @@
         <div class="main-slider swiper">
             <div class="swiper-wrapper">
 
-                @@include('slider-item.html', {
-                    "event_type": "Премьера 22 июня",
-                    "img": "1.jpg",
-                    "name": "Сказка о мёртвой царевне и о семи богатырях",
-                    "text": 'Наивная сказка в двух действиях – спектакль для самых маленьких зрителей',
-                })
 
                 @@include('slider-item.html', {
+                    "bg": "lyellow",
                     "event_type": "Премьера 22 августа",
+                    "event_type_bg": "white",
                     "img": "2.jpg",
                     "name": "Сказка о капризной принцессе и короле лягушек",
                     "text": 'Наивная сказка в двух действиях – спектакль для самых маленьких зрителей',
+
+                    "decors-colors": "red,yellow",
+                    "decors-figures": "1,2",
+                    "decors-figures-count": "2",
+                    "decors-min_margin": "70",
+
                 })
 
                 @@include('slider-item.html', {
+                    "bg": "lgreen",
                     "event_type": "Премьера 22 августа",
+                    "event_type_bg": "yellow",
                     "img": "3.jpg",
                     "name": "Первая зима",
                     "text": 'Наивная сказка в двух действиях – спектакль для самых маленьких зрителей',
+                    "decors-colors": "",
+                    "decors-figures": "",
+                    "decors-figures-count": "",
                 })
                 @@include('slider-item.html', {
+                    "bg": "lbrown",
                     "event_type": "Премьера 22 августа",
+                    "event_type_bg": "white",
                     "img": "4.jpg",
                     "name": "Сказки африканского леса",
                     "text": 'Наивная сказка в двух действиях – спектакль для самых маленьких зрителей',
+                    
+                    "decors-colors": "random",
+                    "decors-figures": "random",
+                    "decors-figures-count": "auto",
+                    "decors-min_margin": "15",
                 })
 
                 @@include('slider-item.html', {
+                    "bg": "yellow",
                     "event_type": "Премьера 22 августа",
+                    "event_type_bg": "white",
                     "img": "5.jpg",
                     "name": "Айболит",
                     "text": 'Наивная сказка в двух действиях – спектакль для самых маленьких зрителей',
+
+                    "decors-colors": "white",
+                    "decors-figures": "1,2",
+                    "decors-figures-count": "auto",
+                    "decors-figures-pos": "top-bottom",
+                    "decors-min_margin": "15",
+
                 })
+
+                
+                @@include('slider-item.html', {
+                    "bg": "lblue",
+                    "event_type": "Премьера 22 июня",
+                    "event_type_bg": "yellow",
+                    "img": "1.jpg",
+                    "name": "Сказка о мёртвой царевне и о семи богатырях",
+                    "text": 'Наивная сказка в двух действиях – спектакль для самых маленьких зрителей',
+
+                    "decors-colors": "",
+                    "decors-figures": "",
+                    "decors-figures-count": "",
+                    
+                })
+
+
             </div>
 
             <div class="swiper-navigation">

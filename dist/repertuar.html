@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="ru">
 <!--
-Правила
 Актер
-Актеры
 Документы
+-
 Новости
 Новость
-Отзывы
+Актеры
 --------
+Меню активно при переходе в подраздел
+Всплывашка окно
+Лого наведение цвета
+Слайдер выбор декора, выбор цвета
 Для слабовидящих
 Новости на главной декор
 Слайдер декор 
@@ -32,7 +35,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="format-detection" content="telephone=no" />
 	<meta name="format-detection" content="address=no" />
-	<link rel="stylesheet" href="css/style.min.css?_v=20220921134840">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220922140957">
 	<title>Театр сказки</title>
 	<script>
 		var homePage = false;
@@ -78,7 +81,7 @@
 										>Абонементы</a></li>
 								<li><a href="#"
 										>Цены</a></li>
-								<li><a href="#"
+								<li><a href="news-list.html"
 										>Новости</a></li>
 								<li><a href="#"
 										>Экскурсии</a></li>
@@ -89,15 +92,15 @@
 						<li class="nav-item nav-item-parent" id="item-teatr"><span>Театр</span>
 						
 							<ul class="list-unstyled nav-item-children" id="item-teatr-children">
-								<li><a href="#">Сказочники</a></li>
+								<li><a href="actor-list.html">Сказочники</a></li>
 								<li><a href="#">История</a></li>
 								<li><a href="#">Проекты</a></li>
 								<li><a href="#">Доступная среда</a></li>
-								<li><a href="#">Отзывы</a></li>
-								<li><a href="#">Документы</a></li>
+								<li><a href="comments-list.html">Отзывы</a></li>
+								<li><a href="documents.html">Документы</a></li>
 							</ul>
 						</li>
-						<li class="nav-item"><a href="">Новости</a></li>
+						<li class="nav-item"><a href="news-list.html">Новости</a></li>
 						<li class="nav-item"><a href="">Проекты</a></li>
 						<li class="nav-item"><a href="contacts.html">Контакты</a></li>
 					</ul>
@@ -218,7 +221,7 @@
                 <div class="author-post">
                     Режиссёр
                 </div>
-                <a href="actor.html" class="underline">Григорий Лайко</a>
+                <a href="actor-detail.html" class="underline">Григорий Лайко</a>
             </div>
 
         </div>
@@ -256,7 +259,7 @@
                 <div class="author-post">
                     Режиссёр
                 </div>
-                <a href="actor.html" class="underline">Григорий Лайко</a>
+                <a href="actor-detail.html" class="underline">Григорий Лайко</a>
             </div>
 
         </div>
@@ -294,7 +297,7 @@
                 <div class="author-post">
                     Режиссёр
                 </div>
-                <a href="actor.html" class="underline">Григорий Лайко</a>
+                <a href="actor-detail.html" class="underline">Григорий Лайко</a>
             </div>
 
         </div>
@@ -332,7 +335,7 @@
                 <div class="author-post">
                     Режиссёр
                 </div>
-                <a href="actor.html" class="underline">Григорий Лайко</a>
+                <a href="actor-detail.html" class="underline">Григорий Лайко</a>
             </div>
 
         </div>
@@ -370,7 +373,7 @@
                 <div class="author-post">
                     Режиссёр
                 </div>
-                <a href="actor.html" class="underline">Григорий Лайко</a>
+                <a href="actor-detail.html" class="underline">Григорий Лайко</a>
             </div>
 
         </div>
@@ -408,7 +411,7 @@
                 <div class="author-post">
                     Режиссёр
                 </div>
-                <a href="actor.html" class="underline">Григорий Лайко</a>
+                <a href="actor-detail.html" class="underline">Григорий Лайко</a>
             </div>
 
         </div>
@@ -421,13 +424,10 @@
 
         </div>
     </div>
-    <div class="subscribe bg-white @@one_decor">
-    <div class="decors"></div>
-    <!--div class="decors-">
-        <div class="decor decor3 decor-yellow"></div>
+    <div class="subscribe bg-white">
+    <div class="decors">
         <div class="decor decor2 decor-yellow"></div>
-        <div class="decor decor1 decor-yellow"></div>
-    </div-->
+    </div>
 
     <div class="row position-relative">
         <div class="col-lg-6">
@@ -462,19 +462,19 @@
 	<div class="partners__items">
 
 		<div class="partners__item">
-    <a href="#"><picture><source srcset="img/demo/partners/1.webp" type="image/webp"><img src="img/demo/partners/1.png" alt="" width="134"></picture></a>
+    <a href="#" class="grayscale"><picture><source srcset="img/demo/partners/1.webp" type="image/webp"><img src="img/demo/partners/1.png" alt="" width="134"></picture></a>
 </div>
 		<div class="partners__item">
-    <a href="#"><picture><source srcset="img/demo/partners/2.webp" type="image/webp"><img src="img/demo/partners/2.png" alt="" width="197"></picture></a>
+    <a href="#" class="grayscale"><picture><source srcset="img/demo/partners/2.webp" type="image/webp"><img src="img/demo/partners/2.png" alt="" width="197"></picture></a>
 </div>
 		<div class="partners__item">
-    <a href="#"><picture><source srcset="img/demo/partners/3.webp" type="image/webp"><img src="img/demo/partners/3.png" alt="" width="178"></picture></a>
+    <a href="#" class="grayscale"><picture><source srcset="img/demo/partners/3.webp" type="image/webp"><img src="img/demo/partners/3.png" alt="" width="178"></picture></a>
 </div>
 		<div class="partners__item">
-    <a href="#"><picture><source srcset="img/demo/partners/4.webp" type="image/webp"><img src="img/demo/partners/4.png" alt="" width="186"></picture></a>
+    <a href="#" class="grayscale"><picture><source srcset="img/demo/partners/4.webp" type="image/webp"><img src="img/demo/partners/4.png" alt="" width="186"></picture></a>
 </div>
 		<div class="partners__item">
-    <a href="#"><picture><source srcset="img/demo/partners/5.webp" type="image/webp"><img src="img/demo/partners/5.png" alt="" width="160"></picture></a>
+    <a href="#" class="grayscale"><picture><source srcset="img/demo/partners/5.webp" type="image/webp"><img src="img/demo/partners/5.png" alt="" width="160"></picture></a>
 </div>
 
 	</div>
@@ -545,7 +545,7 @@
 <!--.wrapper-->
 
 <!--script src="js/bvi.min.js"></script-->
-<script src="js/app.min.js?_v=20220921134840"></script>
+<script src="js/app.min.js?_v=20220922140957"></script>
 
 </body>
 

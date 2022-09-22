@@ -1,4 +1,4 @@
-@@include('html/header.html', {
+@@include('_common/header.html', {
 "class": " spectacle-page page",
 })
 
@@ -26,9 +26,16 @@
 
 <div class="spectacle-header">
     <div class="spectacle-header__text-block bg-lblue">
-        <div class="decors">
-            <div class="decor decor2 decor-yellow"></div>
-            <div class="decor decor1 decor-yellow"></div>
+        <div class="decors decor-js" 
+            data-colors="white" 
+            data-figure="1,2" 
+            data-figure_count="2"
+            data-figure_pos="horizontal"
+            data-min_margin="70" 
+            data-edge_margin="30" 
+            data-shift="5" 
+            data-scale="0.5,1.1" 
+            data-parallax="true">
         </div>
         <div class="spectacle-header__text-block-items">
             <h1>Волшебник изумрудного города</h1>
@@ -58,15 +65,15 @@
     <div class="tab-content">
 
         <div class="tab" id="tab-description-content">
-            @@include('html/spectacle/description.html')
+            @@include('spectacle/description.html')
         </div>
 
         <div class="tab d-none" id="tab-tickets-content">
-            @@include('html/spectacle/tickets.html')
+            @@include('spectacle/tickets.html')
         </div>
 
         <div class="tab d-none" id="tab-comments-content">
-            @@include('html/spectacle/comments.html')
+            @@include('spectacle/comments.html')
         </div>
 
     </div>
@@ -75,6 +82,6 @@
 
 
 
-@@include('html/subscribe.html', {"one_decor": "one-decor"})
+@@include('_common/subscribe.html')
 
-@@include('html/footer.html')
+@@include('_common/footer.html')
