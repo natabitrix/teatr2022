@@ -1,0 +1,69 @@
+@@include('_common/header.html', {
+    "class": " reviews-page page",
+    })
+    
+    <div class="container-fluid bg-bg">
+    
+        <div class="breadcrumbs">
+            <div class="breadcrumbs__container">
+                <ul class="breadcrumbs__list list-unstyled d-flex">
+                    <li class="breadcrumbs__list-item">
+                        <a href="index.html">главная</a>
+                    </li>
+                    <li class="breadcrumbs__list-item icon">
+                        &rarr;
+                    </li>
+                    <li class="breadcrumbs__list-item">
+                        <span>Отзывы</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    
+    
+        <div class="content-text">
+    
+            <h1>Отзывы</h1>
+ 
+            <div class="reviews-list">
+                <div class="row">
+                    @@include('reviews/reviews-list-item.html', {
+                        "date": "16 сентября 2022",
+                        "name": 'Арт-журнал "ОКОЛО" о спектакле "Русалка"',
+                        "text": 'Бывало у вас так — вы чинно-благородно собирались в театр, а попали.. на маргинальное застолье с песнями и танцами на столе? Что-то пошло не так? Вовсе нет! Скорее всего, вы на спектакле «Русалка» лауреатов «Золотой маски» Алексея Шульгача и Дианы Разживайкиной в Кукольном театре сказки...',
+                        "author": 'Наталья Стародубцева',
+                        "company": 'Арт-журнал "ОКОЛО"',
+                    })
+                    @@include('reviews/reviews-list-item.html', {
+                        "date": "16 сентября 2022",
+                        "name": 'Сюжет канала «Санкт-Петербург» о спектакле «Русалка»',
+                        "text": 'Сюжет канала «Санкт-Петербург» о спектакле «Русалка»',
+                        "author": 'Наталья Стародубцева',
+                        "company": 'канала «Санкт-Петербург»',
+                    })
+                    @@include('reviews/reviews-list-item.html', {
+                        "date": "16 сентября 2022",
+                        "name": 'Арт-журнал "ОКОЛО" о спектакле "Русалка"',
+                        "text": 'Бывало у вас так — вы чинно-благородно собирались в театр, а попали.. на маргинальное застолье с песнями и танцами на столе? Что-то пошло не так? Вовсе нет! Скорее всего, вы на спектакле «Русалка» лауреатов «Золотой маски» Алексея Шульгача и Дианы Разживайкиной в Кукольном театре сказки...',
+                        "author": 'Наталья Стародубцева',
+                        "company": 'Арт-журнал "ОКОЛО"',
+                    })
+                    @@include('reviews/reviews-list-item.html', {
+                        "date": "16 сентября 2022",
+                        "name": 'Сюжет канала «Санкт-Петербург» о спектакле «Русалка»',
+                        "text": 'Сюжет канала «Санкт-Петербург» о спектакле «Русалка»',
+                        "author": 'Наталья Стародубцева',
+                        "company": 'канала «Санкт-Петербург»',
+                    })
+                </div>
+            </div>
+
+
+        </div>
+    
+    </div>
+    
+    
+    @@include('_common/subscribe.html', {"one_decor": "one-decor"})
+    
+    @@include('_common/footer.html')

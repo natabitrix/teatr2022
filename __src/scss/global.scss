@@ -2279,3 +2279,61 @@ $headerHeight: 48px;
 	}
 }
 
+
+/****************reviews PAGE********************/
+
+.reviews-page .container-fluid{
+	padding-bottom: 60px;
+}
+
+.reviews-list {
+	margin-top: 36px;
+
+	&-item {
+		margin-bottom: 20px;
+		padding-left: 10px;
+		padding-right: 10px;
+
+		&__inner{
+			background-color: $white;
+			padding: 20px 36px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			height: 100%;
+		}
+
+
+		&__text-block {
+
+		}
+
+
+		&__date {
+			font-size: 14px;
+			line-height: 20px;
+			letter-spacing: 0.04em;
+			text-transform: uppercase;
+		}
+
+		&__name {
+			margin-bottom: 10px;
+			font-size: 32px;
+			line-height: 37px;
+		}
+
+		&__text {
+			font-size: 20px;
+			line-height: 26px;
+		}
+
+		&__author {
+			font-size: 14px;
+			line-height: 20px;
+			letter-spacing: 0.04em;
+			text-transform: uppercase;
+			margin-top: 25px;
+		}
+	}
+
+}
