@@ -2343,3 +2343,40 @@ $headerHeight: 48px;
 	}
 
 }
+
+.popover {
+	position: absolute;
+	display: none;
+	//padding: 10px;
+	z-index: 10;
+	&.active{
+		display:block;
+	}
+	&__inner{
+		background-color: $white;
+		border: 1px solid $dark;
+		border-radius: 20px;
+		padding: 20px;
+		width: 400px;
+		font-size: 16px;
+		line-height: 22px;
+		font-weight: 400;
+	}
+	&__title {
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 21px;
+		margin-bottom: 10px;
+	}
+	&__text {
+
+	}
+	&-close{
+		padding: 0!important;
+		width: 30px;
+		height: 30px;
+		position: absolute;
+		top: 20px;
+		right: 20px;
+	}
+}

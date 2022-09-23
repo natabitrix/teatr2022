@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
 
-        if(activeMenuId && activeMenuId != "" && activeMenuId !="@@activeMenuParentId") {
+        if (activeMenuId && activeMenuId != "" && activeMenuId != "@@activeMenuParentId") {
             //Появление дочернего ul
             document.getElementById(activeMenuId).classList.add("active");
             //Появление кнопки Назад
@@ -190,11 +190,11 @@ document.addEventListener("DOMContentLoaded", function () {
             //Скрытие parent ul
             navItems.classList.remove("active");
         }
-        
+
         /**Активный пункт меню временно для верстки */
-        if(url && url != "" && url !="@@url") {
-            document.getElementsByTagName('a').forEach((link) => { 
-                if(link.getAttribute("href") == url) {
+        if (url && url != "" && url != "@@url") {
+            document.getElementsByTagName('a').forEach((link) => {
+                if (link.getAttribute("href") == url) {
                     link.classList.add("current");
                 }
             });
@@ -358,15 +358,15 @@ document.addEventListener("DOMContentLoaded", function () {
      * недостаток фигур до размеров контейнера дополняется автоматически
      * недостаток фигур до указанного кол-ва дополняется автоматически
      */
-         
+
     function decoration(container, colors, figures, figureCount, figurePosition, minMargin, edgeMargin, scaleRange, isParallax, shift) {
-  
+
         const decors = [];
 
         //все цвета
-        var arrColors = ['red','blue','yellow','dark','white']; //все фигуры (colors.scss, helper.scss: .decor)
+        var arrColors = ['red', 'blue', 'yellow', 'dark', 'white']; //все фигуры (colors.scss, helper.scss: .decor)
         //указанные цвета
-        if(colors != "random") {  
+        if (colors != "random") {
             arrColors = colors.split(",");
         }
         //перемешаем массив цветов
@@ -380,18 +380,18 @@ document.addEventListener("DOMContentLoaded", function () {
         shuffle(arrDecors);
 
         //рандомные фигуры в указанном кол-ве: figures="random" figure_count="3"
-        if(figures == "random" && parseInt(figureCount) > 0) {
+        if (figures == "random" && parseInt(figureCount) > 0) {
             arrDecors = arrDecors.slice(0, figureCount);
             console.log(arrDecors);
         }
         else {
             //указанные фигуры в любом кол-ве: figures="1,2,3" figure_count="auto"
-            if(figures != "random") {
+            if (figures != "random") {
                 arrDecors = figures.split(",");
             }
-            
+
             //указанные фигуры в указанном кол-ве: figures="1,2,3" figure_count="7" и указанное кол-во больше чем кол-во указанных фигур
-            if(parseInt(figureCount) > 0 && arrDecors.length < parseInt(figureCount)) {
+            if (parseInt(figureCount) > 0 && arrDecors.length < parseInt(figureCount)) {
                 var addNumDecors = parseInt(figureCount) - arrDecors.length; //сколько добавить
                 for (let n = 0; n < addNumDecors; n++) {
                     shuffle(arrDecors);
@@ -404,16 +404,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
         var numDecors = arrDecors.length;
         var containerSize = container.offsetHeight;
-        if(figurePosition == "horizontal") { 
+        if (figurePosition == "horizontal") {
             containerSize = container.offsetWidth;
         }
         var margin = containerSize / numDecors;
 
         if (figureCount == arrDecors.length) {
             margin = minMargin;
-        }     
+        }
         else {
-        //недостаток фигур до размеров контейнера дополняется автоматически
+            //недостаток фигур до размеров контейнера дополняется автоматически
             if (margin > minMargin || figureCount == "auto") {
                 var newNumDecors = Math.round(containerSize / minMargin);
                 margin = minMargin;
@@ -441,7 +441,7 @@ document.addEventListener("DOMContentLoaded", function () {
             decor.classList.add("decor-" + arrColors[Math.floor(Math.random() * arrColors.length)]);
 
             var scale = 1;
-            if(scaleRange) {
+            if (scaleRange) {
                 var scaleMin = parseFloat(scaleRange.split(",")[0]);
                 var scaleMax = parseFloat(scaleRange.split(",")[1]);
                 scale = (getRandomWholeNumber(scaleMin, scaleMax)).toFixed(1);
@@ -453,16 +453,16 @@ document.addEventListener("DOMContentLoaded", function () {
             decor.setAttribute("data-rotate", rotate);
 
 
-            var randomMargin = (getRandomWholeNumber(margin-1, margin+1)).toFixed(1);
-            if(figurePosition == "horizontal") {
+            var randomMargin = (getRandomWholeNumber(margin - 1, margin + 1)).toFixed(1);
+            if (figurePosition == "horizontal") {
                 //decor.style.left = randomMargin * i + "px";
                 decor.style.left = randomMargin * i + "%";
-            } 
+            }
             else {
                 //decor.style.top = randomMargin * i + "px";
                 decor.style.top = randomMargin * i + "%";
             }
-            
+
 
             var left = 0;
             var right = 0;
@@ -495,7 +495,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             else {
 
-                if(figurePosition == "horizontal") {
+                if (figurePosition == "horizontal") {
                     if (i % 2 == randomIndex) { //top
                         bottom = "auto";
                         top = getRandomWholeNumber(0, edgeMargin) + "%";
@@ -522,7 +522,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             }
 
-            if(figurePosition == "horizontal") {
+            if (figurePosition == "horizontal") {
                 decor.style.top = top;
                 decor.style.bottom = bottom;
             }
@@ -567,7 +567,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         if (isParallax) {
-            
+
             document.addEventListener("mousemove", parallax);
             function parallax(event) {
                 container.querySelectorAll(".decor").forEach((decor_move) => {
@@ -587,13 +587,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function initDecors() {
         var containerDecors = document.querySelectorAll(".decors-js");
-        
+
         Array.prototype.forEach.call(containerDecors, function (decor) {
 
             decor.innerHTML = "";
 
-            if(decor.dataset.figure !== undefined)
-            {
+            if (decor.dataset.figure !== undefined) {
                 //цвета (helper.scss: .decor)
                 //data-colors="red,blue,yellow,dark,white" или random
                 //var arrColors = decor.dataset.colors.split(",");
@@ -618,7 +617,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 //отступ от границ контейнера в процентах (сгенерируется случайны отступ примерно равный указанному)
                 var edge_margin = (decor.dataset.edge_margin !== undefined) ? decor.dataset.edge_margin : "10";
-                
+
                 //величина рандомного размера фигуры
                 //data-scale="2" 
                 var scale = (decor.dataset.scale !== undefined) ? decor.dataset.scale : false;
@@ -633,18 +632,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 decoration(decor, colors, figure, figure_count, figure_pos, min_margin, edge_margin, scale, parallax, shift);
             }
-            
+
         });
     }
 
-    function resizeTextarea()
-    {
+    function resizeTextarea() {
         const tx = document.getElementsByTagName("textarea");
         for (let i = 0; i < tx.length; i++) {
 
             tx[i].style.height = (tx[i].scrollHeight) + "px";
             var borderRadius = 70;
-            if(tx[i].offsetHeight > 60)
+            if (tx[i].offsetHeight > 60)
                 borderRadius = 24;
             tx[i].style.borderRadius = borderRadius + "px";
 
@@ -657,22 +655,103 @@ document.addEventListener("DOMContentLoaded", function () {
         this.style.height = 0;
         this.style.height = (this.scrollHeight) + "px";
         var borderRadius = 70;
-        if(this.offsetHeight > 60)
+        if (this.offsetHeight > 60)
             borderRadius = 24;
         this.style.borderRadius = borderRadius + "px";
     }
-    
-    function colorLogo()
-    {
+
+    function colorLogo() {
         var logo = document.querySelector(".color-logo");
         var colors = ['yellow', 'red', 'blue'];
         logo.addEventListener('mouseover', e => {
             var currentColorIndex = e.target.getAttribute("data-color");
             var nextColorIndex = parseInt(currentColorIndex) + 1;
-            if(nextColorIndex == colors.length) nextColorIndex = 0;
+            if (nextColorIndex == colors.length) nextColorIndex = 0;
             e.target.src = "/img/logo-" + colors[nextColorIndex] + ".svg";
             e.target.setAttribute("data-color", nextColorIndex);
         });
+    }
+
+    function offscreen(el) {
+        var rect = el.getBoundingClientRect();
+        console.log(rect.x);
+        return (
+            (rect.x + rect.width) < 0 ||
+            (rect.y + rect.height) < 0 ||
+            (rect.x > window.innerWidth || rect.y > window.innerHeight)
+        );
+    };
+
+    function popovers() {
+
+        Array.prototype.forEach.call(document.querySelectorAll('[data-popover]'), (popover_btn) => {
+            const popover = document.getElementById(popover_btn.getAttribute('data-popover'));
+            const popover_btn_close = popover.querySelector(".popover-close");
+
+            /**events */
+            popover_btn.addEventListener("click", function () {
+                if (popover.getAttribute('data-hidden') == "true") {
+                    popoverShow(popover, popover_btn);
+                    popoverPos(popover);
+                }
+                else {
+                    popoverHide(popover);
+                }
+            });
+
+            popover_btn_close.addEventListener("click", function () {
+                popoverHide(popover);
+            });
+
+        });
+
+        function popoverShow(popover, popover_btn) {
+            popover.classList.add("active");
+            popover.setAttribute('data-hidden', '');
+            document.addEventListener("click", function (event) {
+                if (!popover.contains(event.target) && event.target != popover_btn) {
+                    popoverHide(popover);
+                }
+            });
+        }
+
+        function popoverHide(popover) {
+            popover.classList.remove("active");
+            popover.setAttribute('data-hidden', 'true');
+            popover.setAttribute("style", '');
+        }
+
+        function popoverPos(popover) {
+            var rect = popover.getBoundingClientRect();
+            var arrPos = [];
+            var margin = 10;
+            if((rect.x + rect.width) < 0) {
+                arrPos.push("left:0");
+            }
+            if((rect.y + rect.height) < 0) {
+                arrPos.push("top:0");
+            }
+            if(rect.x > window.innerWidth || (rect.x + rect.width) > window.innerWidth) {
+                arrPos.push("right:0");
+            }
+            if(rect.y > window.innerHeight || (rect.y + rect.height) > window.innerHeight) {
+                arrPos.push("bottom:0");
+            }
+            
+            var position = arrPos.join(";");
+            popover.setAttribute("style", position);
+            console.log(position);
+        }
+
+
+
+
+        // Array.prototype.forEach.call(document.querySelectorAll(".close-slider"), function (close) {
+        //     close.addEventListener("click", function () {
+        //         document.querySelector("body").classList.remove("swiper-slider-fullscreen");
+        //     });
+        // });
+
     }
 
     /**Tabs */
@@ -701,15 +780,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 //Добавить активность активной tab
                 tabListItem.classList.add("active");
 
-                //Обновить фильтр
                 filterResponsive();
-
-                //Обновить collapse
                 collapseContent();
-
                 initDecors();
-
                 resizeTextarea();
+                popovers();
 
             });
         });
@@ -726,6 +801,7 @@ document.addEventListener("DOMContentLoaded", function () {
     newsItemTextHeight();
     initDecors();
     resizeTextarea();
+    popovers();
 
 
     window.addEventListener('resize', function (event) {
@@ -735,7 +811,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-    
+
 
 
 });

@@ -24,7 +24,22 @@
 
         <div class="filter-right col-xxxl-6 col-xl-4 col-lg-6 col-md-6">
             <div class="filter-name">
-                <div class="icon btn question">?</div>Возраст:
+
+                <div class="popover" data-hidden="true" id="age_popover">
+                    <div class="popover__inner">
+                        <div class="popover__title">
+                            Возрастные ограничения
+                        </div>
+                        <div class="popover__text">
+<p>Дорогие родители! Согласно закону, мы обязаны ставить значок "0+", "6+", "12+", "16+" или "18+" на печатной продукции и на сайте. Однако мы с вами знаем, какие разные дети в 3 года и в 5 лет, не говоря уже об интервале 6 - 11 лет. </p>
+<p>Поэтому мы адресуем наши спектакли: для зрителей 3 - 4 лет и старше, 5 - 6 лет и старше, для младших школьников. И ставя значок "0+" мы рекомендуем смотреть этот спектакль зрителям 3 - 4 или 5 лет и старше. Ставя значок "6+", мы уточняем, зрителям какого именно возраста: от 6 лет, 7 - 8 или 10 лет и старше мы адресуем спектакль.</p>
+<p>Просим Вас обращать внимание на возрастные рекомендации!</p>
+                        </div>
+                        <button type="button" class="btn no-border no-bg popover-close"><img src="@img/icons/close.svg" alt=""></button>
+                    </div>
+                </div>
+                <div class="icon btn question" data-popover="age_popover">?</div>Возраст:
+            
             </div>
             <div class="filter-list-container" id="main_filter_old">
                 <ul class="filter-list list-unstyled">

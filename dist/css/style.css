@@ -4546,6 +4546,11 @@ a {
   border: none;
 }
 
+.btn.no-bg {
+  background: none;
+  padding: 0;
+}
+
 .btn:focus {
   outline: 0;
   -webkit-box-shadow: none;
@@ -7390,6 +7395,43 @@ body.lock {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   margin-top: 25px;
+}
+
+.popover {
+  position: absolute;
+  display: none;
+  z-index: 10;
+}
+
+.popover.active {
+  display: block;
+}
+
+.popover__inner {
+  background-color: #ffffff;
+  border: 1px solid #1D1D1B;
+  border-radius: 20px;
+  padding: 20px;
+  width: 400px;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+.popover__title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 21px;
+  margin-bottom: 10px;
+}
+
+.popover-close {
+  padding: 0 !important;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
 @media (min-width: 576px) {
