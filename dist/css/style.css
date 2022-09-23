@@ -5415,6 +5415,8 @@ body.lock {
   margin-top: 12px;
 }
 
+/****************SIDEBAR********************/
+
 .sidebar {
   border-right: 1px solid #000000;
   background-color: #ffffff;
@@ -5463,7 +5465,7 @@ body.lock {
 
 .sidebar__nav ul {
   padding: 16px 16px 24px;
-  position: relative;
+  position: absolute;
   top: 0;
   -webkit-transform: translateX(-100%);
       -ms-transform: translateX(-100%);
@@ -5498,6 +5500,11 @@ body.lock {
 .sidebar__nav ul li a :hover,
 .sidebar__nav .nav-item-parent > span :hover {
   color: #1D1D1B;
+}
+
+.sidebar__nav ul li a.current {
+  text-decoration: underline;
+  cursor: text;
 }
 
 .sidebar__nav .nav-item-parent > span {

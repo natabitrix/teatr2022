@@ -30,10 +30,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="format-detection" content="telephone=no" />
 	<meta name="format-detection" content="address=no" />
-	<link rel="stylesheet" href="css/style.min.css?_v=20220922194951">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220923102312">
 	<title>Театр сказки</title>
 	<script>
 		var homePage = false;
+		var activeMenuId = "@@activeMenuParentId";
+		var url = "@@current";
 	</script>
 </head>
 
@@ -66,35 +68,34 @@
 					<div class="nav-item-active-children"></div>
 
 					<ul class="nav-items list-unstyled active">
+
 						<li><a href="index.html">Главная</a></li>
 
-						<li class="nav-item nav-item-parent" id="item-afisha"><span>Афиша</span>
+						<li class="nav-item nav-item-parent" id="item-afisha">
+							<span>Афиша</span>
 							<ul class="list-unstyled nav-item-children" id="item-afisha-children">
-								<li><a href="rules.html">О билетах и
-										правилах</a></li>
-								<li><a href="abonements.html"
-										>Абонементы</a></li>
-								<li><a href="#"
-										>Цены</a></li>
-								<li><a href="news-list.html"
-										>Новости</a></li>
-								<li><a href="#"
-										>Экскурсии</a></li>
+								<li class="nav-item"><a href="rules.html">О билетах и правилах</a></li>
+								<li class="nav-item"><a href="abonements.html">Абонементы</a></li>
+								<li class="nav-item"><a href="#">Цены</a></li>
+								<li class="nav-item"><a href="news-list.html">Новости</a></li>
+								<li class="nav-item"><a href="#">Экскурсии</a></li>
 							</ul>
+						</li>
 
-						</li>
 						<li class="nav-item"><a href="repertuar.html">Репертуар</a></li>
-						<li class="nav-item nav-item-parent" id="item-teatr"><span>Театр</span>
-						
+
+						<li class="nav-item nav-item-parent" id="item-teatr">
+							<span>Театр</span>
 							<ul class="list-unstyled nav-item-children" id="item-teatr-children">
-								<li><a href="actor-list.html">Сказочники</a></li>
-								<li><a href="#">История</a></li>
-								<li><a href="#">Проекты</a></li>
-								<li><a href="#">Доступная среда</a></li>
-								<li><a href="reviews.html">Отзывы</a></li>
-								<li><a href="documents.html">Документы</a></li>
+								<li class="nav-item"><a href="actor-list.html">Сказочники</a></li>
+								<li class="nav-item"><a href="#">История</a></li>
+								<li class="nav-item"><a href="#">Проекты</a></li>
+								<li class="nav-item"><a href="#">Доступная среда</a></li>
+								<li class="nav-item"><a href="reviews.html">Отзывы</a></li>
+								<li class="nav-item"><a href="documents.html">Документы</a></li>
 							</ul>
 						</li>
+
 						<li class="nav-item"><a href="news-list.html">Новости</a></li>
 						<li class="nav-item"><a href="">Проекты</a></li>
 						<li class="nav-item"><a href="contacts.html">Контакты</a></li>
@@ -104,7 +105,7 @@
 				<div class="sidebar__bottom">
 					<div class="sidebar__logo">
 						<a class="sidebar__logo-link" href="index.html">
-							<img src="img/logo.svg" alt="театр сказки">
+							<img src="img/logo-yellow.svg" alt="театр сказки" class="color-logo" data-color="0">
 						</a>
 					</div>
 	
@@ -1118,7 +1119,7 @@
 <!--.wrapper-->
 
 <!--script src="js/bvi.min.js"></script-->
-<script src="js/app.min.js?_v=20220922194951"></script>
+<script src="js/app.min.js?_v=20220923102312"></script>
 
 </body>
 

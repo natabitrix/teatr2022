@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     /**Menu */
-    function menu() {
+    function menu(activeMenuId = "") {
         const navItems = document.querySelector(".nav-items");
         const navItemParents = document.querySelectorAll(".nav-item-parent");
         const navItemChildren = document.querySelectorAll(".nav-item-children");
@@ -136,6 +136,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const navItemActiveChildrenPlaceholder = document.querySelector(".nav-item-active-children");
 
         //Перемещение всех children ul в отдельный div
+        navItemActiveChildrenPlaceholder.innerHTML = "";
         Array.prototype.forEach.call(navItemChildren, function (navItemChild) {
             navItemActiveChildrenPlaceholder.append(navItemChild);
         });
@@ -180,6 +181,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
             });
         });
+
+        if(activeMenuId && activeMenuId != "" && activeMenuId !="@@activeMenuParentId") {
+            //Появление дочернего ul
+            document.getElementById(activeMenuId).classList.add("active");
+            //Появление кнопки Назад
+            navBack.classList.add("active");
+            //Скрытие parent ul
+            navItems.classList.remove("active");
+        }
+        
+        /**Активный пункт меню временно для верстки */
+        if(url && url != "" && url !="@@url") {
+            document.getElementsByTagName('a').forEach((link) => { 
+                if(link.getAttribute("href") == url) {
+                    link.classList.add("current");
+                }
+            });
+        }
 
     }
 
@@ -642,7 +661,19 @@ document.addEventListener("DOMContentLoaded", function () {
             borderRadius = 24;
         this.style.borderRadius = borderRadius + "px";
     }
-
+    
+    function colorLogo()
+    {
+        var logo = document.querySelector(".color-logo");
+        var colors = ['yellow', 'red', 'blue'];
+        logo.addEventListener('mouseover', e => {
+            var currentColorIndex = e.target.getAttribute("data-color");
+            var nextColorIndex = parseInt(currentColorIndex) + 1;
+            if(nextColorIndex == colors.length) nextColorIndex = 0;
+            e.target.src = "/img/logo-" + colors[nextColorIndex] + ".svg";
+            e.target.setAttribute("data-color", nextColorIndex);
+        });
+    }
 
     /**Tabs */
     function tabs() {
@@ -686,7 +717,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    menu();
+    menu(activeMenuId);
+    colorLogo();
     sidebarToggle();
     tabs();
     filterResponsive();
@@ -703,6 +735,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
+    
 
 
 });

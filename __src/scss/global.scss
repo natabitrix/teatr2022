@@ -96,6 +96,7 @@ $headerHeight: 48px;
 	}
 }
 
+/****************SIDEBAR********************/
 .sidebar {
 	border-right: 1px solid $black;
 	background-color: $white;
@@ -156,10 +157,11 @@ $headerHeight: 48px;
 				padding: 24px 24px 24px;
 			}
 
-			position: relative;
+			position: absolute;
 			top: 0;
 			transform: translateX(-100%);
 			transition: transform .3s ease-in-out;
+
 
 			&.active {
 				transform: translateX(0);
@@ -187,6 +189,10 @@ $headerHeight: 48px;
 			:hover {
 				color: $dark;
 			}
+		}
+		ul li a.current {
+			text-decoration: underline;
+			cursor:text;
 		}
 
 		.nav-item-parent>span {
