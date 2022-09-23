@@ -667,7 +667,7 @@ document.addEventListener("DOMContentLoaded", function () {
             var currentColorIndex = e.target.getAttribute("data-color");
             var nextColorIndex = parseInt(currentColorIndex) + 1;
             if (nextColorIndex == colors.length) nextColorIndex = 0;
-            e.target.src = "/img/logo-" + colors[nextColorIndex] + ".svg";
+            e.target.src = "img/logo-" + colors[nextColorIndex] + ".svg";
             e.target.setAttribute("data-color", nextColorIndex);
         });
     }
