@@ -108,7 +108,7 @@ a {
 	text-align: center;
 	text-decoration: none !important;
 	vertical-align: middle;
-
+	white-space: nowrap;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -116,7 +116,7 @@ a {
 	//-webkit-user-select: none;
 	//-moz-user-select: none;
 	//user-select: none;
-	padding: 0 24px;
+	padding: 0 18px;
 	height: 38px;
 	transition: color .20s ease-in-out, background-color .20s ease-in-out, border-color .20s ease-in-out; //www
 
@@ -340,11 +340,16 @@ h1 {
 	font-family: $Gothic;
 	font-style: normal;
 	font-weight: 500;
-	font-size: 74px;
-	line-height: 60px;
 	margin-top: 10px;
 	margin-bottom: 10px;
 	max-width: 900px;
+
+	font-size: 42px;
+	line-height: 38px;
+	@include media-breakpoint-up(md) {
+		font-size: 74px;
+		line-height: 60px;
+	}
 
 }
 
@@ -353,9 +358,13 @@ h2 {
 	font-family: $Gothic;
 	font-style: normal;
 	font-weight: 500;
-	font-size: 48px;
-	line-height: 48px;
+	font-size: 21px;
+	line-height: 24px;
 	margin-bottom: 1rem;
+	@include media-breakpoint-up(md) {
+		font-size: 48px;
+		line-height: 48px;
+	}
 }
 
 .h3,

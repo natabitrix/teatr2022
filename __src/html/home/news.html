@@ -1,38 +1,69 @@
 
     <div class="main-news news">
+        
         <div class="news__heading">
             <h2 class="h2">Новости</h2>
             <a href="#" class="btn btn-lcase btn-all-news">все новости</a>
         </div>
 
-        <div class="news__items">
-            <div class="row">
 
-                @@include('news-item.html', {
-                    "img": "1.jpg",
-                    "date": "23 июн 2022",
-                    "name": "Сказка о мёртвой царевне и о семи богатырях",
-                })
 
-                @@include('news-item.html', {
-                    "img": "2.jpg",
-                    "date": "23 июн 2022",
-                    "name": "Объявлены номинанты Высшей театральной премии Санкт-Петербурга «Золотой софит» сезона 2021/22",
-                })
+            <div class="news__items news-slider swiper">
+                <div class="row- swiper-wrapper">
 
-                @@include('news-item.html', {
-                    "img": "3.jpg",
-                    "date": "23 июн 2022",
-                    "name": "Пресс-конференция на Книжных аллеях",
-                })
+                    @@include('news-item.html', {
+                        "img": "1.jpg",
+                        "date": "23 июн 2022",
+                        "name": "Сказка о мёртвой царевне и о семи богатырях",
+                    })
 
-                @@include('news-item.html', {
-                    "img": "4.jpg",
-                    "date": "23 июн 2022",
-                    "name": "Закрытие 77-го сезона",
-                })
+                    @@include('news-item.html', {
+                        "img": "2.jpg",
+                        "date": "23 июн 2022",
+                        "name": "Объявлены номинанты Высшей театральной премии Санкт-Петербурга «Золотой софит» сезона 2021/22",
+                    })
 
+                    @@include('news-item.html', {
+                        "img": "3.jpg",
+                        "date": "23 июн 2022",
+                        "name": "Пресс-конференция на Книжных аллеях",
+                    })
+
+                    @@include('news-item.html', {
+                        "img": "4.jpg",
+                        "date": "23 июн 2022",
+                        "name": "Закрытие 77-го сезона",
+                    })
+
+                    @@include('news-item.html', {
+                        "img": "1.jpg",
+                        "date": "23 июн 2022",
+                        "name": "Сказка о мёртвой царевне и о семи богатырях",
+                    })
+
+                    @@include('news-item.html', {
+                        "img": "2.jpg",
+                        "date": "23 июн 2022",
+                        "name": "Объявлены номинанты Высшей театральной премии Санкт-Петербурга «Золотой софит» сезона 2021/22",
+                    })
+
+                    @@include('news-item.html', {
+                        "img": "3.jpg",
+                        "date": "23 июн 2022",
+                        "name": "Пресс-конференция на Книжных аллеях",
+                    })
+
+                    @@include('news-item.html', {
+                        "img": "4.jpg",
+                        "date": "23 июн 2022",
+                        "name": "Закрытие 77-го сезона",
+                    })
+
+                </div>
             </div>
-        </div>
 
+
+            <div class="all-news-container text-center">
+                <a href="#" class="btn btn-lcase btn-all-news-mobile">все новости</a>
+            </div>
     </div>
