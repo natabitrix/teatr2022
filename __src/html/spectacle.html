@@ -25,6 +25,7 @@
     </div>
 </div>
 
+
 <div class="spectacle-header">
     <div class="spectacle-header__text-block bg-lblue">
         <div class="decors decors-js" 
@@ -38,6 +39,9 @@
             data-scale="0.5,1.1" 
             data-parallax="true">
         </div>
+
+
+
         <div class="spectacle-header__text-block-items">
             <h1>Волшебник изумрудного города</h1>
             <div class="spectacle-header-text">Наивная сказка в двух действиях – спектакль для самых маленьких зрителей
@@ -47,20 +51,18 @@
     <div class="spectacle-header__img-block"><img src="@img/demo/main-event/1.jpg" alt=""></div>
 </div>
 
-<div class="spectacle-tabs tabs bg-bg">
+<div class="spectacle-tabs tabs bg-bg" data-sticky-container>
 
-    <ul class="tab-list list-unstyled d-flex">
-        <li class="tab-list-item active" id="tab-description"><img src="@img/icons/description.svg" alt=""
-                class="icon icon-l">
-            <h2 class="h2">Описание</h2>
-        </li>
-        <li class="tab-list-item" id="tab-tickets"><img src="@img/icons/ticket.svg" alt="" class="icon icon-l">
-            <h2 class="h2">Билеты</h2>
-        </li>
-        <li class="tab-list-item" id="tab-comments"><img src="@img/icons/comment.svg" alt="" class="icon icon-l">
-            <h2 class="h2">Отзывы</h2>
-        </li>
-    </ul>
+    <div class="tab-list bg-bg sticky" data-id="tabList" data-sticky data-sticky-class="is-sticky" data-sticky-for="0" data-margin-top="0" data-sticky-wrap="true">
+        <div class="scroll">
+            <div class="tab-list-item active" id="tab-description"><img src="@img/icons/description.svg" alt="" class="icon icon-l"><h2 class="h2">Описание</h2></div>
+            <div class="tab-list-item" id="tab-tickets"><img src="@img/icons/ticket.svg" alt="" class="icon icon-l"><h2 class="h2">Билеты</h2></div>
+            <div class="tab-list-item" id="tab-comments"><img src="@img/icons/comment.svg" alt="" class="icon icon-l"><h2 class="h2">Отзывы</h2></div>
+        </div>
+    </div>
+
+
+
 
 
     <div class="tab-content">

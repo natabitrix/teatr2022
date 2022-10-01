@@ -82,6 +82,18 @@ a {
 			text-decoration: none;
 		}
 	}
+
+	&.underline-hover {
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	&.decoration-none {
+		text-decoration: none!important;
+	}
 }
 
 *,
@@ -340,7 +352,8 @@ h1 {
 	font-family: $Gothic;
 	font-style: normal;
 	font-weight: 500;
-	margin-top: 10px;
+	margin-top: 0;
+	padding-top: 10px;
 	margin-bottom: 10px;
 	max-width: 900px;
 
@@ -906,15 +919,30 @@ img.w-100 {
 
 
 .alert {
-	padding: 24px 24px 10px;
+	padding: 16px 16px 10px;
 	max-width: 1200px;
+
+	@include media-breakpoint-up(md) {
+		padding: 24px 24px 10px;
+	}
 
 	.btn {
 		margin-right: 20px;
 
+		@include media-breakpoint-down(md) {
+			width: 26px;
+			height: 26px;
+			margin-right: 10px;
+		}
+
 		.icon {
 			width: 4px;
 			height: 31px;
+
+			@include media-breakpoint-down(md) {
+				width: 2px;
+				height: 15px;
+			}
 		}
 	}
 
@@ -924,8 +952,14 @@ img.w-100 {
 		font-weight: 400;
 		font-size: 20px;
 		line-height: 26px;
+
+		@include media-breakpoint-down(md) {
+			font-size: 16px;
+			line-height: 22px;
+		}
 	}
 }
+
 
 
 .grayscale {
@@ -938,3 +972,79 @@ img.w-100 {
 }
 
 
+.popover {
+	&-placeholder {
+
+	}
+	position: absolute;
+	//display: none;
+	visibility: hidden;
+	opacity: 0;
+	transform: translate(0, 10px);
+	height:0;
+	overflow: hidden;
+	transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+
+	z-index: 10;
+	font-family: $Berlin;
+
+	&.active {
+		//display:block;
+		visibility: visible;
+		opacity: 1;
+		transform: translate(0, -20px);
+		height: 455px;
+
+	}
+
+	&__inner {
+		background-color: $white;
+		border: 1px solid $dark;
+		border-radius: 20px;
+		padding: 20px 0 20px 20px;
+
+		font-size: 16px;
+		line-height: 22px;
+		font-weight: 400;
+
+		display:flex;
+		flex-direction: column;
+		height: 100%;
+
+		@include media-breakpoint-up(sm) {
+			width: 400px;
+		}
+	}
+
+	&__title {
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 21px;
+		margin-bottom: 10px;
+	}
+
+	&__text {
+
+		height: 100%;
+		overflow: auto;
+		padding-right: 20px;
+	}
+
+	&-close {
+		padding: 0 !important;
+		width: 30px;
+		height: 30px;
+		position: absolute;
+		top: 10px;
+		right: 10px;
+	}
+}
+
+.sticky{
+	z-index: 10;
+}
+
+
+.underline {
+	text-decoration: underline;
+}

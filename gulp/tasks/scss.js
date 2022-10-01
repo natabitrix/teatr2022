@@ -21,10 +21,11 @@ export const scss = () => {
         .pipe(sass({
             outputStyle: 'expanded'
         }))
-        .pipe(app.plugins.if(
-                app.isBuild,
+        .pipe(app.gulp.dest(app.path.build.css))
+        .pipe(
+        //    app.plugins.if(app.isBuild,
                 groupCssMediaQueries()
-            )
+        //    )
         )
         /*.pipe(app.plugins.if(
                 app.isBuild,
@@ -35,20 +36,19 @@ export const scss = () => {
             )
         )*/
         .pipe(
-            app.plugins.if(
-               app.isBuild,
+            //app.plugins.if(app.isBuild,
                 autoprefixer({
                     grid: true,
                     overrideBrowserslist: ["last 3 versions"],
                     cascade: true
                 })
-            )
+            //)
         )
-        .pipe(app.gulp.dest(app.path.build.css))
-        .pipe(app.plugins.if(
-                app.isBuild,
+        //.pipe(app.gulp.dest(app.path.build.css))
+        .pipe(
+        //    app.plugins.if(app.isBuild,
                 cleanCss()
-            )
+        //    )
         )
         .pipe(rename({
             extname: ".min.css"

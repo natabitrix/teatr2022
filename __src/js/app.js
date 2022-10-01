@@ -1,9 +1,110 @@
-import * as flsFunctions from "./modules/functions.js";
+//import * as flsFunctions from "./modules/functions.js";
+//flsFunctions.isWebP();
 
-flsFunctions.isWebP();
 
-import Sticky from 'sticky-js';
+var ajax = {};
+ajax.x = function () {
+    if (typeof XMLHttpRequest !== 'undefined') {
+        return new XMLHttpRequest();
+    }
+    var versions = [
+        "MSXML2.XmlHttp.6.0",
+        "MSXML2.XmlHttp.5.0",
+        "MSXML2.XmlHttp.4.0",
+        "MSXML2.XmlHttp.3.0",
+        "MSXML2.XmlHttp.2.0",
+        "Microsoft.XmlHttp"
+    ];
+
+    var xhr;
+    for (var i = 0; i < versions.length; i++) {
+        try {
+            xhr = new ActiveXObject(versions[i]);
+            break;
+        } catch (e) {
+        }
+    }
+    return xhr;
+};
+
+ajax.send = function (url, callback, method, data, async) {
+    if (async === undefined) {
+        async = true;
+    }
+    var x = ajax.x();
+    x.open(method, url, async);
+    x.onreadystatechange = function () {
+        if (x.readyState == 4) {
+            callback(x.responseText)
+        }
+    };
+    if (method == 'POST') {
+        x.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    }
+    x.send(data)
+};
+
+ajax.get = function (url, data, callback, async) {
+    var query = [];
+    for (var key in data) {
+        query.push(encodeURIComponent(key) + '=' + encodeURIComponent(data[key]));
+    }
+    ajax.send(url + (query.length ? '?' + query.join('&') : ''), callback, 'GET', null, async)
+};
+
+ajax.post = function (url, data, callback, async) {
+    var query = [];
+    for (var key in data) {
+        query.push(encodeURIComponent(key) + '=' + encodeURIComponent(data[key]));
+    }
+    ajax.send(url, callback, 'POST', query.join('&'), async)
+};
+
+
+
+
+/**if (window.getCookie("cookie_name") !== "Y") */
+function getCookie(a) {
+    var b = document.cookie.match(new RegExp("(?:^|; )" + a.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, "\\$1") + "=([^;]*)"));
+    return b ? decodeURIComponent(b[1]) : undefined
+}
+
+/**window.setCookie("cookie_name", "Y", {
+		expires: 31557600,
+		path: "/",
+		domain: window.location.hostname
+	}); */
+function setCookie(b, f, c) {
+    c = c || {};
+    var i = c.expires;
+    if (typeof i == "number" && i) {
+        var h = new Date();
+        h.setTime(h.getTime() + i * 1000);
+        i = c.expires = h
+    }
+    if (i && i.toUTCString) {
+        c.expires = i.toUTCString()
+    }
+    f = encodeURIComponent(f);
+    var a = b + "=" + f;
+    for (var e in c) {
+        a += "; " + e;
+        var g = c[e];
+        if (g !== true) {
+            a += "=" + g
+        }
+    }
+    document.cookie = a
+}
+
+
+
+//import Sticky from 'sticky-js';
+import Sticky from './modules/sticky-js/sticky.js';
 var sticky = new Sticky('[data-sticky]', {});
+window.addEventListener('resize', function (event) {
+    sticky.update();
+});
 
 
 import Swiper, { Navigation, Autoplay } from 'swiper';
@@ -86,6 +187,7 @@ const newsSlider = new Swiper('.news-slider', {
     },
 });
 
+
 const gallerySlider = new Swiper('.gallery-slider', {
     // configure Swiper to use modules
     //modules: [Navigation],
@@ -98,15 +200,35 @@ const gallerySlider = new Swiper('.gallery-slider', {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
-    speed: 1000
+    speed: 1000,
+    on: {
+        init: function () {
+            setGallerySliderHeight(this);
+        },
+        resize: function () {
+            setGallerySliderHeight(this);
+        }
+    },
 });
+
+
+function setGallerySliderHeight(slider) {
+    const gallSlider = document.querySelector('.gallery-slider');
+    if (gallSlider) {
+        var currentImg = slider.el.querySelector('.swiper-slide-active img');
+        var h = currentImg.clientHeight;
+        Array.prototype.forEach.call(slider.slides, function (slide) {
+            slide.style.height = h + "px";
+        });
+    }
+
+}
+
 
 
 /**Версия для слабовидящих */
 import Bvi from "./modules/bvi/bvi.js";
 new Bvi();
-
-
 
 
 /**sidebar toggle */
@@ -308,7 +430,7 @@ function collapseContent() {
 
 /**News item text height*/
 function newsItemTextHeight() {
-    var newsItems = document.querySelectorAll(".news__item");
+    const newsItems = document.querySelectorAll(".news__item");
     Array.prototype.forEach.call(newsItems, function (newsItem) {
         var imgHeight = newsItem.querySelector("img").clientHeight;
         newsItem.querySelector(".news__item-text").style.height = imgHeight + "px";
@@ -389,7 +511,7 @@ function decoration(container, colors, figures, figureCount, figurePosition, min
     //рандомные фигуры в указанном кол-ве: figures="random" figure_count="3"
     if (figures == "random" && parseInt(figureCount) > 0) {
         arrDecors = arrDecors.slice(0, figureCount);
-        console.log(arrDecors);
+        //console.log(arrDecors);
     }
     else {
         //указанные фигуры в любом кол-ве: figures="1,2,3" figure_count="auto"
@@ -600,8 +722,9 @@ function initDecors() {
     Array.prototype.forEach.call(containerDecors, function (decor) {
 
         decor.innerHTML = "";
+        
+        if (decor.dataset.figure) {
 
-        if (decor.dataset.figure !== undefined) {
             //цвета (helper.scss: .decor)
             //data-colors="red,blue,yellow,dark,white" или random
             //var arrColors = decor.dataset.colors.split(",");
@@ -676,7 +799,7 @@ function colorLogo() {
         var currentColorIndex = e.target.getAttribute("data-color");
         var nextColorIndex = parseInt(currentColorIndex) + 1;
         if (nextColorIndex == colors.length) nextColorIndex = 0;
-        e.target.src = "img/logo-" + colors[nextColorIndex] + ".svg";
+        e.target.src = "/img/logo-" + colors[nextColorIndex] + ".svg";
         e.target.setAttribute("data-color", nextColorIndex);
     });
 }
@@ -695,6 +818,8 @@ function popovers() {
 
         document.querySelector(".popover-placeholder").innerHTML = "";
         document.querySelector(".popover-placeholder").append(popover);
+
+        popoverHide(popover);
 
         /**events */
         //popover_btn.addEventListener("click", function () {
@@ -757,7 +882,7 @@ function popovers() {
 
 
         //var arrPos = [];
-        var margin = 10;
+        var margin = 20;
 
         var top = popoverBtnRect.top - bodyRect.top + "px";
         var left = popoverBtnRect.left - bodyRect.left - 10 + "px";
@@ -824,12 +949,40 @@ function tabs() {
     const tabList = document.querySelectorAll(".tab-list-item");
     const tabContent = document.querySelectorAll(".tab");
 
+    var cookieTab = getCookie("tab");
+
     Array.prototype.forEach.call(tabList, function (tabListItem) {
+
+        const thisId = tabListItem.id;
+        const tabContentId = thisId + "-content";
+        let thisTabContentItem = document.getElementById(tabContentId);
+
+        
+        if(cookieTab && cookieTab == thisId) {
+            //Скрытие всех tab-content
+            Array.prototype.forEach.call(tabContent, function (tabContentItem) {
+                tabContentItem.classList.add("d-none");
+            });
+            //Открытие активной tab-content
+            thisTabContentItem.classList.remove("d-none");
+
+            //Убрать активность у всех tab
+            Array.prototype.forEach.call(tabList, function (tabListItem) {
+                tabListItem.classList.remove("active");
+            });
+            
+            //Добавить активность активной tab
+            tabListItem.classList.add("active");
+        }
+
+
         tabListItem.addEventListener("click", function () {
 
-            const thisId = tabListItem.id;
-            const tabContentId = thisId + "-content";
-            let thisTabContentItem = document.getElementById(tabContentId);
+            setCookie("tab", thisId, {
+                expires: 31557600,
+                path: "/",
+                domain: window.location.hostname
+            }); 
 
             //Скрытие всех tab-content
             Array.prototype.forEach.call(tabContent, function (tabContentItem) {
@@ -842,6 +995,7 @@ function tabs() {
             Array.prototype.forEach.call(tabList, function (tabListItem) {
                 tabListItem.classList.remove("active");
             });
+
             //Добавить активность активной tab
             tabListItem.classList.add("active");
 
@@ -852,10 +1006,59 @@ function tabs() {
             resizeTextarea();
             popovers();
             swiperFullScreen();
+            setGallerySliderHeight(gallerySlider);
 
         });
     });
 }
+
+
+
+/*
+function ajaxLoadingItems (loadMoreBtn) {
+
+    const ajaxContainer = document.querySelector(".ajax-container");
+    const ajaxItems = ajaxContainer.querySelector(".ajax-items");
+    const loadMoreBtnContainer = ajaxContainer.querySelector(".load-more-container");
+    const loadMoreBtn = ajaxContainer.querySelector(".load-more");
+
+    var loadMoreUrl = loadMoreBtn.getAttribute("data-url");
+    loadMoreBtn.classList.add("loading");
+
+    if (loadMoreUrl) {
+
+        ajax.get(loadMoreUrl, {}, function(responseText) {
+
+            loadMoreBtn.remove();
+
+            var ajaxContent = responseText.split('<!--ajax_content-->')[1];
+
+            var tempDiv = document.createElement("div");
+            tempDiv.innerHTML = ajaxContent;
+
+            var loadedItems = tempDiv.querySelectorAll(".ajax-item");
+
+            Array.prototype.forEach.call(loadedItems, function (loadedItem) {
+                ajaxItems.append(loadedItem);
+            });
+
+            var loadedloadMoreBtn = tempDiv.querySelector(".load-more");
+
+            loadMoreBtnContainer.append(loadedloadMoreBtn);
+
+            loadedloadMoreBtn.addEventListener("click", function () {
+                ajaxLoadingItems(this);
+            });
+
+            //console.log(loadedItems);
+        });
+    }
+}
+
+loadMoreBtn.addEventListener("click", function () {
+    ajaxLoadingItems(this);
+});
+*/
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -865,6 +1068,7 @@ document.addEventListener("DOMContentLoaded", function () {
     tabs();
     filterResponsive();
     swiperFullScreen();
+    //setGallerySliderHeight(gallerySlider);
     collapseContent();
     newsItemTextHeight();
     initDecors();
@@ -877,7 +1081,7 @@ document.addEventListener("DOMContentLoaded", function () {
         filterResponsive();
         collapseContent();
         newsItemTextHeight();
-
+        //setGallerySliderHeight(gallerySlider);
     });
 
 

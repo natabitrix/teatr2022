@@ -2,17 +2,29 @@
 <html lang="ru">
 <!--
 Для слабовидящих
+
 Новости на главной декор
-Актеры и актер декор
-Адаптив
+Актеры декор
+
+Кнопка наверх
+Куки вплывашка
+
+
+Верстка блока госуслуги
+
+заголовки component_epilog
+og
+shema.org
+
 Стили для контент-редактора
+404
 -->
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="format-detection" content="telephone=no" />
 	<meta name="format-detection" content="address=no" />
-	<link rel="stylesheet" href="css/style.min.css?_v=20220925084110">
+	<link rel="stylesheet" href="css/style.min.css">
 	<title>Театр сказки</title>
 	<script>
 		var homePage = false;
@@ -122,29 +134,32 @@
 
 			<main class="main">
 
-<div class="container-fluid bg-bg">
 
-    <div class="breadcrumbs">
-        <div class="breadcrumbs__container">
-            <ul class="breadcrumbs__list list-unstyled d-flex">
-                <li class="breadcrumbs__list-item">
-                    <a href="index.html">главная</a>
-                </li>
-                <li class="breadcrumbs__list-item icon">
-                    &rarr;
-                </li>
-                <li class="breadcrumbs__list-item">
-                    <a href="actor-list.html">творческая группа</a>
-                </li>
-                <li class="breadcrumbs__list-item icon">
-                    &rarr;
-                </li>
-                <li class="breadcrumbs__list-item">
-                    <span>Полина Чебунина</span>
-                </li>
-            </ul>
-        </div>
+<div class="breadcrumbs  bg-bg">
+    <div class="breadcrumbs__container">
+        <ul class="breadcrumbs__list list-unstyled d-flex">
+            <li class="breadcrumbs__list-item">
+                <a href="index.html">главная</a>
+            </li>
+            <li class="breadcrumbs__list-item icon">
+                &rarr;
+            </li>
+            <li class="breadcrumbs__list-item">
+                <a href="actor-list.html">творческая группа</a>
+            </li>
+            <li class="breadcrumbs__list-item icon">
+                &rarr;
+            </li>
+            <li class="breadcrumbs__list-item">
+                <span>Полина Чебунина</span>
+            </li>
+        </ul>
     </div>
+</div>
+
+
+
+<div class="container-fluid bg-bg">
 
 
     <div class="content-text">
@@ -190,9 +205,9 @@
             </div>
 
             <div class="col-md-5 content-text__right">
-                <div class="sticky" data-sticky data-sticky-class="is-sticky" data-sticky-for="992" data-margin-top="36">
+                <div class="sticky" data-sticky data-sticky-class="is-sticky" data-sticky-for="768" data-margin-top="40">
                     <div class="decors"><div class="decor decor2 decor-yellow"></div></div>
-                    <picture><source srcset="img/demo/actor.webp" type="image/webp"><img src="img/demo/actor.jpg" alt="" class="img-fluid d-block" class="sticky"></picture>
+                    <img src="img/demo/actor.jpg" alt="" class="img-fluid d-block" class="sticky">
                 </div>
 
             </div>
@@ -207,19 +222,31 @@
     <div class="btn btn-slider-fullscreen-close close-slider btn-circle-48"><img src="img/icons/close.svg" alt=""></div>
     <div class="gallery-slider swiper">
         <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <div class="slider-fullscreen-overlay close-slider"></div>
-                <div class="swiper-slide-fullscreen">
-                    <picture><source srcset="img/demo/spectacle/1.webp" type="image/webp"><img src="img/demo/spectacle/1.jpg" alt="" class="w-100-"></picture>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="slider-fullscreen-overlay close-slider"></div>
-                <div class="swiper-slide-fullscreen">
-                    <picture><source srcset="img/demo/spectacle/1.webp" type="image/webp"><img src="img/demo/spectacle/1.jpg" alt="" class="w-100-"></picture>
-                </div>
-            </div>
 
+            <div class="swiper-slide">
+                <div class="slider-fullscreen-overlay close-slider"></div>
+                <div class="swiper-slide-fullscreen">
+                    <img src="img/demo/spectacle/1.jpg" alt="" class="w-100-">
+                </div>
+            </div>
+            <div class="swiper-slide vertical">
+                <div class="slider-fullscreen-overlay close-slider"></div>
+                <div class="swiper-slide-fullscreen">
+                    <img src="img/demo/spectacle/2.jpg" alt="" class="w-100-">
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="slider-fullscreen-overlay close-slider"></div>
+                <div class="swiper-slide-fullscreen">
+                    <img src="img/demo/spectacle/1.jpg" alt="" class="w-100-">
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="slider-fullscreen-overlay close-slider"></div>
+                <div class="swiper-slide-fullscreen">
+                    <img src="img/demo/spectacle/1.jpg" alt="" class="w-100-">
+                </div>
+            </div>
         </div>
 
         <div class="swiper-navigation">
@@ -264,27 +291,27 @@
 
 </main>
 
-<div class="ext-code">
 
-</div>
+
+
 
 <div class="partners">
 	<div class="partners__items">
 
 		<div class="partners__item">
-    <a href="#" class="grayscale"><picture><source srcset="img/demo/partners/1.webp" type="image/webp"><img src="img/demo/partners/1.png" alt="" width="134"></picture></a>
+    <a href="#" class="grayscale"><img src="img/demo/partners/1.png" alt="" width="134"></a>
 </div>
 		<div class="partners__item">
-    <a href="#" class="grayscale"><picture><source srcset="img/demo/partners/2.webp" type="image/webp"><img src="img/demo/partners/2.png" alt="" width="197"></picture></a>
+    <a href="#" class="grayscale"><img src="img/demo/partners/2.png" alt="" width="197"></a>
 </div>
 		<div class="partners__item">
-    <a href="#" class="grayscale"><picture><source srcset="img/demo/partners/3.webp" type="image/webp"><img src="img/demo/partners/3.png" alt="" width="178"></picture></a>
+    <a href="#" class="grayscale"><img src="img/demo/partners/3.png" alt="" width="178"></a>
 </div>
 		<div class="partners__item">
-    <a href="#" class="grayscale"><picture><source srcset="img/demo/partners/4.webp" type="image/webp"><img src="img/demo/partners/4.png" alt="" width="186"></picture></a>
+    <a href="#" class="grayscale"><img src="img/demo/partners/4.png" alt="" width="186"></a>
 </div>
 		<div class="partners__item">
-    <a href="#" class="grayscale"><picture><source srcset="img/demo/partners/5.webp" type="image/webp"><img src="img/demo/partners/5.png" alt="" width="160"></picture></a>
+    <a href="#" class="grayscale"><img src="img/demo/partners/5.png" alt="" width="160"></a>
 </div>
 
 	</div>
@@ -355,7 +382,7 @@
 <!--.wrapper-->
 
 <!--script src="js/bvi.min.js"></script-->
-<script src="js/app.min.js?_v=20220925084110"></script>
+<script src="js/app.min.js"></script>
 
 </body>
 

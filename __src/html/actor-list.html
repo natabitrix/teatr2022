@@ -4,25 +4,27 @@
     "activeMenuParentId": "item-teatr-children",
     })
     
+    <div class="breadcrumbs  bg-bg">
+        <div class="breadcrumbs__container">
+            <ul class="breadcrumbs__list list-unstyled d-flex">
+                <li class="breadcrumbs__list-item">
+                    <a href="index.html">главная</a>
+                </li>
+                <li class="breadcrumbs__list-item icon">
+                    &rarr;
+                </li>
+                <li class="breadcrumbs__list-item">
+                    <span>Творческая группа</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
     <div class="container-fluid bg-bg">
     
-        <div class="breadcrumbs">
-            <div class="breadcrumbs__container">
-                <ul class="breadcrumbs__list list-unstyled d-flex">
-                    <li class="breadcrumbs__list-item">
-                        <a href="index.html">главная</a>
-                    </li>
-                    <li class="breadcrumbs__list-item icon">
-                        &rarr;
-                    </li>
-                    <li class="breadcrumbs__list-item">
-                        <span>Творческая группа</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    
-    
+
         <div class="content-text">
     
             <h1>Творческая группа</h1>
@@ -30,17 +32,19 @@
 
             <div class="filters">
                 <div class="filter-list-container" id="main_filter_month">
-                    <ul class="filter-list list-unstyled">
-                        <li class="filter-item"><button type="button" class="btn active">вся</button></li> 
-                        <li class="filter-item"><button type="button" class="btn">актеры</button></li>
-                        <li class="filter-item"><button type="button" class="btn">авторы</button></li>
-                        <li class="filter-item"><button type="button" class="btn">мастерские</button></li>
-                        <li class="filter-item"><button type="button" class="btn">администрация</button></li>
-                        <li class="filter-item"><button type="button" class="btn">за кулисами</button></li>
-                    </ul>
-                    <div class="filter-more-container">
-                        <button type="button" class="btn btn-more d-none"><img src="@img/icons/dots.svg" alt="" class="icon"></button>
-                        <ul class="filter-list-hidden list-unstyled"></ul>
+                    <div class="scroll">
+                        <ul class="filter-list list-unstyled">
+                            <li class="filter-item"><button type="button" class="btn active">вся</button></li> 
+                            <li class="filter-item"><button type="button" class="btn">актеры</button></li>
+                            <li class="filter-item"><button type="button" class="btn">авторы</button></li>
+                            <li class="filter-item"><button type="button" class="btn">мастерские</button></li>
+                            <li class="filter-item"><button type="button" class="btn">администрация</button></li>
+                            <li class="filter-item"><button type="button" class="btn">за кулисами</button></li>
+                        </ul>
+                        <div class="filter-more-container">
+                            <button type="button" class="btn btn-more d-none"><img src="@img/icons/dots.svg" alt="" class="icon"></button>
+                            <ul class="filter-list-hidden list-unstyled"></ul>
+                        </div>
                     </div>
                 </div>
             </div>

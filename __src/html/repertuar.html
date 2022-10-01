@@ -3,37 +3,42 @@
     "current": "repertuar.html"
     })
     
-    
-    <div class="container-fluid bg-bg">
-        <div class="breadcrumbs">
-            <div class="breadcrumbs__container">
-                <ul class="breadcrumbs__list list-unstyled d-flex">
-                    <li class="breadcrumbs__list-item">
-                        <a href="index.html">главная</a>
-                    </li>
-                    <li class="breadcrumbs__list-item icon">
-                        &rarr;
-                    </li>
-                    <li class="breadcrumbs__list-item">
-                        <span>репертуар</span>
-                    </li>
-                </ul>
-            </div>
+   
+    <div class="breadcrumbs bg-bg">
+        <div class="breadcrumbs__container">
+            <ul class="breadcrumbs__list list-unstyled d-flex">
+                <li class="breadcrumbs__list-item">
+                    <a href="index.html">главная</a>
+                </li>
+                <li class="breadcrumbs__list-item icon">
+                    &rarr;
+                </li>
+                <li class="breadcrumbs__list-item">
+                    <span>репертуар</span>
+                </li>
+            </ul>
         </div>
+    </div>
+
+
+    <div class="container-fluid bg-bg">
+
 
         <h1>Репертуар</h1>
     
         <div class="filters repertuar-filter">
 
             <div class="filter-list-container" id="repertuar_filter_old">
-                <ul class="filter-list list-unstyled">
-                    <li class="filter-item"><button type="button" class="btn active">весь</button></li> 
-                    <li class="filter-item"><button type="button" class="btn">Для малышей  0+</button></li>
-                    <li class="filter-item"><button type="button" class="btn">для детей 6+</button></li>
-                    <li class="filter-item"><button type="button" class="btn">для детей 12+</button></li>
-                    <li class="filter-item"><button type="button" class="btn">для детей 16+</button></li>
-                    <li class="filter-item"><button type="button" class="btn">для взрослых 18+</button></li>
-                </ul>
+                <div class="scroll">
+                    <ul class="filter-list list-unstyled">
+                        <li class="filter-item"><button type="button" class="btn active">весь</button></li> 
+                        <li class="filter-item"><button type="button" class="btn">Для малышей  0+</button></li>
+                        <li class="filter-item"><button type="button" class="btn">для детей 6+</button></li>
+                        <li class="filter-item"><button type="button" class="btn">для детей 12+</button></li>
+                        <li class="filter-item"><button type="button" class="btn">для детей 16+</button></li>
+                        <li class="filter-item"><button type="button" class="btn">для взрослых 18+</button></li>
+                    </ul>
+                </div>
                 <div class="filter-more-container">
                     <button type="button" class="btn btn-more d-none"><img src="@img/icons/dots.svg" alt="..." class="icon"></button>
                     <ul class="filter-list-hidden list-unstyled"></ul>
@@ -102,6 +107,7 @@
 
         </div>
     </div>
+    
     @@include('_common/subscribe.html')
     
     @@include('_common/footer.html')

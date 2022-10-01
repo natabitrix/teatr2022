@@ -8,9 +8,16 @@ export const js = () => {
                 message: "Error: <%= error.message %>"
             }))
         )
+        // .pipe(webpack({
+        //     mode: 'development',
+        //     output: {
+        //         filename: 'app.js'
+        //     }
+        // }))
+        //.pipe(app.gulp.dest(app.path.build.js))
         .pipe(webpack({
-            mode: app.isBuild ? 'production' : 'development',
-            //mode: 'production',
+            //mode: app.isBuild ? 'production' : 'development',
+            mode: 'production',
             output: {
                 filename: 'app.min.js'
             }
@@ -18,8 +25,8 @@ export const js = () => {
         .pipe(app.gulp.dest(app.path.build.js))
 
         .pipe(app.gulp.src(app.path.src.jsExt))
-        .pipe(app.gulp.dest(app.path.build.js))
 
+        .pipe(app.gulp.dest(app.path.build.js))
 
         .pipe(app.plugins.browsersync.stream())
 }

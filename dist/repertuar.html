@@ -2,17 +2,29 @@
 <html lang="ru">
 <!--
 Для слабовидящих
+
 Новости на главной декор
-Актеры и актер декор
-Адаптив
+Актеры декор
+
+Кнопка наверх
+Куки вплывашка
+
+
+Верстка блока госуслуги
+
+заголовки component_epilog
+og
+shema.org
+
 Стили для контент-редактора
+404
 -->
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="format-detection" content="telephone=no" />
 	<meta name="format-detection" content="address=no" />
-	<link rel="stylesheet" href="css/style.min.css?_v=20220925084110">
+	<link rel="stylesheet" href="css/style.min.css">
 	<title>Театр сказки</title>
 	<script>
 		var homePage = false;
@@ -122,37 +134,42 @@
 
 			<main class="main">
     
-    
-    <div class="container-fluid bg-bg">
-        <div class="breadcrumbs">
-            <div class="breadcrumbs__container">
-                <ul class="breadcrumbs__list list-unstyled d-flex">
-                    <li class="breadcrumbs__list-item">
-                        <a href="index.html">главная</a>
-                    </li>
-                    <li class="breadcrumbs__list-item icon">
-                        &rarr;
-                    </li>
-                    <li class="breadcrumbs__list-item">
-                        <span>репертуар</span>
-                    </li>
-                </ul>
-            </div>
+   
+    <div class="breadcrumbs bg-bg">
+        <div class="breadcrumbs__container">
+            <ul class="breadcrumbs__list list-unstyled d-flex">
+                <li class="breadcrumbs__list-item">
+                    <a href="index.html">главная</a>
+                </li>
+                <li class="breadcrumbs__list-item icon">
+                    &rarr;
+                </li>
+                <li class="breadcrumbs__list-item">
+                    <span>репертуар</span>
+                </li>
+            </ul>
         </div>
+    </div>
+
+
+    <div class="container-fluid bg-bg">
+
 
         <h1>Репертуар</h1>
     
         <div class="filters repertuar-filter">
 
             <div class="filter-list-container" id="repertuar_filter_old">
-                <ul class="filter-list list-unstyled">
-                    <li class="filter-item"><button type="button" class="btn active">весь</button></li> 
-                    <li class="filter-item"><button type="button" class="btn">Для малышей  0+</button></li>
-                    <li class="filter-item"><button type="button" class="btn">для детей 6+</button></li>
-                    <li class="filter-item"><button type="button" class="btn">для детей 12+</button></li>
-                    <li class="filter-item"><button type="button" class="btn">для детей 16+</button></li>
-                    <li class="filter-item"><button type="button" class="btn">для взрослых 18+</button></li>
-                </ul>
+                <div class="scroll">
+                    <ul class="filter-list list-unstyled">
+                        <li class="filter-item"><button type="button" class="btn active">весь</button></li> 
+                        <li class="filter-item"><button type="button" class="btn">Для малышей  0+</button></li>
+                        <li class="filter-item"><button type="button" class="btn">для детей 6+</button></li>
+                        <li class="filter-item"><button type="button" class="btn">для детей 12+</button></li>
+                        <li class="filter-item"><button type="button" class="btn">для детей 16+</button></li>
+                        <li class="filter-item"><button type="button" class="btn">для взрослых 18+</button></li>
+                    </ul>
+                </div>
                 <div class="filter-more-container">
                     <button type="button" class="btn btn-more d-none"><img src="img/icons/dots.svg" alt="..." class="icon"></button>
                     <ul class="filter-list-hidden list-unstyled"></ul>
@@ -170,7 +187,7 @@
 
     <div class="repertuar-list-item-inner">
         <div class="repertuar-list-item__img">
-            <a href="spectacle.html"><picture><source srcset="img/demo/repertuar/1.webp" type="image/webp"><img src="img/demo/repertuar/1.jpg" alt=""></picture></a>
+            <a href="spectacle.html"><img src="img/demo/repertuar/1.jpg" alt=""></a>
         </div>
 
         <div class="repertuar-list-item__content">
@@ -208,7 +225,7 @@
 
     <div class="repertuar-list-item-inner">
         <div class="repertuar-list-item__img">
-            <a href="spectacle.html"><picture><source srcset="img/demo/repertuar/2.webp" type="image/webp"><img src="img/demo/repertuar/2.jpg" alt=""></picture></a>
+            <a href="spectacle.html"><img src="img/demo/repertuar/2.jpg" alt=""></a>
         </div>
 
         <div class="repertuar-list-item__content">
@@ -246,7 +263,7 @@
 
     <div class="repertuar-list-item-inner">
         <div class="repertuar-list-item__img">
-            <a href="spectacle.html"><picture><source srcset="img/demo/repertuar/3.webp" type="image/webp"><img src="img/demo/repertuar/3.jpg" alt=""></picture></a>
+            <a href="spectacle.html"><img src="img/demo/repertuar/3.jpg" alt=""></a>
         </div>
 
         <div class="repertuar-list-item__content">
@@ -284,7 +301,7 @@
 
     <div class="repertuar-list-item-inner">
         <div class="repertuar-list-item__img">
-            <a href="spectacle.html"><picture><source srcset="img/demo/repertuar/4.webp" type="image/webp"><img src="img/demo/repertuar/4.jpg" alt=""></picture></a>
+            <a href="spectacle.html"><img src="img/demo/repertuar/4.jpg" alt=""></a>
         </div>
 
         <div class="repertuar-list-item__content">
@@ -322,7 +339,7 @@
 
     <div class="repertuar-list-item-inner">
         <div class="repertuar-list-item__img">
-            <a href="spectacle.html"><picture><source srcset="img/demo/repertuar/3.webp" type="image/webp"><img src="img/demo/repertuar/3.jpg" alt=""></picture></a>
+            <a href="spectacle.html"><img src="img/demo/repertuar/3.jpg" alt=""></a>
         </div>
 
         <div class="repertuar-list-item__content">
@@ -360,7 +377,7 @@
 
     <div class="repertuar-list-item-inner">
         <div class="repertuar-list-item__img">
-            <a href="spectacle.html"><picture><source srcset="img/demo/repertuar/4.webp" type="image/webp"><img src="img/demo/repertuar/4.jpg" alt=""></picture></a>
+            <a href="spectacle.html"><img src="img/demo/repertuar/4.jpg" alt=""></a>
         </div>
 
         <div class="repertuar-list-item__content">
@@ -395,6 +412,7 @@
 
         </div>
     </div>
+    
     <div class="subscribe bg-white">
     <div class="decors">
         <div class="decor decor2 decor-yellow"></div>
@@ -425,27 +443,27 @@
     
     </main>
 
-<div class="ext-code">
 
-</div>
+
+
 
 <div class="partners">
 	<div class="partners__items">
 
 		<div class="partners__item">
-    <a href="#" class="grayscale"><picture><source srcset="img/demo/partners/1.webp" type="image/webp"><img src="img/demo/partners/1.png" alt="" width="134"></picture></a>
+    <a href="#" class="grayscale"><img src="img/demo/partners/1.png" alt="" width="134"></a>
 </div>
 		<div class="partners__item">
-    <a href="#" class="grayscale"><picture><source srcset="img/demo/partners/2.webp" type="image/webp"><img src="img/demo/partners/2.png" alt="" width="197"></picture></a>
+    <a href="#" class="grayscale"><img src="img/demo/partners/2.png" alt="" width="197"></a>
 </div>
 		<div class="partners__item">
-    <a href="#" class="grayscale"><picture><source srcset="img/demo/partners/3.webp" type="image/webp"><img src="img/demo/partners/3.png" alt="" width="178"></picture></a>
+    <a href="#" class="grayscale"><img src="img/demo/partners/3.png" alt="" width="178"></a>
 </div>
 		<div class="partners__item">
-    <a href="#" class="grayscale"><picture><source srcset="img/demo/partners/4.webp" type="image/webp"><img src="img/demo/partners/4.png" alt="" width="186"></picture></a>
+    <a href="#" class="grayscale"><img src="img/demo/partners/4.png" alt="" width="186"></a>
 </div>
 		<div class="partners__item">
-    <a href="#" class="grayscale"><picture><source srcset="img/demo/partners/5.webp" type="image/webp"><img src="img/demo/partners/5.png" alt="" width="160"></picture></a>
+    <a href="#" class="grayscale"><img src="img/demo/partners/5.png" alt="" width="160"></a>
 </div>
 
 	</div>
@@ -516,7 +534,7 @@
 <!--.wrapper-->
 
 <!--script src="js/bvi.min.js"></script-->
-<script src="js/app.min.js?_v=20220925084110"></script>
+<script src="js/app.min.js"></script>
 
 </body>
 

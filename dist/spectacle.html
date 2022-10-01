@@ -2,17 +2,29 @@
 <html lang="ru">
 <!--
 Для слабовидящих
+
 Новости на главной декор
-Актеры и актер декор
-Адаптив
+Актеры декор
+
+Кнопка наверх
+Куки вплывашка
+
+
+Верстка блока госуслуги
+
+заголовки component_epilog
+og
+shema.org
+
 Стили для контент-редактора
+404
 -->
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="format-detection" content="telephone=no" />
 	<meta name="format-detection" content="address=no" />
-	<link rel="stylesheet" href="css/style.min.css?_v=20220925084110">
+	<link rel="stylesheet" href="css/style.min.css">
 	<title>Театр сказки</title>
 	<script>
 		var homePage = false;
@@ -144,6 +156,7 @@
     </div>
 </div>
 
+
 <div class="spectacle-header">
     <div class="spectacle-header__text-block bg-lblue">
         <div class="decors decors-js" 
@@ -157,29 +170,30 @@
             data-scale="0.5,1.1" 
             data-parallax="true">
         </div>
+
+
+
         <div class="spectacle-header__text-block-items">
             <h1>Волшебник изумрудного города</h1>
             <div class="spectacle-header-text">Наивная сказка в двух действиях – спектакль для самых маленьких зрителей
             </div>
         </div>
     </div>
-    <div class="spectacle-header__img-block"><picture><source srcset="img/demo/main-event/1.webp" type="image/webp"><img src="img/demo/main-event/1.jpg" alt=""></picture></div>
+    <div class="spectacle-header__img-block"><img src="img/demo/main-event/1.jpg" alt=""></div>
 </div>
 
-<div class="spectacle-tabs tabs bg-bg">
+<div class="spectacle-tabs tabs bg-bg" data-sticky-container>
 
-    <ul class="tab-list list-unstyled d-flex">
-        <li class="tab-list-item active" id="tab-description"><img src="img/icons/description.svg" alt=""
-                class="icon icon-l">
-            <h2 class="h2">Описание</h2>
-        </li>
-        <li class="tab-list-item" id="tab-tickets"><img src="img/icons/ticket.svg" alt="" class="icon icon-l">
-            <h2 class="h2">Билеты</h2>
-        </li>
-        <li class="tab-list-item" id="tab-comments"><img src="img/icons/comment.svg" alt="" class="icon icon-l">
-            <h2 class="h2">Отзывы</h2>
-        </li>
-    </ul>
+    <div class="tab-list bg-bg sticky" data-id="tabList" data-sticky data-sticky-class="is-sticky" data-sticky-for="0" data-margin-top="0" data-sticky-wrap="true">
+        <div class="scroll">
+            <div class="tab-list-item active" id="tab-description"><img src="img/icons/description.svg" alt="" class="icon icon-l"><h2 class="h2">Описание</h2></div>
+            <div class="tab-list-item" id="tab-tickets"><img src="img/icons/ticket.svg" alt="" class="icon icon-l"><h2 class="h2">Билеты</h2></div>
+            <div class="tab-list-item" id="tab-comments"><img src="img/icons/comment.svg" alt="" class="icon icon-l"><h2 class="h2">Отзывы</h2></div>
+        </div>
+    </div>
+
+
+
 
 
     <div class="tab-content">
@@ -248,19 +262,31 @@
     <div class="btn btn-slider-fullscreen-close close-slider btn-circle-48"><img src="img/icons/close.svg" alt=""></div>
     <div class="gallery-slider swiper">
         <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <div class="slider-fullscreen-overlay close-slider"></div>
-                <div class="swiper-slide-fullscreen">
-                    <picture><source srcset="img/demo/spectacle/1.webp" type="image/webp"><img src="img/demo/spectacle/1.jpg" alt="" class="w-100-"></picture>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="slider-fullscreen-overlay close-slider"></div>
-                <div class="swiper-slide-fullscreen">
-                    <picture><source srcset="img/demo/spectacle/1.webp" type="image/webp"><img src="img/demo/spectacle/1.jpg" alt="" class="w-100-"></picture>
-                </div>
-            </div>
 
+            <div class="swiper-slide">
+                <div class="slider-fullscreen-overlay close-slider"></div>
+                <div class="swiper-slide-fullscreen">
+                    <img src="img/demo/spectacle/1.jpg" alt="" class="w-100-">
+                </div>
+            </div>
+            <div class="swiper-slide vertical">
+                <div class="slider-fullscreen-overlay close-slider"></div>
+                <div class="swiper-slide-fullscreen">
+                    <img src="img/demo/spectacle/2.jpg" alt="" class="w-100-">
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="slider-fullscreen-overlay close-slider"></div>
+                <div class="swiper-slide-fullscreen">
+                    <img src="img/demo/spectacle/1.jpg" alt="" class="w-100-">
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="slider-fullscreen-overlay close-slider"></div>
+                <div class="swiper-slide-fullscreen">
+                    <img src="img/demo/spectacle/1.jpg" alt="" class="w-100-">
+                </div>
+            </div>
         </div>
 
         <div class="swiper-navigation">
@@ -286,7 +312,7 @@
 
     <div class="repertuar-list-item-inner">
         <div class="repertuar-list-item__img">
-            <a href="spectacle.html"><picture><source srcset="img/demo/repertuar/1.webp" type="image/webp"><img src="img/demo/repertuar/1.jpg" alt=""></picture></a>
+            <a href="spectacle.html"><img src="img/demo/repertuar/1.jpg" alt=""></a>
         </div>
 
         <div class="repertuar-list-item__content">
@@ -324,7 +350,7 @@
 
     <div class="repertuar-list-item-inner">
         <div class="repertuar-list-item__img">
-            <a href="spectacle.html"><picture><source srcset="img/demo/repertuar/2.webp" type="image/webp"><img src="img/demo/repertuar/2.jpg" alt=""></picture></a>
+            <a href="spectacle.html"><img src="img/demo/repertuar/2.jpg" alt=""></a>
         </div>
 
         <div class="repertuar-list-item__content">
@@ -374,7 +400,7 @@
     </div>
     <div class="tickets-list">
         <div class="row">
-            <div class="col-lg-4 col-md-6 ticket-item">
+            <div class="col-xl-4 col-md-6 ticket-item">
     <div class="ticket-item__inner bg-lblue">
         <div class="ticket-item__day">
             среда
@@ -389,7 +415,7 @@
         </div>
     </div>
 </div>
-            <div class="col-lg-4 col-md-6 ticket-item">
+            <div class="col-xl-4 col-md-6 ticket-item">
     <div class="ticket-item__inner bg-lblue">
         <div class="ticket-item__day">
             среда
@@ -404,7 +430,7 @@
         </div>
     </div>
 </div>
-            <div class="col-lg-4 col-md-6 ticket-item">
+            <div class="col-xl-4 col-md-6 ticket-item">
     <div class="ticket-item__inner bg-lblue">
         <div class="ticket-item__day">
             четверг
@@ -419,7 +445,7 @@
         </div>
     </div>
 </div>
-            <div class="col-lg-4 col-md-6 ticket-item">
+            <div class="col-xl-4 col-md-6 ticket-item">
     <div class="ticket-item__inner bg-lblue">
         <div class="ticket-item__day">
             среда
@@ -455,86 +481,86 @@
     </div>
 
     <div class="comment-list">
-        <div class="comment-item">
-    <div class="comment-item__wrapper">
-        <div class="comment-item__inner">
-            <div class="comment-item__info">
-                <div class="comment-item__name">
+        <div class="comment-list-item">
+    <div class="comment-list-item__wrapper">
+        <div class="comment-list-item__inner">
+            <div class="comment-list-item__info">
+                <div class="comment-list-item__name">
                     Артем
                 </div>
-                <div class="comment-item__date">
+                <div class="comment-list-item__date">
                     03.06.2022
                 </div>
             </div>
-            <div class="comment-item__text">
+            <div class="comment-list-item__text">
                 История о том, как маленький Лисенок, считающий себя хитрым-прехитрым, всячески пытается обмануть двух своих приятелей - Зайчонка и Медвежонка. Его проделки, в конце концов, надоедают друзьям, и они решают проучить обманщика… Кроме Медвежонка, Зайчонка и Лисенка
             </div>
         </div>
     </div>
 </div>
-        <div class="comment-item">
-    <div class="comment-item__wrapper">
-        <div class="comment-item__inner">
-            <div class="comment-item__info">
-                <div class="comment-item__name">
+        <div class="comment-list-item">
+    <div class="comment-list-item__wrapper">
+        <div class="comment-list-item__inner">
+            <div class="comment-list-item__info">
+                <div class="comment-list-item__name">
                     Артем
                 </div>
-                <div class="comment-item__date">
+                <div class="comment-list-item__date">
                     03.06.2022
                 </div>
             </div>
-            <div class="comment-item__text">
+            <div class="comment-list-item__text">
                 Бомба
             </div>
         </div>
     </div>
 </div>
-        <div class="comment-item">
-    <div class="comment-item__wrapper">
-        <div class="comment-item__inner">
-            <div class="comment-item__info">
-                <div class="comment-item__name">
+        <div class="comment-list-item">
+    <div class="comment-list-item__wrapper">
+        <div class="comment-list-item__inner">
+            <div class="comment-list-item__info">
+                <div class="comment-list-item__name">
                     Артем
                 </div>
-                <div class="comment-item__date">
+                <div class="comment-list-item__date">
                     03.06.2022
                 </div>
             </div>
-            <div class="comment-item__text">
+            <div class="comment-list-item__text">
                 Дети довольны
             </div>
         </div>
     </div>
 </div>
-        <div class="comment-item">
-    <div class="comment-item__wrapper">
-        <div class="comment-item__inner">
-            <div class="comment-item__info">
-                <div class="comment-item__name">
+        <div class="comment-list-item">
+    <div class="comment-list-item__wrapper">
+        <div class="comment-list-item__inner">
+            <div class="comment-list-item__info">
+                <div class="comment-list-item__name">
                     Артем
                 </div>
-                <div class="comment-item__date">
+                <div class="comment-list-item__date">
                     03.06.2022
                 </div>
             </div>
-            <div class="comment-item__text">
+            <div class="comment-list-item__text">
                 История о том, как маленький Лисенок, считающий себя хитрым-прехитрым, всячески пытается обмануть двух своих приятелей - Зайчонка и Медвежонка. Его проделки, в конце концов, надоедают друзьям, и они решают проучить обманщика… Кроме Медвежонка, Зайчонка и Лисенка
             </div>
         </div>
     </div>
 </div>
-        <div class="comment-item">
-    <div class="comment-item__wrapper">
-        <div class="comment-item__inner">
-            <div class="comment-item__info">
-                <div class="comment-item__name">
+        <div class="comment-list-item">
+    <div class="comment-list-item__wrapper">
+        <div class="comment-list-item__inner">
+            <div class="comment-list-item__info">
+                <div class="comment-list-item__name">
                     Артем
                 </div>
-                <div class="comment-item__date">
+                <div class="comment-list-item__date">
                     03.06.2022
                 </div>
             </div>
-            <div class="comment-item__text">
+            <div class="comment-list-item__text">
                 Просто в восторге
             </div>
         </div>
@@ -552,7 +578,7 @@
             </div>
             
             <div class="form-field form-field--btn">
-                <textarea placeholder="Поделитесь вашими впечатлениями от спектакля" class="textarea-autoresize">История о том, как маленький Лисенок, считающий себя хитрым-прехитрым, всячески пытается обмануть двух своих приятелей - Зайчонка и Медвежонка. Его проделки, в конце концов, надоедают друзьям, и они решают проучить обманщика… Кроме Медвежонка, Зайчонка и Лисенка</textarea>
+                <textarea placeholder="Поделитесь вашими впечатлениями от спектакля" class="textarea-autoresize"></textarea>
                 <button type="submit" class="btn btn-circle-44"><img src="img/icons/send.svg" alt=""></button>
             </div>
         </form>
@@ -597,27 +623,27 @@
 
 </main>
 
-<div class="ext-code">
 
-</div>
+
+
 
 <div class="partners">
 	<div class="partners__items">
 
 		<div class="partners__item">
-    <a href="#" class="grayscale"><picture><source srcset="img/demo/partners/1.webp" type="image/webp"><img src="img/demo/partners/1.png" alt="" width="134"></picture></a>
+    <a href="#" class="grayscale"><img src="img/demo/partners/1.png" alt="" width="134"></a>
 </div>
 		<div class="partners__item">
-    <a href="#" class="grayscale"><picture><source srcset="img/demo/partners/2.webp" type="image/webp"><img src="img/demo/partners/2.png" alt="" width="197"></picture></a>
+    <a href="#" class="grayscale"><img src="img/demo/partners/2.png" alt="" width="197"></a>
 </div>
 		<div class="partners__item">
-    <a href="#" class="grayscale"><picture><source srcset="img/demo/partners/3.webp" type="image/webp"><img src="img/demo/partners/3.png" alt="" width="178"></picture></a>
+    <a href="#" class="grayscale"><img src="img/demo/partners/3.png" alt="" width="178"></a>
 </div>
 		<div class="partners__item">
-    <a href="#" class="grayscale"><picture><source srcset="img/demo/partners/4.webp" type="image/webp"><img src="img/demo/partners/4.png" alt="" width="186"></picture></a>
+    <a href="#" class="grayscale"><img src="img/demo/partners/4.png" alt="" width="186"></a>
 </div>
 		<div class="partners__item">
-    <a href="#" class="grayscale"><picture><source srcset="img/demo/partners/5.webp" type="image/webp"><img src="img/demo/partners/5.png" alt="" width="160"></picture></a>
+    <a href="#" class="grayscale"><img src="img/demo/partners/5.png" alt="" width="160"></a>
 </div>
 
 	</div>
@@ -688,7 +714,7 @@
 <!--.wrapper-->
 
 <!--script src="js/bvi.min.js"></script-->
-<script src="js/app.min.js?_v=20220925084110"></script>
+<script src="js/app.min.js"></script>
 
 </body>
 
